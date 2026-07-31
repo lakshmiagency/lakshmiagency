@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #f1f5f9;
+  --muted-text: #64748b;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: rgba(241, 245, 249, 0.8);
+}
+
+.dark {
+  --background: #0b0f19;
+  --foreground: #f8fafc;
+  --card-bg: #111827;
+  --card-border: #1f2937;
+  --muted-text: #9ca3af;
+  --nav-bg: rgba(11, 15, 25, 0.85);
+  --nav-border: rgba(31, 41, 55, 0.8);
+}
+
+@theme {
+  --color-primary: #0B3D91;
+  --color-primary-hover: #072e6e;
+  --color-accent: #22C55E;
+  --color-accent-hover: #16a34a;
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-muted-text: var(--muted-text);
+  --color-nav-bg: var(--nav-bg);
+  --color-nav-border: var(--nav-border);
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth transiton classes */
+.transition-theme {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
