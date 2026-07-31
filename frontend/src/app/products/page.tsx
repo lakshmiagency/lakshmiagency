@@ -40,10 +40,17 @@ function ProductsCatalogInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // Filter States
-  const [search, setSearch] = useState(searchParams.get('search') || '');
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category_id') || '');
-  const [selectedBrand, setSelectedBrand] = useState(searchParams.get('brand_id') || '');
+  // Filter States initialized to empty for hydration safety
+  const [search, setSearch] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState('');
+
+  // Sync state with URL search params on mount or when searchParams change
+  useEffect(() => {
+    setSearch(searchParams.get('search') || '');
+    setSelectedCategory(searchParams.get('category_id') || '');
+    setSelectedBrand(searchParams.get('brand_id') || '');
+  }, [searchParams]);
 
   // Data States
   const [products, setProducts] = useState<Product[]>([]);
