@@ -1,14 +1,10 @@
 import { Router } from 'express';
-import { getCategories } from '../controllers/categoryController';
-import { getBrands } from '../controllers/brandController';
 import { getProducts, getProductById } from '../controllers/productController';
 import { getPrices } from '../controllers/priceController';
 
 const router = Router();
 
 // Public Catalog Routes
-router.get('/categories', getCategories);
-router.get('/brands', getBrands);
 router.get('/products', getProducts);
 router.get('/products/:id', getProductById);
 router.get('/prices', getPrices);

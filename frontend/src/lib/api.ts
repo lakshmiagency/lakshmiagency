@@ -1,16 +1,9 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
 async function apiFetch(path: string, options: RequestInit = {}) {
-  const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-  
   const headers = new Headers(options.headers || {});
   
-  if (token) {
-    headers.set('Authorization', `Bearer ${token}`);
-  }
-
-  // Only set Content-Type to JSON if it's not FormData (which sets its own boundary)
-  if (!(options.body instanceof FormData) && !headers.has('Content-Type')) {
+  if (!headers.has('Content-Type')) {
     headers.set('Content-Type', 'application/json');
   }
 
@@ -35,19 +28,9 @@ async function apiFetch(path: string, options: RequestInit = {}) {
 
 export const api = {
   // Public Data
-  async getCategories() {
-    return apiFetch('/categories');
-  },
-
-  async getBrands() {
-    return apiFetch('/brands');
-  },
-
-  async getProducts(filters?: { search?: string; category_id?: string; brand_id?: string }) {
+  async getProducts(filters?: { search?: string }) {
     const query = new URLSearchParams();
     if (filters?.search) query.append('search', filters.search);
-    if (filters?.category_id) query.append('category_id', filters.category_id);
-    if (filters?.brand_id) query.append('brand_id', filters.brand_id);
     
     return apiFetch(`/products?${query.toString()}`);
   },
@@ -56,11 +39,9 @@ export const api = {
     return apiFetch(`/products/${id}`);
   },
 
-  async getPrices(filters?: { search?: string; category_id?: string; brand_id?: string }) {
+  async getPrices(filters?: { search?: string }) {
     const query = new URLSearchParams();
     if (filters?.search) query.append('search', filters.search);
-    if (filters?.category_id) query.append('category_id', filters.category_id);
-    if (filters?.brand_id) query.append('brand_id', filters.brand_id);
     
     return apiFetch(`/prices?${query.toString()}`);
   },
@@ -68,6 +49,6 @@ export const api = {
   async getBusinessInfo() {
     return apiFetch('/business-info');
   },
-
 };
+
 export default api;

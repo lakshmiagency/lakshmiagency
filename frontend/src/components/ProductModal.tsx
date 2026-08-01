@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { X, MessageSquare, Phone, ShieldAlert, CheckCircle, AlertTriangle } from 'lucide-react';
+import { X, AlertTriangle, Phone, MessageSquare } from 'lucide-react';
 
 interface Variant {
   id: number;
@@ -17,8 +17,6 @@ interface Product {
   product_name: string;
   description: string;
   image: string;
-  category_name: string;
-  brand_name: string | null;
   variants: Variant[];
 }
 
@@ -30,7 +28,7 @@ interface ProductModalProps {
 export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
   if (!product) return null;
 
-  const { product_name, category_name, brand_name, description, image, variants } = product;
+  const { product_name, description, image, variants } = product;
 
   // Format prices
   const prices = variants.map((v) => parseFloat(v.price as string)).filter((p) => !isNaN(p));
@@ -45,7 +43,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
 
   // WhatsApp inquiry URL for this specific product
   const phoneNumber = '916361033361';
-  const whatsappText = `Hello Lakshmi Agency, I am interested in "${product_name}" (${brand_name || 'Generic'}). Could you please provide the latest price and availability for this item? Thanks!`;
+  const whatsappText = `Hello Lakshmi Agency, I am interested in "${product_name}". Could you please provide the latest price and availability for this item? Thanks!`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
 
   return (
@@ -77,20 +75,8 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
         {/* Details Section */}
         <div className="p-6 md:p-8 flex flex-col flex-grow justify-between">
           <div>
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              <span className="text-[10px] font-bold text-primary dark:text-blue-400 bg-primary/5 dark:bg-blue-400/10 px-2 py-0.5 rounded uppercase tracking-wider">
-                {category_name}
-              </span>
-              {brand_name && (
-                <span className="text-[10px] font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded uppercase tracking-wider">
-                  {brand_name}
-                </span>
-              )}
-            </div>
-
             {/* Title */}
-            <h2 className="text-xl sm:text-2xl font-extrabold text-foreground mb-3 leading-tight">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-foreground mb-3 mt-4 leading-tight">
               {product_name}
             </h2>
 
@@ -167,4 +153,5 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
     </div>
   );
 };
+
 export default ProductModal;

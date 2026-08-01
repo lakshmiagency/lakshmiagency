@@ -2,32 +2,18 @@
 
 import React, { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
-import { useSearchParams, useRouter } from 'next/navigation';
-import { Search, MessageSquare, SlidersHorizontal, RefreshCw, AlertCircle } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Search, SlidersHorizontal, RefreshCw, AlertCircle, MessageSquare } from 'lucide-react';
 import { api } from '../../lib/api';
 
 interface PriceItem {
   variant_id: number;
+  product_id: number;
+  product_name: string;
   size: string;
   unit: string;
   price: string | number;
   status: string;
-  product_id: number;
-  product_name: string;
-  category_name: string;
-  category_id: number;
-  brand_name: string | null;
-  brand_id: number | null;
-}
-
-interface Category {
-  id: number;
-  name: string;
-}
-
-interface Brand {
-  id: number;
-  name: string;
 }
 
 function PriceListInner() {
@@ -36,51 +22,24 @@ function PriceListInner() {
 
   // Filter States initialized to empty for hydration safety
   const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedBrand, setSelectedBrand] = useState('');
 
   // Sync state with URL search params on mount or when searchParams change
   useEffect(() => {
     setSearch(searchParams.get('search') || '');
-    setSelectedCategory(searchParams.get('category_id') || '');
-    setSelectedBrand(searchParams.get('brand_id') || '');
   }, [searchParams]);
 
   // Data States
   const [prices, setPrices] = useState<PriceItem[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [brands, setBrands] = useState<Brand[]>([]);
   const [loading, setLoading] = useState(true);
-
-  // Load Filters
-  useEffect(() => {
-    const loadFilters = async () => {
-      try {
-        const [cats, brs] = await Promise.all([
-          api.getCategories(),
-          api.getBrands()
-        ]);
-        setCategories(cats);
-        setBrands(brs);
-      } catch (err) {
-        console.error('Error loading filter dropdowns:', err);
-      }
-    };
-    loadFilters();
-  }, []);
 
   // Fetch flat prices
   useEffect(() => {
     const fetchPrices = async () => {
       setLoading(true);
       try {
-        const catId = searchParams.get('category_id') || undefined;
-        const brandId = searchParams.get('brand_id') || undefined;
         const queryText = searchParams.get('search') || undefined;
 
         const data = await api.getPrices({
-          category_id: catId,
-          brand_id: brandId,
           search: queryText
         });
         setPrices(data);
@@ -95,42 +54,26 @@ function PriceListInner() {
   }, [searchParams]);
 
   // Apply filters
-  const applyFilters = (newSearch: string, newCat: string, newBrand: string) => {
+  const applyFilters = (newSearch: string) => {
     const params = new URLSearchParams();
     if (newSearch) params.append('search', newSearch);
-    if (newCat) params.append('category_id', newCat);
-    if (newBrand) params.append('brand_id', newBrand);
     router.push(`/price-list?${params.toString()}`);
   };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    applyFilters(search, selectedCategory, selectedBrand);
-  };
-
-  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const val = e.target.value;
-    setSelectedCategory(val);
-    applyFilters(search, val, selectedBrand);
-  };
-
-  const handleBrandChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const val = e.target.value;
-    setSelectedBrand(val);
-    applyFilters(search, selectedCategory, val);
+    applyFilters(search);
   };
 
   const resetFilters = () => {
     setSearch('');
-    setSelectedCategory('');
-    setSelectedBrand('');
     router.push('/price-list');
   };
 
   // WhatsApp Inquiry Generator
   const getWhatsAppInquiryUrl = (item: PriceItem) => {
     const phoneNumber = '916361033361';
-    const msg = `Hello Lakshmi Agency, I am checking your website price list. I would like to inquire about the item:\n\n*Product*: ${item.product_name}\n*Brand*: ${item.brand_name || 'Generic'}\n*Size*: ${item.size} ${item.unit}\n*Listed Price*: ₹${parseFloat(item.price as string).toLocaleString('en-IN')}\n\nPlease confirm availability and let me know if there are any price changes. Thank you!`;
+    const msg = `Hello Lakshmi Agency, I am checking your website price list. I would like to inquire about the item:\n\n*Product*: ${item.product_name}\n*Size*: ${item.size} ${item.unit}\n*Listed Price*: ₹${parseFloat(item.price as string).toLocaleString('en-IN')}\n\nPlease confirm availability and let me know if there are any price changes. Thank you!`;
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -151,7 +94,7 @@ function PriceListInner() {
             Materials Rate Card & Price List
           </h1>
           <p className="text-sm text-muted-text mt-2">
-            Search live prices for cement bags, paints, CPVC accessories, waterproofing coatings, and tile chemicals.
+            Search live prices for cement, primers, paint mixes, PVC components, or waterproofing solutions.
           </p>
         </div>
 
@@ -165,10 +108,10 @@ function PriceListInner() {
 
         {/* Filter Toolbar */}
         <div className="bg-card-bg border border-card-border rounded-2xl p-5 mb-8 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between transition-theme">
-          <form onSubmit={handleSearchSubmit} className="relative w-full md:w-1/3">
+          <form onSubmit={handleSearchSubmit} className="relative w-full md:w-1/2">
             <input
               type="text"
-              placeholder="Search product price..."
+              placeholder="Search product name or size..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
@@ -176,42 +119,15 @@ function PriceListInner() {
             <Search className="w-4.5 h-4.5 text-muted-text absolute left-3 top-3" />
           </form>
 
-          <div className="flex flex-wrap sm:flex-nowrap gap-3 w-full md:w-auto items-center justify-end">
-            <div className="flex items-center gap-1 text-xs font-bold text-muted-text uppercase tracking-wider mr-2">
-              <SlidersHorizontal className="w-4 h-4 text-primary" />
-              Filter Table
-            </div>
-
-            <select
-              value={selectedCategory}
-              onChange={handleCategoryChange}
-              className="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-card-bg text-sm text-foreground focus:outline-none w-full sm:w-auto"
-            >
-              <option value="">All Categories</option>
-              {categories.map((c) => (
-                <option key={c.id} value={c.id}>{c.name}</option>
-              ))}
-            </select>
-
-            <select
-              value={selectedBrand}
-              onChange={handleBrandChange}
-              className="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-card-bg text-sm text-foreground focus:outline-none w-full sm:w-auto"
-            >
-              <option value="">All Brands</option>
-              {brands.map((b) => (
-                <option key={b.id} value={b.id}>{b.name}</option>
-              ))}
-            </select>
-
-            {(search || selectedCategory || selectedBrand) && (
+          <div className="flex gap-3 w-full md:w-auto items-center justify-end">
+            {search && (
               <button
                 type="button"
                 onClick={resetFilters}
                 className="flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl border border-red-200 dark:border-red-950/20 text-red-500 hover:bg-red-50 dark:hover:bg-red-950/10 text-sm font-bold w-full sm:w-auto transition-colors"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
-                Reset
+                Reset Search
               </button>
             )}
           </div>
@@ -228,13 +144,13 @@ function PriceListInner() {
           <div className="text-center py-20 bg-card-bg border border-card-border rounded-2xl">
             <h3 className="text-lg font-bold text-foreground mb-1">No Pricing Records Found</h3>
             <p className="text-sm text-muted-text max-w-sm mx-auto mb-6">
-              We couldn&apos;t find any variant matching your selection. Try revising spelling or changing category toggles.
+              We couldn&apos;t find any variant matching your search query &ldquo;{search}&rdquo;.
             </p>
             <button
               onClick={resetFilters}
               className="py-2 px-4 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary-hover transition-colors"
             >
-              Clear Search Filters
+              Clear Search
             </button>
           </div>
         ) : (
@@ -245,8 +161,6 @@ function PriceListInner() {
                 <thead>
                   <tr className="bg-slate-50 dark:bg-slate-950/20 text-muted-text font-bold text-xs uppercase tracking-wider border-b border-card-border">
                     <th className="p-4 pl-6">Product Item</th>
-                    <th className="p-4">Brand</th>
-                    <th className="p-4">Category</th>
                     <th className="p-4">Variant Size</th>
                     <th className="p-4">Price</th>
                     <th className="p-4">Availability</th>
@@ -257,12 +171,6 @@ function PriceListInner() {
                   {prices.map((item) => (
                     <tr key={item.variant_id} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/10 transition-colors">
                       <td className="p-4 pl-6 font-bold text-foreground">{item.product_name}</td>
-                      <td className="p-4 font-semibold text-slate-700 dark:text-slate-300">{item.brand_name || 'Generic'}</td>
-                      <td className="p-4">
-                        <span className="text-xs font-semibold px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-muted-text rounded-md border border-card-border">
-                          {item.category_name}
-                        </span>
-                      </td>
                       <td className="p-4 font-medium text-foreground">{item.size} {item.unit}</td>
                       <td className="p-4 font-black text-primary dark:text-white text-base">
                         ₹{parseFloat(item.price as string).toLocaleString('en-IN')}
@@ -301,7 +209,6 @@ function PriceListInner() {
                   <div className="flex justify-between items-start gap-2 mb-2">
                     <div>
                       <h3 className="font-extrabold text-foreground leading-snug">{item.product_name}</h3>
-                      <span className="text-xs text-muted-text font-semibold">{item.brand_name || 'Generic'} • {item.category_name}</span>
                     </div>
                     <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
                       item.status === 'Available' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/20 dark:text-emerald-400' : 'bg-red-100 text-red-700 dark:bg-red-950/20 dark:text-red-400'

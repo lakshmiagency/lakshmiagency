@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { MessageSquare, Eye } from 'lucide-react';
+import { Eye, MessageSquare } from 'lucide-react';
 
 interface Variant {
   id: number;
@@ -17,8 +17,6 @@ interface Product {
   product_name: string;
   description: string;
   image: string;
-  category_name: string;
-  brand_name: string | null;
   variants: Variant[];
 }
 
@@ -28,7 +26,7 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => {
-  const { product_name, category_name, brand_name, image, variants } = product;
+  const { product_name, image, variants } = product;
 
   // Format prices
   const prices = variants.map((v) => parseFloat(v.price as string)).filter((p) => !isNaN(p));
@@ -45,7 +43,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
 
   // WhatsApp inquiry URL for this specific product
   const phoneNumber = '916361033361';
-  const whatsappText = `Hello Lakshmi Agency, I would like to inquire about "${product_name}" (${brand_name || 'Generic'}). Details: Category: ${category_name}, Price range: ${displayPrice()}.`;
+  const whatsappText = `Hello Lakshmi Agency, I would like to inquire about "${product_name}". Price range: ${displayPrice()}.`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
 
   return (
@@ -74,18 +72,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
 
       {/* Content */}
       <div className="p-4 sm:p-5 flex flex-col flex-grow">
-        {/* Category & Brand */}
-        <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="text-[10px] font-bold text-primary dark:text-blue-400 bg-primary/5 dark:bg-blue-400/10 px-2 py-0.5 rounded uppercase tracking-wider">
-            {category_name}
-          </span>
-          {brand_name && (
-            <span className="text-xs font-semibold text-muted-text">
-              {brand_name}
-            </span>
-          )}
-        </div>
-
         {/* Title */}
         <h3 
           className="text-base font-bold text-foreground hover:text-primary dark:hover:text-white transition-colors line-clamp-1 mb-1 cursor-pointer"
@@ -131,4 +117,5 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
     </div>
   );
 };
+
 export default ProductCard;
