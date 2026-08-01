@@ -1,150 +1,941 @@
 [
   {
     "id": 1,
-    "category_id": 10,
+    "category_id": 1,
     "brand_id": 1,
-    "product_name": "JK WallMaxX Putty",
-    "description": "Premium quality white cement-based wall putty with advanced water resistance and excellent adhesion. Provides a smooth, glossy finish for interior and exterior walls.",
-    "image": "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=500&auto=format&fit=crop&q=60",
+    "product_name": "/Mtr",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 1, "size": "40", "unit": "kg", "price": 1150.00, "status": "Available" },
-      { "id": 2, "size": "20", "unit": "kg", "price": 620.00, "status": "Available" },
-      { "id": 3, "size": "5", "unit": "kg", "price": 210.00, "status": "Available" }
+      {
+        "id": 1,
+        "size": "WHITE",
+        "unit": "",
+        "price": 72.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 2,
-    "category_id": 10,
+    "category_id": 2,
     "brand_id": 1,
-    "product_name": "JK Super Strong Cement",
-    "description": "High-performance PPC cement designed for durable RCC structures, foundations, and plastering. Offers excellent strength development and resistance to environmental elements.",
-    "image": "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=500&auto=format&fit=crop&q=60",
+    "product_name": "Brided Waste",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 4, "size": "50", "unit": "kg", "price": 430.00, "status": "Available" }
+      {
+        "id": 2,
+        "size": "PIPE",
+        "unit": "",
+        "price": 62.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 3,
-    "category_id": 7,
-    "brand_id": 7,
-    "product_name": "Dr. Fixit LW+ Super",
-    "description": "Liquid waterproofing compound mixed with concrete and mortar during construction. Reduces water permeability, prevents dampness, and increases concrete strength.",
-    "image": "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=500&auto=format&fit=crop&q=60",
+    "category_id": 3,
+    "brand_id": 1,
+    "product_name": "Black",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 5, "size": "1", "unit": "Litre", "price": 185.00, "status": "Available" },
-      { "id": 6, "size": "5", "unit": "Litre", "price": 860.00, "status": "Available" },
-      { "id": 7, "size": "10", "unit": "Litre", "price": 1620.00, "status": "Available" },
-      { "id": 8, "size": "20", "unit": "Litre", "price": 3100.00, "status": "Available" }
+      {
+        "id": 3,
+        "size": "GARDEN PIPES 1\" SUPER BLACK",
+        "unit": "",
+        "price": 101.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 4,
-    "category_id": 7,
-    "brand_id": 7,
-    "product_name": "Dr. Fixit Pidiproof LW",
-    "description": "Specially formulated additive for cement sand mortars to make plaster and concrete waterproof. Highly recommended for basements, terraces, and bathrooms.",
-    "image": "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=500&auto=format&fit=crop&q=60",
+    "category_id": 4,
+    "brand_id": 1,
+    "product_name": "Tube Blue",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 9, "size": "1", "unit": "Litre", "price": 150.00, "status": "Available" },
-      { "id": 10, "size": "5", "unit": "Litre", "price": 710.00, "status": "Available" }
+      {
+        "id": 4,
+        "size": "200ML",
+        "unit": "",
+        "price": 21.5,
+        "status": "Available"
+      },
+      {
+        "id": 5,
+        "size": "400ML",
+        "unit": "",
+        "price": 42.5,
+        "status": "Available"
+      },
+      {
+        "id": 6,
+        "size": "PAINT THINNER 800ML",
+        "unit": "",
+        "price": 85.0,
+        "status": "Available"
+      },
+      {
+        "id": 7,
+        "size": "2.4 LITERS",
+        "unit": "",
+        "price": 255.0,
+        "status": "Available"
+      },
+      {
+        "id": 8,
+        "size": "4 LITERS",
+        "unit": "",
+        "price": 425.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 5,
-    "category_id": 1,
-    "brand_id": 4,
-    "product_name": "Finolex Rigid PVC Pipe (6kg/cm²)",
-    "description": "High-quality unplasticized PVC pipes suitable for plumbing, water supply, and agriculture. Resistant to corrosion and easy to install with solvent cement.",
-    "image": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=500&auto=format&fit=crop&q=60",
+    "category_id": 5,
+    "brand_id": 1,
+    "product_name": "S S Grating",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 11, "size": "110mm (6m)", "unit": "Length", "price": 850.00, "status": "Available" },
-      { "id": 12, "size": "90mm (6m)", "unit": "Length", "price": 680.00, "status": "Available" },
-      { "id": 13, "size": "75mm (6m)", "unit": "Length", "price": 540.00, "status": "Available" }
+      {
+        "id": 9,
+        "size": "LOCK WITH",
+        "unit": "",
+        "price": 46.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 6,
-    "category_id": 1,
-    "brand_id": 5,
-    "product_name": "Ashirvad CPVC FlowGuard Pipe SDR 11",
-    "description": "Chlorinated PVC pipes designed for hot and cold water distribution. Ideal for residential plumbing with high temperature resistance and lead-free formulation.",
-    "image": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=500&auto=format&fit=crop&q=60",
+    "category_id": 6,
+    "brand_id": 1,
+    "product_name": "Fittings",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 14, "size": "1 inch (3m)", "unit": "Length", "price": 440.00, "status": "Available" },
-      { "id": 15, "size": "3/4 inch (3m)", "unit": "Length", "price": 310.00, "status": "Available" },
-      { "id": 16, "size": "1/2 inch (3m)", "unit": "Length", "price": 215.00, "status": "Available" }
+      {
+        "id": 10,
+        "size": "COUPLING PER",
+        "unit": "",
+        "price": 86.7,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 7,
-    "category_id": 2,
-    "brand_id": 8,
-    "product_name": "Supreme DuraHose Braided Garden Pipe",
-    "description": "Heavy-duty 3-layer flexible PVC braided garden water hose pipe. Kink-resistant, weather-proof, and highly durable for gardening and car washing.",
-    "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&auto=format&fit=crop&q=60",
+    "category_id": 7,
+    "brand_id": 1,
+    "product_name": "Hose Per Pcs",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 17, "size": "1/2 inch - 30m", "unit": "Roll", "price": 1250.00, "status": "Available" },
-      { "id": 18, "size": "3/4 inch - 30m", "unit": "Roll", "price": 1950.00, "status": "Available" }
+      {
+        "id": 11,
+        "size": "1”",
+        "unit": "",
+        "price": 54.0,
+        "status": "Available"
+      },
+      {
+        "id": 12,
+        "size": "PVC HOSE PIPE 1.5”",
+        "unit": "",
+        "price": 72.0,
+        "status": "Available"
+      },
+      {
+        "id": 13,
+        "size": "3”",
+        "unit": "",
+        "price": 138.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 8,
-    "category_id": 6,
-    "brand_id": 2,
-    "product_name": "Asian Paints Decoprime Wall Primer (Water Based)",
-    "description": "Superior quality water-based wall primer undercoat. Excellent sealing properties, enhances topcoat coverage, and increases paint adhesion on masonry surfaces.",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&auto=format&fit=crop&q=60",
+    "category_id": 8,
+    "brand_id": 1,
+    "product_name": "Steel Wool",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 19, "size": "20", "unit": "Litre", "price": 2450.00, "status": "Available" },
-      { "id": 20, "size": "10", "unit": "Litre", "price": 1350.00, "status": "Available" },
-      { "id": 21, "size": "4", "unit": "Litre", "price": 620.00, "status": "Available" },
-      { "id": 22, "size": "1", "unit": "Litre", "price": 180.00, "status": "Available" }
+      {
+        "id": 14,
+        "size": "60 PCS",
+        "unit": "",
+        "price": 800.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 9,
-    "category_id": 4,
-    "brand_id": 2,
-    "product_name": "Asian Paints Mineral Turpentine Oil (MTO)",
-    "description": "Premium quality paint thinner and cleaning solvent. Speeds up drying time for oil paints and varnishes while providing a glossy finish.",
-    "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=500&auto=format&fit=crop&q=60",
+    "category_id": 9,
+    "brand_id": 1,
+    "product_name": "Sienna",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 23, "size": "5", "unit": "Litre", "price": 780.00, "status": "Available" },
-      { "id": 24, "size": "1", "unit": "Litre", "price": 175.00, "status": "Available" },
-      { "id": 25, "size": "500", "unit": "ml", "price": 95.00, "status": "Available" }
+      {
+        "id": 15,
+        "size": "100 GMS",
+        "unit": "",
+        "price": 630.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 10,
-    "category_id": 8,
-    "brand_id": 9,
-    "product_name": "Laticrete 307 Stone & Tile Adhesive",
-    "description": "Grey cement-based polymer fortified adhesive. Perfect for installing ceramic, vitrified tiles, and natural stones on floors and walls in interior applications.",
-    "image": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=500&auto=format&fit=crop&q=60",
+    "category_id": 10,
+    "brand_id": 1,
+    "product_name": "Chalk",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 26, "size": "20", "unit": "kg", "price": 380.00, "status": "Available" }
+      {
+        "id": 16,
+        "size": "1 KG",
+        "unit": "",
+        "price": 17.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 11,
-    "category_id": 3,
-    "brand_id": 6,
-    "product_name": "Astral Bathroom Overhead Shower & Arm",
-    "description": "Premium chrome plated overhead shower with rub-clean silicon nozzles and durable brass connection arm. Features smooth flow and elegant design.",
-    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&auto=format&fit=crop&q=60",
+    "category_id": 11,
+    "brand_id": 1,
+    "product_name": "Stag Brand",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 27, "size": "Standard", "unit": "Piece", "price": 1100.00, "status": "Available" }
+      {
+        "id": 17,
+        "size": "500 GMS",
+        "unit": "",
+        "price": 35.0,
+        "status": "Available"
+      }
     ]
   },
   {
     "id": 12,
-    "category_id": 9,
-    "brand_id": 10,
-    "product_name": "Taparia 812 Steel Screw Driver Set",
-    "description": "Multi-blade screwdriver kit containing 5 interchangeable blades made of high grade silicon-manganese steel and a shockproof plastic handle.",
-    "image": "https://images.unsplash.com/photo-1530124560072-a059b014b666?w=500&auto=format&fit=crop&q=60",
+    "category_id": 12,
+    "brand_id": 1,
+    "product_name": "Yellow /",
+    "description": "",
+    "image": "",
     "variants": [
-      { "id": 28, "size": "Set of 5 Blades", "unit": "Box", "price": 320.00, "status": "Available" }
+      {
+        "id": 18,
+        "size": "1 KG",
+        "unit": "",
+        "price": 65.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "category_id": 13,
+    "brand_id": 1,
+    "product_name": "Cleaner",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 19,
+        "size": "5 LITER",
+        "unit": "",
+        "price": 540.0,
+        "status": "Available"
+      },
+      {
+        "id": 20,
+        "size": "SPRAY",
+        "unit": "",
+        "price": 510.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "category_id": 14,
+    "brand_id": 1,
+    "product_name": "Premium",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 21,
+        "size": "STONE",
+        "unit": "",
+        "price": 430.0,
+        "status": "Available"
+      },
+      {
+        "id": 22,
+        "size": "900 GMS",
+        "unit": "",
+        "price": 180.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "category_id": 15,
+    "brand_id": 1,
+    "product_name": "Filler White",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 23,
+        "size": "500 GMS",
+        "unit": "",
+        "price": 103.0,
+        "status": "Available"
+      },
+      {
+        "id": 24,
+        "size": "200 GMS",
+        "unit": "",
+        "price": 38.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "category_id": 16,
+    "brand_id": 1,
+    "product_name": "Metal Paste",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 25,
+        "size": "PROMISE 500 GMS",
+        "unit": "",
+        "price": 68.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "category_id": 17,
+    "brand_id": 1,
+    "product_name": "Polyester",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 26,
+        "size": "FILLER GREEN 900 GMS",
+        "unit": "",
+        "price": 114.0,
+        "status": "Available"
+      },
+      {
+        "id": 27,
+        "size": "STEEL WOOL 1 BAG 60 PCS",
+        "unit": "",
+        "price": 800.0,
+        "status": "Available"
+      },
+      {
+        "id": 28,
+        "size": "METAL PASTE 200 GMS",
+        "unit": "",
+        "price": 38.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "category_id": 18,
+    "brand_id": 1,
+    "product_name": "Camel Filler",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 29,
+        "size": "500 GMS",
+        "unit": "",
+        "price": 68.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "category_id": 19,
+    "brand_id": 1,
+    "product_name": "Green / White",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 30,
+        "size": "900 GMS",
+        "unit": "",
+        "price": 114.0,
+        "status": "Available"
+      },
+      {
+        "id": 31,
+        "size": "1 LTR",
+        "unit": "",
+        "price": 20.0,
+        "status": "Available"
+      },
+      {
+        "id": 32,
+        "size": "5 LTR",
+        "unit": "",
+        "price": 100.0,
+        "status": "Available"
+      },
+      {
+        "id": 33,
+        "size": "10 LTR",
+        "unit": "",
+        "price": 200.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "category_id": 20,
+    "brand_id": 1,
+    "product_name": "Acid",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 34,
+        "size": "20 LTR",
+        "unit": "",
+        "price": 400.0,
+        "status": "Available"
+      },
+      {
+        "id": 35,
+        "size": "500 ML",
+        "unit": "",
+        "price": 57.5,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "category_id": 21,
+    "brand_id": 1,
+    "product_name": "Nc Thinner",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 36,
+        "size": "1 LTR",
+        "unit": "",
+        "price": 92.0,
+        "status": "Available"
+      },
+      {
+        "id": 37,
+        "size": "CASTIC SODA 1KG",
+        "unit": "",
+        "price": 95.0,
+        "status": "Available"
+      },
+      {
+        "id": 38,
+        "size": "250 GMS",
+        "unit": "",
+        "price": 14.37,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "category_id": 22,
+    "brand_id": 1,
+    "product_name": "Bleaching",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 39,
+        "size": "500 GMS",
+        "unit": "",
+        "price": 28.98,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "category_id": 23,
+    "brand_id": 1,
+    "product_name": "Powder",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 40,
+        "size": "1 KG",
+        "unit": "",
+        "price": 54.96,
+        "status": "Available"
+      },
+      {
+        "id": 41,
+        "size": "CLOTH",
+        "unit": "",
+        "price": 25.0,
+        "status": "Available"
+      },
+      {
+        "id": 42,
+        "size": "CLOTH",
+        "unit": "",
+        "price": 20.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "category_id": 24,
+    "brand_id": 1,
+    "product_name": "Dothi",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 43,
+        "size": "CLOTH",
+        "unit": "",
+        "price": 30.0,
+        "status": "Available"
+      },
+      {
+        "id": 44,
+        "size": "500 ML",
+        "unit": "",
+        "price": 75.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "category_id": 25,
+    "brand_id": 1,
+    "product_name": "Remover",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 45,
+        "size": "1 LTR",
+        "unit": "",
+        "price": 130.0,
+        "status": "Available"
+      },
+      {
+        "id": 46,
+        "size": "1 LTR",
+        "unit": "",
+        "price": 79.5,
+        "status": "Available"
+      },
+      {
+        "id": 47,
+        "size": "4 LTR",
+        "unit": "",
+        "price": 290.0,
+        "status": "Available"
+      },
+      {
+        "id": 48,
+        "size": "10 LTR",
+        "unit": "",
+        "price": 580.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "category_id": 26,
+    "brand_id": 1,
+    "product_name": "Primer",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 49,
+        "size": "20 LTR",
+        "unit": "",
+        "price": 1046.0,
+        "status": "Available"
+      },
+      {
+        "id": 50,
+        "size": "2 KG",
+        "unit": "",
+        "price": 99.0,
+        "status": "Available"
+      },
+      {
+        "id": 51,
+        "size": "5 KG",
+        "unit": "",
+        "price": 240.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "category_id": 27,
+    "brand_id": 1,
+    "product_name": "Distemper",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 52,
+        "size": "10 KG",
+        "unit": "",
+        "price": 386.0,
+        "status": "Available"
+      },
+      {
+        "id": 53,
+        "size": "20 KG",
+        "unit": "",
+        "price": 663.0,
+        "status": "Available"
+      },
+      {
+        "id": 54,
+        "size": "COVER BLOCK 1 BOX",
+        "unit": "",
+        "price": 120.0,
+        "status": "Available"
+      },
+      {
+        "id": 55,
+        "size": "20 KG",
+        "unit": "",
+        "price": 266.0,
+        "status": "Available"
+      },
+      {
+        "id": 56,
+        "size": "30 KG",
+        "unit": "",
+        "price": 382.5,
+        "status": "Available"
+      },
+      {
+        "id": 57,
+        "size": "20 KG",
+        "unit": "",
+        "price": 428.4,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "category_id": 28,
+    "brand_id": 1,
+    "product_name": "Vb_Gold_",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 58,
+        "size": "20 KG",
+        "unit": "",
+        "price": 428.5,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "category_id": 29,
+    "brand_id": 1,
+    "product_name": "Vb_Gold_Pro_",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 59,
+        "size": "1 KG",
+        "unit": "",
+        "price": 756.0,
+        "status": "Available"
+      },
+      {
+        "id": 60,
+        "size": "5 KG",
+        "unit": "",
+        "price": 2907.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "category_id": 30,
+    "brand_id": 1,
+    "product_name": "Grout / All",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 61,
+        "size": "1 KG",
+        "unit": "",
+        "price": 44.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "category_id": 31,
+    "brand_id": 1,
+    "product_name": "Colour",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 62,
+        "size": "1 LTR",
+        "unit": "",
+        "price": 144.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "category_id": 32,
+    "brand_id": 1,
+    "product_name": "Tile Cleaner",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 63,
+        "size": "5 LTR",
+        "unit": "",
+        "price": 598.0,
+        "status": "Available"
+      },
+      {
+        "id": 64,
+        "size": "AQUA BOND 2K 4 KG",
+        "unit": "",
+        "price": 622.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "category_id": 33,
+    "brand_id": 1,
+    "product_name": "Waterproof",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 65,
+        "size": "PRIMER 20 LTR",
+        "unit": "",
+        "price": 2547.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "category_id": 34,
+    "brand_id": 1,
+    "product_name": "Bag)",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 66,
+        "size": "1 KG 25 \u20b9 30.2",
+        "unit": "",
+        "price": 755.0,
+        "status": "Available"
+      },
+      {
+        "id": 67,
+        "size": "5 KG 05 \u20b9 145",
+        "unit": "",
+        "price": 725.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "category_id": 35,
+    "brand_id": 1,
+    "product_name": "Cement)",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 68,
+        "size": "01 \u20b9 1200",
+        "unit": "",
+        "price": 1200.0,
+        "status": "Available"
+      },
+      {
+        "id": 69,
+        "size": "1 KG 20 \u20b9 40.5",
+        "unit": "",
+        "price": 810.0,
+        "status": "Available"
+      },
+      {
+        "id": 70,
+        "size": "5 KG 04 \u20b9 193.75",
+        "unit": "",
+        "price": 775.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "category_id": 36,
+    "brand_id": 1,
+    "product_name": "Jk Wallmaxx",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 71,
+        "size": "30 KG 01 \u20b9 753",
+        "unit": "",
+        "price": 753.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "category_id": 37,
+    "brand_id": 1,
+    "product_name": "(Wall Putty)",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 72,
+        "size": "40 KG 01 \u20b9 1150",
+        "unit": "",
+        "price": 1150.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "category_id": 38,
+    "brand_id": 1,
+    "product_name": "Jk Sheild Maxx",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 73,
+        "size": "40 KG 01 \u20b9 1300",
+        "unit": "",
+        "price": 1300.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "category_id": 39,
+    "brand_id": 1,
+    "product_name": "Jk Level Maxx",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 74,
+        "size": "(COARSE PUTTY) 40 KG 01 \u20b9 570",
+        "unit": "",
+        "price": 570.0,
+        "status": "Available"
+      },
+      {
+        "id": 75,
+        "size": "1 KG 20 \u20b9 18.75",
+        "unit": "",
+        "price": 375.0,
+        "status": "Available"
+      },
+      {
+        "id": 76,
+        "size": "5 KG 04 \u20b9 93.75",
+        "unit": "",
+        "price": 375.0,
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "category_id": 40,
+    "brand_id": 1,
+    "product_name": "(Pop)",
+    "description": "",
+    "image": "",
+    "variants": [
+      {
+        "id": 77,
+        "size": "25 KG 01 \u20b9 340",
+        "unit": "",
+        "price": 340.0,
+        "status": "Available"
+      }
     ]
   }
 ]

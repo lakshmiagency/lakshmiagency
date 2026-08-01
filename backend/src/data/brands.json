@@ -1,12 +1,3 @@
 [
-  { "id": 1, "name": "JK Cement", "logo": "" },
-  { "id": 2, "name": "Asian Paints", "logo": "" },
-  { "id": 3, "name": "Berger Paints", "logo": "" },
-  { "id": 4, "name": "Finolex Pipes", "logo": "" },
-  { "id": 5, "name": "Ashirvad Pipes", "logo": "" },
-  { "id": 6, "name": "Astral Pipes", "logo": "" },
-  { "id": 7, "name": "Dr. Fixit", "logo": "" },
-  { "id": 8, "name": "Supreme", "logo": "" },
-  { "id": 9, "name": "Laticrete", "logo": "" },
-  { "id": 10, "name": "Taparia", "logo": "" }
+  { "id": 1, "name": "Premium Brands", "logo": "" }
 ]
