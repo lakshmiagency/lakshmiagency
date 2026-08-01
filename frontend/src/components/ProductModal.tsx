@@ -43,7 +43,9 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
 
   // WhatsApp inquiry URL for this specific product
   const phoneNumber = '916361033361';
-  const whatsappText = `Hello Lakshmi Agency, I am interested in "${product_name}". Could you please provide the latest price and availability for this item? Thanks!`;
+  const whatsappText = `Hello Lakshmi Agency,
+I need "${product_name}"
+Quanty : `;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
 
   return (
@@ -61,15 +63,17 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
         </button>
 
         {/* Product Image Section */}
-        <div className="w-full md:w-1/2 aspect-square relative bg-slate-50 dark:bg-slate-900 flex-shrink-0">
-          <Image
-            src={image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60'}
-            alt={product_name}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-            priority={true}
-          />
+        <div className="w-full md:w-1/2 aspect-square relative bg-white dark:bg-slate-900 flex-shrink-0 p-6 flex items-center justify-center">
+          <div className="relative w-full h-full">
+            <Image
+              src={image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop&q=60'}
+              alt={product_name}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain"
+              priority={true}
+            />
+          </div>
         </div>
 
         {/* Details Section */}

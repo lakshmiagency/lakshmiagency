@@ -44,11 +44,11 @@ function ProductCard({
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
       {/* Product Image */}
-      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
+      <div className="relative h-56 w-full bg-white border-b border-slate-200 p-4 flex items-center justify-center">
         <img
           src={activeImage || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
           alt={product.product_name}
-          className="w-full h-full object-cover transition-all duration-300"
+          className="max-w-full max-h-full object-contain transition-all duration-300"
           loading="lazy"
         />
         <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
@@ -125,11 +125,11 @@ function JkCementProductCard({
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
       {/* Product Image */}
-      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
+      <div className="relative h-56 w-full bg-white border-b border-slate-200 p-4 flex items-center justify-center">
         <img
           src={activeImage || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
           alt={product.product_name}
-          className="w-full h-full object-cover transition-all duration-300"
+          className="max-w-full max-h-full object-contain transition-all duration-300"
           loading="lazy"
         />
         <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
@@ -260,12 +260,11 @@ function ProductsCatalogInner() {
   };
 
   // WhatsApp inquiry URL generator
-  const getWhatsAppInquiryUrl = (product: Product, variant?: Variant) => {
+  const getWhatsAppInquiryUrl = (product: Product) => {
     const phoneNumber = '916361033361';
-    let text = `Hello Lakshmi Agency, I am interested in inquiring about "${product.product_name}".`;
-    if (variant) {
-      text += ` Size/Type: ${variant.size} ${variant.unit}, Price: ₹${parseFloat(variant.price as string).toLocaleString('en-IN')}.`;
-    }
+    const text = `Hello Lakshmi Agency,
+I need "${product.product_name}"
+Quanty : `;
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   };
 

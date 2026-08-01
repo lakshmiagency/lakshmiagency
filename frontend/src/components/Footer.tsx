@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, MapPin, Clock, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -11,8 +12,14 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Bio */}
           <div className="space-y-4 md:col-span-1">
-            <span className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-              <span className="bg-blue-600 text-white px-2 py-0.5 rounded-md font-extrabold text-sm">LA</span>
+            <span className="text-xl font-bold tracking-tight text-white flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="Lakshmi Agency Logo"
+                width={36}
+                height={36}
+                className="object-contain bg-white rounded-full p-0.5"
+              />
               LAKSHMI AGENCY
             </span>
             <p className="text-sm text-slate-400 leading-relaxed">

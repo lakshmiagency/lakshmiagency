@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
@@ -30,12 +31,20 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo / Brand */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-primary flex items-center gap-2">
-                <span className="bg-primary text-white px-2 py-0.5 rounded-md font-extrabold text-sm sm:text-base">LA</span>
-                LAKSHMI AGENCY
-              </span>
-              <span className="text-[10px] tracking-wider text-muted-text font-semibold uppercase">Building Materials & Hardware</span>
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="Lakshmi Agency Logo"
+                width={40}
+                height={40}
+                className="object-contain rounded-full border border-slate-200"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-bold tracking-tight text-primary">
+                  LAKSHMI AGENCY
+                </span>
+                <span className="text-[10px] tracking-wider text-muted-text font-semibold uppercase leading-none mt-0.5">Building Materials & Hardware</span>
+              </div>
             </Link>
           </div>
 

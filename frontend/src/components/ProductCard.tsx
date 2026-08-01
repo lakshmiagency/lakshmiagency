@@ -43,21 +43,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
 
   // WhatsApp inquiry URL for this specific product
   const phoneNumber = '916361033361';
-  const whatsappText = `Hello Lakshmi Agency, I would like to inquire about "${product_name}". Price range: ${displayPrice()}.`;
+  const whatsappText = `Hello Lakshmi Agency,
+I need "${product_name}"
+Quanty : `;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
 
   return (
     <div className="bg-card-bg border border-card-border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
       {/* Product Image */}
-      <div className="relative aspect-square w-full bg-slate-50 dark:bg-slate-900 overflow-hidden cursor-pointer" onClick={() => onViewDetails(product)}>
-        <Image
-          src={image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&auto=format&fit=crop&q=60'}
-          alt={product_name}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          priority={false}
-        />
+      <div className="relative aspect-square w-full bg-white dark:bg-slate-900 overflow-hidden cursor-pointer p-4 flex items-center justify-center" onClick={() => onViewDetails(product)}>
+        <div className="relative w-full h-full">
+          <Image
+            src={image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&auto=format&fit=crop&q=60'}
+            alt={product_name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-contain transition-transform duration-500 group-hover:scale-105"
+            priority={false}
+          />
+        </div>
         {/* Availability Badge */}
         <div className="absolute top-3 right-3 z-10">
           <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md shadow-sm ${
