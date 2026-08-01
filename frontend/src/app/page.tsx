@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  ArrowRight, 
-  Award, 
-  ShieldCheck, 
-  Truck, 
+import {
+  ArrowRight,
+  Award,
+  ShieldCheck,
+  Truck,
   BadgeCheck,
   ChevronRight,
   Phone,
@@ -55,7 +55,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      
+
       {/* 1. Hero Section */}
       <section className="relative bg-slate-50 text-slate-900 overflow-hidden py-24 md:py-32 flex items-center min-h-[75vh]">
         {/* Background Image Overlay */}
@@ -139,7 +139,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-video lg:aspect-square w-full rounded-2xl overflow-hidden shadow-lg bg-slate-100">
               <Image
-                src="https://images.unsplash.com/photo-1530124560072-a059b014b666?w=800&auto=format&fit=crop&q=80"
+                src="shop-front.png"
                 alt="Lakshmi Agency Hardware Store Front"
                 fill
                 className="object-cover"
