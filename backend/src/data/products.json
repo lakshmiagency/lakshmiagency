@@ -151,9 +151,9 @@
   },
   {
     "id": 4,
-    "product_name": "GARDEN PIPES",
-    "description": "High-grade flexible garden hose pipes available in Super Black, Black Zebra, Green Zebra, and Super Foam styles.",
-    "image": "",
+    "product_name": "GARDEN PIPES (SUPER BLACK)",
+    "description": "High-grade flexible garden hose pipes in premium Super Black style.",
+    "image": "/product-image/Picture3.jpg",
     "variants": [
       {
         "id": 19,
@@ -168,7 +168,15 @@
         "unit": "",
         "price": "101",
         "status": "Available"
-      },
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "product_name": "GARDEN PIPES (BLACK ZEBRA)",
+    "description": "High-grade flexible garden hose pipes in Black Zebra style with yellow stripes.",
+    "image": "/product-image/Picture4.jpg",
+    "variants": [
       {
         "id": 21,
         "size": "3/4\" BLACK ZEBRA",
@@ -182,7 +190,15 @@
         "unit": "",
         "price": "81",
         "status": "Available"
-      },
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "product_name": "GARDEN PIPES (GREEN ZEBRA)",
+    "description": "High-grade flexible garden hose pipes in Green Zebra style.",
+    "image": "/product-image/Picture5.jpg",
+    "variants": [
       {
         "id": 23,
         "size": "3/4\" GREEN ZEBRA",
@@ -196,7 +212,15 @@
         "unit": "",
         "price": "130",
         "status": "Available"
-      },
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "product_name": "GARDEN PIPES (SUPER FOAM)",
+    "description": "Premium lightweight and durable foam-shield garden water hoses.",
+    "image": "/product-image/Picture6.jpg",
+    "variants": [
       {
         "id": 25,
         "size": "1/2\" SUPER FOAM PIPE",
@@ -1173,7 +1197,7 @@
     "id": 44,
     "product_name": "JK WHITE MAXX (WHITE CEMENT)",
     "description": "Premium white Portland cement with advanced white-shield technology, providing high whiteness and bonding strength.",
-    "image": "",
+    "image": "/product-image/44.png",
     "tableType": "jk_cement",
     "variants": [
       {
@@ -1209,7 +1233,7 @@
     "id": 45,
     "product_name": "JK WALLMAXX (WALL PUTTY)",
     "description": "White cement-based premium wall putty that provides a smooth, water-resistant undercoat for painting.",
-    "image": "",
+    "image": "/product-image/45.jpg",
     "tableType": "jk_cement",
     "variants": [
       {
@@ -1254,7 +1278,7 @@
     "id": 46,
     "product_name": "JK SHEILD MAXX",
     "description": "Premium waterproof white putty with advanced active protection against dampness and water seepage.",
-    "image": "",
+    "image": "/product-image/46.png",
     "tableType": "jk_cement",
     "variants": [
       {
@@ -1272,7 +1296,7 @@
     "id": 47,
     "product_name": "JK LEVEL MAXX (COARSE PUTTY)",
     "description": "Coarse undercoat putty for levelling surface irregularities, plaster cracks, and hollow spots on concrete walls.",
-    "image": "",
+    "image": "/product-image/47.png",
     "tableType": "jk_cement",
     "variants": [
       {
@@ -1290,7 +1314,7 @@
     "id": 48,
     "product_name": "JK GYPSO MAXX (POP)",
     "description": "Superfine plaster of Paris (POP) for ceiling designs, decorative moldings, and wall finishing.",
-    "image": "",
+    "image": "/product-image/48.jpg",
     "tableType": "jk_cement",
     "variants": [
       {
