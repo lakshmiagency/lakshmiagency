@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "category_id": 10,
+    "brand_id": 1,
+    "product_name": "JK WallMaxX Putty",
+    "description": "Premium quality white cement-based wall putty with advanced water resistance and excellent adhesion. Provides a smooth, glossy finish for interior and exterior walls.",
+    "image": "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 1, "size": "40", "unit": "kg", "price": 1150.00, "status": "Available" },
+      { "id": 2, "size": "20", "unit": "kg", "price": 620.00, "status": "Available" },
+      { "id": 3, "size": "5", "unit": "kg", "price": 210.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 2,
+    "category_id": 10,
+    "brand_id": 1,
+    "product_name": "JK Super Strong Cement",
+    "description": "High-performance PPC cement designed for durable RCC structures, foundations, and plastering. Offers excellent strength development and resistance to environmental elements.",
+    "image": "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 4, "size": "50", "unit": "kg", "price": 430.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 3,
+    "category_id": 7,
+    "brand_id": 7,
+    "product_name": "Dr. Fixit LW+ Super",
+    "description": "Liquid waterproofing compound mixed with concrete and mortar during construction. Reduces water permeability, prevents dampness, and increases concrete strength.",
+    "image": "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 5, "size": "1", "unit": "Litre", "price": 185.00, "status": "Available" },
+      { "id": 6, "size": "5", "unit": "Litre", "price": 860.00, "status": "Available" },
+      { "id": 7, "size": "10", "unit": "Litre", "price": 1620.00, "status": "Available" },
+      { "id": 8, "size": "20", "unit": "Litre", "price": 3100.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 4,
+    "category_id": 7,
+    "brand_id": 7,
+    "product_name": "Dr. Fixit Pidiproof LW",
+    "description": "Specially formulated additive for cement sand mortars to make plaster and concrete waterproof. Highly recommended for basements, terraces, and bathrooms.",
+    "image": "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 9, "size": "1", "unit": "Litre", "price": 150.00, "status": "Available" },
+      { "id": 10, "size": "5", "unit": "Litre", "price": 710.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 5,
+    "category_id": 1,
+    "brand_id": 4,
+    "product_name": "Finolex Rigid PVC Pipe (6kg/cm²)",
+    "description": "High-quality unplasticized PVC pipes suitable for plumbing, water supply, and agriculture. Resistant to corrosion and easy to install with solvent cement.",
+    "image": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 11, "size": "110mm (6m)", "unit": "Length", "price": 850.00, "status": "Available" },
+      { "id": 12, "size": "90mm (6m)", "unit": "Length", "price": 680.00, "status": "Available" },
+      { "id": 13, "size": "75mm (6m)", "unit": "Length", "price": 540.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 6,
+    "category_id": 1,
+    "brand_id": 5,
+    "product_name": "Ashirvad CPVC FlowGuard Pipe SDR 11",
+    "description": "Chlorinated PVC pipes designed for hot and cold water distribution. Ideal for residential plumbing with high temperature resistance and lead-free formulation.",
+    "image": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 14, "size": "1 inch (3m)", "unit": "Length", "price": 440.00, "status": "Available" },
+      { "id": 15, "size": "3/4 inch (3m)", "unit": "Length", "price": 310.00, "status": "Available" },
+      { "id": 16, "size": "1/2 inch (3m)", "unit": "Length", "price": 215.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 7,
+    "category_id": 2,
+    "brand_id": 8,
+    "product_name": "Supreme DuraHose Braided Garden Pipe",
+    "description": "Heavy-duty 3-layer flexible PVC braided garden water hose pipe. Kink-resistant, weather-proof, and highly durable for gardening and car washing.",
+    "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 17, "size": "1/2 inch - 30m", "unit": "Roll", "price": 1250.00, "status": "Available" },
+      { "id": 18, "size": "3/4 inch - 30m", "unit": "Roll", "price": 1950.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 8,
+    "category_id": 6,
+    "brand_id": 2,
+    "product_name": "Asian Paints Decoprime Wall Primer (Water Based)",
+    "description": "Superior quality water-based wall primer undercoat. Excellent sealing properties, enhances topcoat coverage, and increases paint adhesion on masonry surfaces.",
+    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 19, "size": "20", "unit": "Litre", "price": 2450.00, "status": "Available" },
+      { "id": 20, "size": "10", "unit": "Litre", "price": 1350.00, "status": "Available" },
+      { "id": 21, "size": "4", "unit": "Litre", "price": 620.00, "status": "Available" },
+      { "id": 22, "size": "1", "unit": "Litre", "price": 180.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 9,
+    "category_id": 4,
+    "brand_id": 2,
+    "product_name": "Asian Paints Mineral Turpentine Oil (MTO)",
+    "description": "Premium quality paint thinner and cleaning solvent. Speeds up drying time for oil paints and varnishes while providing a glossy finish.",
+    "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 23, "size": "5", "unit": "Litre", "price": 780.00, "status": "Available" },
+      { "id": 24, "size": "1", "unit": "Litre", "price": 175.00, "status": "Available" },
+      { "id": 25, "size": "500", "unit": "ml", "price": 95.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 10,
+    "category_id": 8,
+    "brand_id": 9,
+    "product_name": "Laticrete 307 Stone & Tile Adhesive",
+    "description": "Grey cement-based polymer fortified adhesive. Perfect for installing ceramic, vitrified tiles, and natural stones on floors and walls in interior applications.",
+    "image": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 26, "size": "20", "unit": "kg", "price": 380.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 11,
+    "category_id": 3,
+    "brand_id": 6,
+    "product_name": "Astral Bathroom Overhead Shower & Arm",
+    "description": "Premium chrome plated overhead shower with rub-clean silicon nozzles and durable brass connection arm. Features smooth flow and elegant design.",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 27, "size": "Standard", "unit": "Piece", "price": 1100.00, "status": "Available" }
+    ]
+  },
+  {
+    "id": 12,
+    "category_id": 9,
+    "brand_id": 10,
+    "product_name": "Taparia 812 Steel Screw Driver Set",
+    "description": "Multi-blade screwdriver kit containing 5 interchangeable blades made of high grade silicon-manganese steel and a shockproof plastic handle.",
+    "image": "https://images.unsplash.com/photo-1530124560072-a059b014b666?w=500&auto=format&fit=crop&q=60",
+    "variants": [
+      { "id": 28, "size": "Set of 5 Blades", "unit": "Box", "price": 320.00, "status": "Available" }
+    ]
+  }
+]

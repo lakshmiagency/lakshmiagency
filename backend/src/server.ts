@@ -1,8 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import path from 'path';
-import fs from 'fs';
 import router from './routes';
 
 dotenv.config();
@@ -10,24 +8,17 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Enable CORS for all requests (crucial for local development & Vercel deployment)
+// Enable CORS for frontend routing
 app.use(cors());
 
-// Parse JSON body & URL-encoded data
+// Parse JSON body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Ensure public uploads folder exists and serve it statically
-const uploadDir = path.join(__dirname, '../public/uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
-app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
 // Root route
 app.get('/', (req: Request, res: Response) => {
   res.json({
-    message: 'Lakshmi Agency Business Catalogue API is running.',
+    message: 'Lakshmi Agency Business Catalogue Static API is running.',
     environment: process.env.NODE_ENV || 'development'
   });
 });

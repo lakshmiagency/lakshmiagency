@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "PVC Pipes", "image": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=500&auto=format&fit=crop&q=60" },
+  { "id": 2, "name": "Garden Pipes", "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&auto=format&fit=crop&q=60" },
+  { "id": 3, "name": "Bathroom Fittings", "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&auto=format&fit=crop&q=60" },
+  { "id": 4, "name": "Paint Chemicals", "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=500&auto=format&fit=crop&q=60" },
+  { "id": 5, "name": "Putty", "image": "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=500&auto=format&fit=crop&q=60" },
+  { "id": 6, "name": "Wall Primer", "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&auto=format&fit=crop&q=60" },
+  { "id": 7, "name": "Waterproofing", "image": "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=500&auto=format&fit=crop&q=60" },
+  { "id": 8, "name": "Tile Chemicals", "image": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=500&auto=format&fit=crop&q=60" },
+  { "id": 9, "name": "Hardware Tools", "image": "https://images.unsplash.com/photo-1530124560072-a059b014b666?w=500&auto=format&fit=crop&q=60" },
+  { "id": 10, "name": "JK Cement Products", "image": "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=500&auto=format&fit=crop&q=60" }
+]

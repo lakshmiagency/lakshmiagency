@@ -1,61 +1,19 @@
 import { Router } from 'express';
-import { login, verifyToken } from '../controllers/authController';
-import { authenticateAdmin } from '../middleware/auth';
-import {
-  getCategories,
-  createCategory,
-  updateCategory,
-  deleteCategory,
-} from '../controllers/categoryController';
-import {
-  getBrands,
-  createBrand,
-  updateBrand,
-  deleteBrand,
-} from '../controllers/brandController';
-import {
-  getProducts,
-  getProductById,
-  createProduct,
-  updateProduct,
-  deleteProduct,
-} from '../controllers/productController';
-import { getPrices, updatePrice } from '../controllers/priceController';
-import { uploadMiddleware, uploadImage } from '../controllers/uploadController';
+import { getCategories } from '../controllers/categoryController';
+import { getBrands } from '../controllers/brandController';
+import { getProducts, getProductById } from '../controllers/productController';
+import { getPrices } from '../controllers/priceController';
 
 const router = Router();
 
-// Auth Routes
-router.post('/admin/login', login);
-router.get('/admin/verify', authenticateAdmin, verifyToken);
-
-// Categories Routes
+// Public Catalog Routes
 router.get('/categories', getCategories);
-router.post('/categories', authenticateAdmin, createCategory);
-router.put('/categories/:id', authenticateAdmin, updateCategory);
-router.delete('/categories/:id', authenticateAdmin, deleteCategory);
-
-// Brands Routes
 router.get('/brands', getBrands);
-router.post('/brands', authenticateAdmin, createBrand);
-router.put('/brands/:id', authenticateAdmin, updateBrand);
-router.delete('/brands/:id', authenticateAdmin, deleteBrand);
-
-// Products Routes
 router.get('/products', getProducts);
 router.get('/products/:id', getProductById);
-router.post('/products', authenticateAdmin, createProduct);
-router.put('/products/:id', authenticateAdmin, updateProduct);
-router.delete('/products/:id', authenticateAdmin, deleteProduct);
-
-// Price List Routes
 router.get('/prices', getPrices);
-router.put('/prices/:variantId', authenticateAdmin, updatePrice);
 
-// Image Upload Route
-router.post('/upload', authenticateAdmin, uploadMiddleware.single('image'), uploadImage);
-
-// Business Info Route (static data for simplicity)
+// Business Info Route (Static)
 router.get('/business-info', (req, res) => {
   res.json({
     name: 'Lakshmi Agency',
