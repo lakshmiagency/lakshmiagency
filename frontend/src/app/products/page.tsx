@@ -191,7 +191,14 @@ function ProductsCatalogInner() {
 
                         {/* Variant Price Column */}
                         <td className="p-4 border-r border-card-border font-black text-right text-base text-primary dark:text-white align-middle w-[17%]">
-                          ₹{parseFloat(variant.price as string).toLocaleString('en-IN')}
+                          {(() => {
+                            const val = String(variant.price);
+                            if (isNaN(parseFloat(val))) return val;
+                            if (val.includes('/') || val.toLowerCase().includes('mtr')) {
+                              return val.startsWith('₹') ? val : `₹ ${val}`;
+                            }
+                            return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
+                          })()}
                         </td>
 
                         {/* Spanned Product Image Column */}

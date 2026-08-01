@@ -101,7 +101,16 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                     {variants.map((v) => (
                       <tr key={v.id} className="border-b border-card-border last:border-b-0 hover:bg-slate-100/30 dark:hover:bg-slate-800/10">
                         <td className="p-2.5 pl-3 font-medium text-foreground">{v.size} {v.unit}</td>
-                        <td className="p-2.5 font-bold text-primary dark:text-white">₹{parseFloat(v.price as string).toLocaleString('en-IN')}</td>
+                        <td className="p-2.5 font-bold text-primary dark:text-white">
+                          {(() => {
+                            const val = String(v.price);
+                            if (isNaN(parseFloat(val))) return val;
+                            if (val.includes('/') || val.toLowerCase().includes('mtr')) {
+                              return val.startsWith('₹') ? val : `₹ ${val}`;
+                            }
+                            return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
+                          })()}
+                        </td>
                         <td className="p-2.5 pr-3 text-right">
                           <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider ${
                             v.status === 'Available' ? 'text-emerald-500' : 'text-red-500'

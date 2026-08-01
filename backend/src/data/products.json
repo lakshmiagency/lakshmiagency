@@ -1,941 +1,170 @@
 [
   {
     "id": 1,
-    "category_id": 1,
-    "brand_id": 1,
-    "product_name": "/Mtr",
-    "description": "",
+    "product_name": "PVC SUCTION HOSE PIPE",
+    "description": "Heavy-duty flexible green PVC suction hose pipe, ideal for agricultural water pump suction and general delivery applications.",
     "image": "/product-image/1.jpeg",
     "variants": [
-      {
-        "id": 1,
-        "size": "WHITE",
-        "unit": "",
-        "price": 72.0,
-        "status": "Available"
-      }
+      { "id": 1, "size": "20MM [3/4\"]", "unit": "", "price": "215 / 190", "status": "Available" },
+      { "id": 2, "size": "25MM [1\"]", "unit": "", "price": "215 / 190", "status": "Available" },
+      { "id": 3, "size": "30MM [1 1/4\"]", "unit": "", "price": "215 / 190", "status": "Available" },
+      { "id": 4, "size": "40MM [1 1/2\"]", "unit": "", "price": "215 / 190", "status": "Available" },
+      { "id": 5, "size": "50MM [2\"]", "unit": "", "price": "215 / 190", "status": "Available" },
+      { "id": 6, "size": "63MM [2 1/2\"]", "unit": "", "price": "215 / 190", "status": "Available" },
+      { "id": 7, "size": "75MM [3\"]", "unit": "", "price": "215 / 190", "status": "Available" }
     ]
   },
   {
     "id": 2,
-    "category_id": 2,
-    "brand_id": 1,
-    "product_name": "Brided Waste",
-    "description": "",
-    "image": "/product-image/2.png",
+    "product_name": "WHITE BRAIDED",
+    "description": "Flexible multi-purpose white braided vinyl hose. Reinforced with high-tensile polyester yarn for pressurized fluid and air delivery.",
+    "image": "",
     "variants": [
-      {
-        "id": 2,
-        "size": "PIPE",
-        "unit": "",
-        "price": 62.0,
-        "status": "Available"
-      }
+      { "id": 8, "size": "6MM", "unit": "", "price": "20.50 /MTR", "status": "Available" },
+      { "id": 9, "size": "8MM", "unit": "", "price": "25 /MTR", "status": "Available" },
+      { "id": 10, "size": "10MM", "unit": "", "price": "29 /MTR", "status": "Available" },
+      { "id": 11, "size": "12MM", "unit": "", "price": "35 /MTR", "status": "Available" },
+      { "id": 12, "size": "20MM", "unit": "", "price": "72 /MTR", "status": "Available" },
+      { "id": 13, "size": "25MM", "unit": "", "price": "92 /MTR", "status": "Available" },
+      { "id": 14, "size": "31MM", "unit": "", "price": "117 /MTR", "status": "Available" },
+      { "id": 15, "size": "40MM", "unit": "", "price": "147 /MTR", "status": "Available" },
+      { "id": 16, "size": "50MM", "unit": "", "price": "243 /MTR", "status": "Available" }
     ]
   },
   {
     "id": 3,
-    "category_id": 3,
-    "brand_id": 1,
-    "product_name": "Black",
-    "description": "",
-    "image": "",
+    "product_name": "PVC WASTE PIPE",
+    "description": "Durable flexible PVC waste drainage pipes with connectors, perfect for washbasin and urinal outlets.",
+    "image": "/product-image/2.png",
     "variants": [
-      {
-        "id": 3,
-        "size": "GARDEN PIPES 1\" SUPER BLACK",
-        "unit": "",
-        "price": 101.0,
-        "status": "Available"
-      }
+      { "id": 17, "size": "BRIDED WASTE PIPE (WASHBASIN)", "unit": "", "price": "62", "status": "Available" },
+      { "id": 18, "size": "BRIDED WASTE PIPE (URINAL)", "unit": "", "price": "70", "status": "Available" }
     ]
   },
   {
     "id": 4,
-    "category_id": 4,
-    "brand_id": 1,
-    "product_name": "Tube Blue",
-    "description": "",
+    "product_name": "GARDEN PIPES",
+    "description": "High-grade flexible garden hose pipes available in Super Black, Black Zebra, Green Zebra, and Super Foam styles.",
     "image": "",
     "variants": [
-      {
-        "id": 4,
-        "size": "200ML",
-        "unit": "",
-        "price": 21.5,
-        "status": "Available"
-      },
-      {
-        "id": 5,
-        "size": "400ML",
-        "unit": "",
-        "price": 42.5,
-        "status": "Available"
-      },
-      {
-        "id": 6,
-        "size": "PAINT THINNER 800ML",
-        "unit": "",
-        "price": 85.0,
-        "status": "Available"
-      },
-      {
-        "id": 7,
-        "size": "2.4 LITERS",
-        "unit": "",
-        "price": 255.0,
-        "status": "Available"
-      },
-      {
-        "id": 8,
-        "size": "4 LITERS",
-        "unit": "",
-        "price": 425.0,
-        "status": "Available"
-      }
+      { "id": 19, "size": "3/4\" SUPER BLACK", "unit": "", "price": "101", "status": "Available" },
+      { "id": 20, "size": "1\" SUPER BLACK", "unit": "", "price": "101", "status": "Available" },
+      { "id": 21, "size": "3/4\" BLACK ZEBRA", "unit": "", "price": "81", "status": "Available" },
+      { "id": 22, "size": "1\" BLACK ZEBRA", "unit": "", "price": "81", "status": "Available" },
+      { "id": 23, "size": "3/4\" GREEN ZEBRA", "unit": "", "price": "130", "status": "Available" },
+      { "id": 24, "size": "1\" GREEN ZEBRA", "unit": "", "price": "130", "status": "Available" },
+      { "id": 25, "size": "1/2\" SUPER FOAM PIPE", "unit": "", "price": "166", "status": "Available" },
+      { "id": 26, "size": "3/4\" SUPER FOAM PIPE", "unit": "", "price": "166", "status": "Available" },
+      { "id": 27, "size": "1\" SUPER FOAM PIPE", "unit": "", "price": "166", "status": "Available" }
     ]
   },
   {
     "id": 5,
-    "category_id": 5,
-    "brand_id": 1,
-    "product_name": "S S Grating",
-    "description": "",
+    "product_name": "LEVEL TUBE",
+    "description": "Transparent plastic level tube pipes, designed for accurate level measurement in construction and masonry layouts.",
     "image": "",
     "variants": [
-      {
-        "id": 9,
-        "size": "LOCK WITH",
-        "unit": "",
-        "price": 46.0,
-        "status": "Available"
-      }
+      { "id": 28, "size": "6MM LEVEL TUBE CLEAR", "unit": "", "price": "175", "status": "Available" },
+      { "id": 29, "size": "6MM LEVEL TUBE BLUE", "unit": "", "price": "145", "status": "Available" }
     ]
   },
   {
     "id": 6,
-    "category_id": 6,
-    "brand_id": 1,
-    "product_name": "Fittings",
-    "description": "",
+    "product_name": "PAINT THINNER",
+    "description": "High-purity chemical mineral solvent thinner for oil-based paint mixing and brush cleaning tools.",
     "image": "",
     "variants": [
-      {
-        "id": 10,
-        "size": "COUPLING PER",
-        "unit": "",
-        "price": 86.7,
-        "status": "Available"
-      }
+      { "id": 30, "size": "200ML", "unit": "", "price": "21.5", "status": "Available" },
+      { "id": 31, "size": "400ML", "unit": "", "price": "42.5", "status": "Available" },
+      { "id": 32, "size": "800ML", "unit": "", "price": "85", "status": "Available" },
+      { "id": 33, "size": "2.4 LITERS", "unit": "", "price": "255", "status": "Available" },
+      { "id": 34, "size": "4 LITERS", "unit": "", "price": "425", "status": "Available" }
     ]
   },
   {
     "id": 7,
-    "category_id": 7,
-    "brand_id": 1,
-    "product_name": "Hose Per Pcs",
-    "description": "",
+    "product_name": "SUPER CEM",
+    "description": "High strength white cement-based decorative limewash coating powder, providing brilliant white finishing and protection.",
     "image": "",
     "variants": [
-      {
-        "id": 11,
-        "size": "1”",
-        "unit": "",
-        "price": 54.0,
-        "status": "Available"
-      },
-      {
-        "id": 12,
-        "size": "PVC HOSE PIPE 1.5”",
-        "unit": "",
-        "price": 72.0,
-        "status": "Available"
-      },
-      {
-        "id": 13,
-        "size": "3”",
-        "unit": "",
-        "price": 138.0,
-        "status": "Available"
-      }
+      { "id": 35, "size": "25KG", "unit": "", "price": "Price on Request", "status": "Available" },
+      { "id": 36, "size": "10KG", "unit": "", "price": "Price on Request", "status": "Available" },
+      { "id": 37, "size": "5KG", "unit": "", "price": "Price on Request", "status": "Available" },
+      { "id": 38, "size": "1KG", "unit": "", "price": "Price on Request", "status": "Available" }
     ]
   },
   {
     "id": 8,
-    "category_id": 8,
-    "brand_id": 1,
-    "product_name": "Steel Wool",
-    "description": "",
+    "product_name": "FOLDING PIPE",
+    "description": "Flexible lay-flat PVC delivery pipes, easily rollable and portable for water discharge applications.",
     "image": "",
     "variants": [
-      {
-        "id": 14,
-        "size": "60 PCS",
-        "unit": "",
-        "price": 800.0,
-        "status": "Available"
-      }
+      { "id": 39, "size": "2\" FOLDING PIPE", "unit": "", "price": "Price on Request", "status": "Available" },
+      { "id": 40, "size": "2 1/2\" FOLDING PIPE", "unit": "", "price": "Price on Request", "status": "Available" },
+      { "id": 41, "size": "3\" FOLDING PIPE", "unit": "", "price": "Price on Request", "status": "Available" }
     ]
   },
   {
     "id": 9,
-    "category_id": 9,
-    "brand_id": 1,
-    "product_name": "Sienna",
-    "description": "",
+    "product_name": "SCRAPER BLADE",
+    "description": "Heavy-duty steel scraping blades for surface prep and wall plaster scraping before paint applications.",
     "image": "",
     "variants": [
-      {
-        "id": 15,
-        "size": "100 GMS",
-        "unit": "",
-        "price": 630.0,
-        "status": "Available"
-      }
+      { "id": 42, "size": "1 1/2\" PER BOX 12 PIECE", "unit": "", "price": "210", "status": "Available" }
     ]
   },
   {
     "id": 10,
-    "category_id": 10,
-    "brand_id": 1,
-    "product_name": "Chalk",
-    "description": "",
+    "product_name": "PUTTY BLADE",
+    "description": "Premium spring-steel metal blade scrapers for smooth application of wall putty and joint compounds.",
     "image": "",
     "variants": [
-      {
-        "id": 16,
-        "size": "1 KG",
-        "unit": "",
-        "price": 17.0,
-        "status": "Available"
-      }
+      { "id": 43, "size": "2\" PER BOX 12 PIECE", "unit": "", "price": "62.5", "status": "Available" },
+      { "id": 44, "size": "3\" PER BOX 12 PIECE", "unit": "", "price": "55", "status": "Available" },
+      { "id": 45, "size": "4\" PER BOX 12 PIECE", "unit": "", "price": "65", "status": "Available" },
+      { "id": 46, "size": "6\" PER BOX 12 PIECE", "unit": "", "price": "95", "status": "Available" },
+      { "id": 47, "size": "8\" PER BOX 12 PIECE [M]", "unit": "", "price": "162.5", "status": "Available" },
+      { "id": 48, "size": "8\" PER BOX 12 PIECE [H]", "unit": "", "price": "187.5", "status": "Available" }
     ]
   },
   {
     "id": 11,
-    "category_id": 11,
-    "brand_id": 1,
-    "product_name": "Stag Brand",
-    "description": "",
+    "product_name": "AJAX SUKHA SHEETS",
+    "description": "Dry sandpapers for wall, metal, and wood surface polishing and smoothing tasks.",
     "image": "",
     "variants": [
-      {
-        "id": 17,
-        "size": "500 GMS",
-        "unit": "",
-        "price": 35.0,
-        "status": "Available"
-      }
+      { "id": 49, "size": "GRIT 50 / 60 / 80 / 100 / 120 / 150 / 180 / 220", "unit": "", "price": "Price on Request", "status": "Available" }
     ]
   },
   {
     "id": 12,
-    "category_id": 12,
-    "brand_id": 1,
-    "product_name": "Yellow /",
-    "description": "",
+    "product_name": "SAND MASTER NXT CLOTH ROLL",
+    "description": "Heavy-duty abrasive cloth rolls for intensive surface grinding and rust removal operations.",
     "image": "",
     "variants": [
-      {
-        "id": 18,
-        "size": "1 KG",
-        "unit": "",
-        "price": 65.0,
-        "status": "Available"
-      }
+      { "id": 50, "size": "GRIT 36 / 50 / 60 / 80 / 100 / 120", "unit": "", "price": "Price on Request", "status": "Available" }
     ]
   },
   {
     "id": 13,
-    "category_id": 13,
-    "brand_id": 1,
-    "product_name": "Cleaner",
-    "description": "",
+    "product_name": "CONCORD NXT CLOTH ROLL",
+    "description": "Premium industrial grade emery cloth rolls for high precision surface polishing and metal prep.",
     "image": "",
     "variants": [
-      {
-        "id": 19,
-        "size": "5 LITER",
-        "unit": "",
-        "price": 540.0,
-        "status": "Available"
-      },
-      {
-        "id": 20,
-        "size": "SPRAY",
-        "unit": "",
-        "price": 510.0,
-        "status": "Available"
-      }
+      { "id": 51, "size": "GRIT 50 / 60 / 80 / 100 / 120", "unit": "", "price": "Price on Request", "status": "Available" }
     ]
   },
   {
     "id": 14,
-    "category_id": 14,
-    "brand_id": 1,
-    "product_name": "Premium",
-    "description": "",
+    "product_name": "BATHROOM FITTINGS",
+    "description": "Sleek stainless steel grating plates, waste couplings, outlet pipe extensions, and connection hoses for bathrooms.",
     "image": "",
     "variants": [
-      {
-        "id": 21,
-        "size": "STONE",
-        "unit": "",
-        "price": 430.0,
-        "status": "Available"
-      },
-      {
-        "id": 22,
-        "size": "900 GMS",
-        "unit": "",
-        "price": 180.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "category_id": 15,
-    "brand_id": 1,
-    "product_name": "Filler White",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 23,
-        "size": "500 GMS",
-        "unit": "",
-        "price": 103.0,
-        "status": "Available"
-      },
-      {
-        "id": 24,
-        "size": "200 GMS",
-        "unit": "",
-        "price": 38.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "category_id": 16,
-    "brand_id": 1,
-    "product_name": "Metal Paste",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 25,
-        "size": "PROMISE 500 GMS",
-        "unit": "",
-        "price": 68.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "category_id": 17,
-    "brand_id": 1,
-    "product_name": "Polyester",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 26,
-        "size": "FILLER GREEN 900 GMS",
-        "unit": "",
-        "price": 114.0,
-        "status": "Available"
-      },
-      {
-        "id": 27,
-        "size": "STEEL WOOL 1 BAG 60 PCS",
-        "unit": "",
-        "price": 800.0,
-        "status": "Available"
-      },
-      {
-        "id": 28,
-        "size": "METAL PASTE 200 GMS",
-        "unit": "",
-        "price": 38.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "category_id": 18,
-    "brand_id": 1,
-    "product_name": "Camel Filler",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 29,
-        "size": "500 GMS",
-        "unit": "",
-        "price": 68.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "category_id": 19,
-    "brand_id": 1,
-    "product_name": "Green / White",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 30,
-        "size": "900 GMS",
-        "unit": "",
-        "price": 114.0,
-        "status": "Available"
-      },
-      {
-        "id": 31,
-        "size": "1 LTR",
-        "unit": "",
-        "price": 20.0,
-        "status": "Available"
-      },
-      {
-        "id": 32,
-        "size": "5 LTR",
-        "unit": "",
-        "price": 100.0,
-        "status": "Available"
-      },
-      {
-        "id": 33,
-        "size": "10 LTR",
-        "unit": "",
-        "price": 200.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "category_id": 20,
-    "brand_id": 1,
-    "product_name": "Acid",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 34,
-        "size": "20 LTR",
-        "unit": "",
-        "price": 400.0,
-        "status": "Available"
-      },
-      {
-        "id": 35,
-        "size": "500 ML",
-        "unit": "",
-        "price": 57.5,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 21,
-    "category_id": 21,
-    "brand_id": 1,
-    "product_name": "Nc Thinner",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 36,
-        "size": "1 LTR",
-        "unit": "",
-        "price": 92.0,
-        "status": "Available"
-      },
-      {
-        "id": 37,
-        "size": "CASTIC SODA 1KG",
-        "unit": "",
-        "price": 95.0,
-        "status": "Available"
-      },
-      {
-        "id": 38,
-        "size": "250 GMS",
-        "unit": "",
-        "price": 14.37,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "category_id": 22,
-    "brand_id": 1,
-    "product_name": "Bleaching",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 39,
-        "size": "500 GMS",
-        "unit": "",
-        "price": 28.98,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 23,
-    "category_id": 23,
-    "brand_id": 1,
-    "product_name": "Powder",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 40,
-        "size": "1 KG",
-        "unit": "",
-        "price": 54.96,
-        "status": "Available"
-      },
-      {
-        "id": 41,
-        "size": "CLOTH",
-        "unit": "",
-        "price": 25.0,
-        "status": "Available"
-      },
-      {
-        "id": 42,
-        "size": "CLOTH",
-        "unit": "",
-        "price": 20.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 24,
-    "category_id": 24,
-    "brand_id": 1,
-    "product_name": "Dothi",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 43,
-        "size": "CLOTH",
-        "unit": "",
-        "price": 30.0,
-        "status": "Available"
-      },
-      {
-        "id": 44,
-        "size": "500 ML",
-        "unit": "",
-        "price": 75.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 25,
-    "category_id": 25,
-    "brand_id": 1,
-    "product_name": "Remover",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 45,
-        "size": "1 LTR",
-        "unit": "",
-        "price": 130.0,
-        "status": "Available"
-      },
-      {
-        "id": 46,
-        "size": "1 LTR",
-        "unit": "",
-        "price": 79.5,
-        "status": "Available"
-      },
-      {
-        "id": 47,
-        "size": "4 LTR",
-        "unit": "",
-        "price": 290.0,
-        "status": "Available"
-      },
-      {
-        "id": 48,
-        "size": "10 LTR",
-        "unit": "",
-        "price": 580.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 26,
-    "category_id": 26,
-    "brand_id": 1,
-    "product_name": "Primer",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 49,
-        "size": "20 LTR",
-        "unit": "",
-        "price": 1046.0,
-        "status": "Available"
-      },
-      {
-        "id": 50,
-        "size": "2 KG",
-        "unit": "",
-        "price": 99.0,
-        "status": "Available"
-      },
-      {
-        "id": 51,
-        "size": "5 KG",
-        "unit": "",
-        "price": 240.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 27,
-    "category_id": 27,
-    "brand_id": 1,
-    "product_name": "Distemper",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 52,
-        "size": "10 KG",
-        "unit": "",
-        "price": 386.0,
-        "status": "Available"
-      },
-      {
-        "id": 53,
-        "size": "20 KG",
-        "unit": "",
-        "price": 663.0,
-        "status": "Available"
-      },
-      {
-        "id": 54,
-        "size": "COVER BLOCK 1 BOX",
-        "unit": "",
-        "price": 120.0,
-        "status": "Available"
-      },
-      {
-        "id": 55,
-        "size": "20 KG",
-        "unit": "",
-        "price": 266.0,
-        "status": "Available"
-      },
-      {
-        "id": 56,
-        "size": "30 KG",
-        "unit": "",
-        "price": 382.5,
-        "status": "Available"
-      },
-      {
-        "id": 57,
-        "size": "20 KG",
-        "unit": "",
-        "price": 428.4,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 28,
-    "category_id": 28,
-    "brand_id": 1,
-    "product_name": "Vb_Gold_",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 58,
-        "size": "20 KG",
-        "unit": "",
-        "price": 428.5,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 29,
-    "category_id": 29,
-    "brand_id": 1,
-    "product_name": "Vb_Gold_Pro_",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 59,
-        "size": "1 KG",
-        "unit": "",
-        "price": 756.0,
-        "status": "Available"
-      },
-      {
-        "id": 60,
-        "size": "5 KG",
-        "unit": "",
-        "price": 2907.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 30,
-    "category_id": 30,
-    "brand_id": 1,
-    "product_name": "Grout / All",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 61,
-        "size": "1 KG",
-        "unit": "",
-        "price": 44.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 31,
-    "category_id": 31,
-    "brand_id": 1,
-    "product_name": "Colour",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 62,
-        "size": "1 LTR",
-        "unit": "",
-        "price": 144.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 32,
-    "category_id": 32,
-    "brand_id": 1,
-    "product_name": "Tile Cleaner",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 63,
-        "size": "5 LTR",
-        "unit": "",
-        "price": 598.0,
-        "status": "Available"
-      },
-      {
-        "id": 64,
-        "size": "AQUA BOND 2K 4 KG",
-        "unit": "",
-        "price": 622.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 33,
-    "category_id": 33,
-    "brand_id": 1,
-    "product_name": "Waterproof",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 65,
-        "size": "PRIMER 20 LTR",
-        "unit": "",
-        "price": 2547.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 34,
-    "category_id": 34,
-    "brand_id": 1,
-    "product_name": "Bag)",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 66,
-        "size": "1 KG 25 \u20b9 30.2",
-        "unit": "",
-        "price": 755.0,
-        "status": "Available"
-      },
-      {
-        "id": 67,
-        "size": "5 KG 05 \u20b9 145",
-        "unit": "",
-        "price": 725.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 35,
-    "category_id": 35,
-    "brand_id": 1,
-    "product_name": "Cement)",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 68,
-        "size": "01 \u20b9 1200",
-        "unit": "",
-        "price": 1200.0,
-        "status": "Available"
-      },
-      {
-        "id": 69,
-        "size": "1 KG 20 \u20b9 40.5",
-        "unit": "",
-        "price": 810.0,
-        "status": "Available"
-      },
-      {
-        "id": 70,
-        "size": "5 KG 04 \u20b9 193.75",
-        "unit": "",
-        "price": 775.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 36,
-    "category_id": 36,
-    "brand_id": 1,
-    "product_name": "Jk Wallmaxx",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 71,
-        "size": "30 KG 01 \u20b9 753",
-        "unit": "",
-        "price": 753.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 37,
-    "category_id": 37,
-    "brand_id": 1,
-    "product_name": "(Wall Putty)",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 72,
-        "size": "40 KG 01 \u20b9 1150",
-        "unit": "",
-        "price": 1150.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 38,
-    "category_id": 38,
-    "brand_id": 1,
-    "product_name": "Jk Sheild Maxx",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 73,
-        "size": "40 KG 01 \u20b9 1300",
-        "unit": "",
-        "price": 1300.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 39,
-    "category_id": 39,
-    "brand_id": 1,
-    "product_name": "Jk Level Maxx",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 74,
-        "size": "(COARSE PUTTY) 40 KG 01 \u20b9 570",
-        "unit": "",
-        "price": 570.0,
-        "status": "Available"
-      },
-      {
-        "id": 75,
-        "size": "1 KG 20 \u20b9 18.75",
-        "unit": "",
-        "price": 375.0,
-        "status": "Available"
-      },
-      {
-        "id": 76,
-        "size": "5 KG 04 \u20b9 93.75",
-        "unit": "",
-        "price": 375.0,
-        "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 40,
-    "category_id": 40,
-    "brand_id": 1,
-    "product_name": "(Pop)",
-    "description": "",
-    "image": "",
-    "variants": [
-      {
-        "id": 77,
-        "size": "25 KG 01 \u20b9 340",
-        "unit": "",
-        "price": 340.0,
-        "status": "Available"
-      }
+      { "id": 52, "size": "S S GRATING LOCK WITH HOLE PER PCS", "unit": "", "price": "46", "status": "Available" },
+      { "id": 53, "size": "S S GRATING LOCK PER PCS", "unit": "", "price": "46", "status": "Available" },
+      { "id": 54, "size": "WASH BASIN COUPLING PER PCS", "unit": "", "price": "86.70", "status": "Available" },
+      { "id": 55, "size": "WASTE PIPE PER PCS", "unit": "", "price": "33", "status": "Available" },
+      { "id": 56, "size": "2\" CONNECTING HOSE PER PCS", "unit": "", "price": "46", "status": "Available" }
     ]
   }
 ]
