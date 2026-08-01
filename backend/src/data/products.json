@@ -5,7 +5,7 @@
     "brand_id": 1,
     "product_name": "/Mtr",
     "description": "",
-    "image": "",
+    "image": "/product-image/1.jpeg",
     "variants": [
       {
         "id": 1,
@@ -22,7 +22,7 @@
     "brand_id": 1,
     "product_name": "Brided Waste",
     "description": "",
-    "image": "",
+    "image": "/product-image/2.png",
     "variants": [
       {
         "id": 2,
