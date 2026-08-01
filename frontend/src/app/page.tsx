@@ -139,7 +139,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-video lg:aspect-square w-full rounded-2xl overflow-hidden shadow-lg bg-slate-100">
               <Image
-                src="shop-front.png"
+                src="/shop-front.png"
                 alt="Lakshmi Agency Hardware Store Front"
                 fill
                 className="object-cover"
