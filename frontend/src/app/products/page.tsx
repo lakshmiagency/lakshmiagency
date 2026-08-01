@@ -4,7 +4,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Search, RefreshCw, MessageSquare } from 'lucide-react';
+import { Search, RefreshCw, MessageSquare, AlertTriangle } from 'lucide-react';
 import { api } from '../../lib/api';
 
 interface Variant {
@@ -87,12 +87,22 @@ function ProductsCatalogInner() {
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   };
 
+  // Format Price Helper
+  const formatPriceVal = (price: string | number) => {
+    const val = String(price);
+    if (isNaN(parseFloat(val))) return val;
+    if (val.includes('/') || val.toLowerCase().includes('mtr')) {
+      return val.startsWith('₹') ? val : `₹ ${val}`;
+    }
+    return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
+  };
+
   // Split products by table type
   const generalProducts = products.filter(p => p.tableType !== 'jk_cement');
   const jkCementProducts = products.filter(p => p.tableType === 'jk_cement');
 
   return (
-    // Forced Light Theme Wrapper: bg-slate-50 text-slate-900 (dark mode styles overridden)
+    // Forced Light Theme Wrapper
     <div className="py-12 sm:py-20 bg-slate-50 text-slate-900 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -140,10 +150,18 @@ function ProductsCatalogInner() {
           </div>
         </div>
 
+        {/* Price Warning */}
+        <div className="flex items-start gap-2 bg-amber-50 border border-amber-200 p-4 rounded-2xl mb-10 text-xs sm:text-sm text-amber-800 leading-relaxed max-w-3xl">
+          <AlertTriangle className="w-5 h-5 mt-0.5 flex-shrink-0 text-amber-600" />
+          <div>
+            <span className="font-bold">Important Notice:</span> Market prices fluctuate. Listed prices are catalog estimates. Please contact us via WhatsApp to confirm current rates before ordering.
+          </div>
+        </div>
+
         {loading ? (
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="bg-white h-16 rounded-xl border border-slate-200 animate-pulse" />
+              <div key={i} className="bg-white h-96 rounded-2xl border border-slate-200 animate-pulse shadow-sm" />
             ))}
           </div>
         ) : products.length === 0 ? (
@@ -157,215 +175,178 @@ function ProductsCatalogInner() {
             </button>
           </div>
         ) : (
-          <div className="space-y-16">
+          <div className="space-y-20">
             
-            {/* Table 1: General Hardware & Materials */}
+            {/* Section 1: General Hardware & Materials */}
             {generalProducts.length > 0 && (
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
                   Building Materials & Hardware Fittings
                 </h2>
-                <div className="border-2 border-slate-300 rounded-2xl overflow-hidden shadow-sm bg-white overflow-x-auto">
-                  <table className="w-full border-collapse text-left min-w-[700px]">
-                    <thead>
-                      <tr className="bg-slate-100 text-slate-700 font-bold text-xs uppercase tracking-wider border-b-2 border-slate-300">
-                        <th className="p-4 pl-6 border-r-2 border-slate-300 w-[28%]">Item Category / Name</th>
-                        <th className="p-4 border-r border-slate-200 w-[25%]">Size / Type / Unit</th>
-                        <th className="p-4 border-r border-slate-200 text-right w-[17%]">Selling Price (Rs)</th>
-                        <th className="p-4 border-r-2 border-slate-300 text-center w-[20%]">Photo</th>
-                        <th className="p-4 text-center w-[10%]">Inquire</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200 text-sm">
-                      {generalProducts.map((product) => (
-                        <React.Fragment key={product.id}>
-                          {product.variants.map((variant, index) => {
-                            const isLastVariant = index === product.variants.length - 1;
-                            return (
-                              <tr 
-                                key={variant.id} 
-                                className={`hover:bg-slate-50/70 transition-colors ${
-                                  isLastVariant 
-                                    ? 'border-b-4 border-slate-400' 
-                                    : 'border-b border-slate-200'
-                                }`}
-                              >
-                                {index === 0 && (
-                                  <td 
-                                    rowSpan={product.variants.length} 
-                                    className="p-4 pl-6 border-r-2 border-slate-300 align-middle font-bold text-slate-950 bg-slate-50/40"
-                                  >
-                                    <div className="flex flex-col gap-1">
-                                      <span className="text-base font-extrabold uppercase leading-snug">{product.product_name}</span>
-                                      {product.description && (
-                                        <span className="text-xs text-slate-500 font-normal leading-relaxed">{product.description}</span>
-                                      )}
-                                    </div>
-                                  </td>
-                                )}
-                                <td className="p-4 border-r border-slate-200 font-semibold text-slate-800 align-middle">
-                                  {variant.size} {variant.unit}
-                                </td>
-                                <td className="p-4 border-r border-slate-200 font-black text-right text-base text-blue-600 align-middle bg-slate-50/10">
-                                  {(() => {
-                                    const val = String(variant.price);
-                                    if (isNaN(parseFloat(val))) return val;
-                                    if (val.includes('/') || val.toLowerCase().includes('mtr')) {
-                                      return val.startsWith('₹') ? val : `₹ ${val}`;
-                                    }
-                                    return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
-                                  })()}
-                                </td>
-                                {index === 0 && (
-                                  <td 
-                                    rowSpan={product.variants.length} 
-                                    className="p-4 border-r-2 border-slate-300 text-center align-middle bg-slate-50/20"
-                                  >
-                                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-inner">
-                                      <Image
-                                        src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=300&auto=format&fit=crop&q=60'}
-                                        alt={product.product_name}
-                                        fill
-                                        sizes="100px"
-                                        className="object-cover"
-                                      />
-                                    </div>
-                                  </td>
-                                )}
-                                {index === 0 && (
-                                  <td 
-                                    rowSpan={product.variants.length} 
-                                    className="p-4 text-center align-middle bg-slate-50/10"
-                                  >
-                                    <a
-                                      href={getWhatsAppInquiryUrl(product)}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="inline-flex items-center justify-center p-3 bg-emerald-600 text-white hover:bg-emerald-700 rounded-xl shadow-md hover:shadow-lg transition-all"
-                                    >
-                                      <MessageSquare className="w-5 h-5 fill-current" />
-                                    </a>
-                                  </td>
-                                )}
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                  {generalProducts.map((product) => (
+                    <div 
+                      key={product.id} 
+                      className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+                    >
+                      {/* Product Image */}
+                      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
+                        <Image
+                          src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
+                          alt={product.product_name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover"
+                        />
+                        <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+                          In Stock
+                        </span>
+                      </div>
+
+                      {/* Card Content */}
+                      <div className="p-5 flex flex-col flex-grow">
+                        <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-tight mb-2">
+                          {product.product_name}
+                        </h3>
+                        {product.description && (
+                          <p className="text-xs text-slate-500 mb-4 leading-relaxed line-clamp-3">
+                            {product.description}
+                          </p>
+                        )}
+
+                        {/* Variants Sub-Table */}
+                        <div className="border border-slate-200 rounded-xl overflow-hidden text-xs bg-slate-50 mb-5">
+                          <table className="w-full text-left border-collapse">
+                            <thead>
+                              <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 text-[10px] uppercase tracking-wider">
+                                <th className="p-2.5 pl-3">Size / Option</th>
+                                <th className="p-2.5 text-right pr-3">Price (Rs)</th>
                               </tr>
-                            );
-                          })}
-                        </React.Fragment>
-                      ))}
-                    </tbody>
-                  </table>
+                            </thead>
+                            <tbody className="divide-y divide-slate-200 text-slate-700">
+                              {product.variants.map((v) => (
+                                <tr key={v.id} className="hover:bg-slate-100/30">
+                                  <td className="p-2.5 pl-3 font-semibold">{v.size} {v.unit}</td>
+                                  <td className="p-2.5 text-right pr-3 font-extrabold text-blue-600">
+                                    {formatPriceVal(v.price)}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+
+                        {/* WhatsApp Inquire CTA */}
+                        <a
+                          href={getWhatsAppInquiryUrl(product)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
+                        >
+                          <MessageSquare className="w-4 h-4 fill-current" />
+                          Send WhatsApp Inquiry
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
 
-            {/* Table 2: JK Cement & Putty Products */}
+            {/* Section 2: JK Cement & Putty Products */}
             {jkCementProducts.length > 0 && (
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" />
                   JK Cement & Wall Putty Products
                 </h2>
-                <div className="border-2 border-slate-300 rounded-2xl overflow-hidden shadow-sm bg-white overflow-x-auto">
-                  <table className="w-full border-collapse text-left min-w-[850px]">
-                    <thead>
-                      <tr className="bg-slate-100 text-slate-700 font-bold text-xs uppercase tracking-wider border-b-2 border-slate-300">
-                        <th className="p-4 pl-6 border-r-2 border-slate-300 w-[22%]">Name</th>
-                        <th className="p-4 border-r border-slate-200 text-center w-[10%]">Qty</th>
-                        <th className="p-4 border-r border-slate-200 text-center w-[15%]">Std. Packing (Per Bag)</th>
-                        <th className="p-4 border-r border-slate-200 text-right w-[15%]">Dealer Price</th>
-                        <th className="p-4 border-r-2 border-slate-300 text-right w-[18%]">Dealer Price (Per Bag)</th>
-                        <th className="p-4 border-r-2 border-slate-300 text-center w-[12%]">Photo</th>
-                        <th className="p-4 text-center w-[8%]">Inquire</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200 text-sm">
-                      {jkCementProducts.map((product) => (
-                        <React.Fragment key={product.id}>
-                          {product.variants.map((variant, index) => {
-                            const isLastVariant = index === product.variants.length - 1;
-                            return (
-                              <tr 
-                                key={variant.id} 
-                                className={`hover:bg-slate-50/70 transition-colors ${
-                                  isLastVariant 
-                                    ? 'border-b-4 border-slate-400' 
-                                    : 'border-b border-slate-200'
-                                }`}
-                              >
-                                {index === 0 && (
-                                  <td 
-                                    rowSpan={product.variants.length} 
-                                    className="p-4 pl-6 border-r-2 border-slate-300 align-middle font-bold text-slate-950 bg-slate-50/40"
-                                  >
-                                    <div className="flex flex-col gap-1">
-                                      <span className="text-base font-extrabold uppercase leading-snug">{product.product_name}</span>
-                                      {product.description && (
-                                        <span className="text-xs text-slate-500 font-normal leading-relaxed">{product.description}</span>
-                                      )}
-                                    </div>
-                                  </td>
-                                )}
-                                <td className="p-4 border-r border-slate-200 text-center font-bold text-slate-800 align-middle">
-                                  {variant.size}
-                                </td>
-                                <td className="p-4 border-r border-slate-200 text-center font-semibold text-slate-700 align-middle">
-                                  {variant.stdPacking !== undefined ? String(variant.stdPacking).padStart(2, '0') : '-'}
-                                </td>
-                                <td className="p-4 border-r border-slate-200 font-bold text-right text-slate-800 align-middle bg-slate-50/10">
-                                  {(() => {
-                                    const val = String(variant.price);
-                                    if (isNaN(parseFloat(val))) return val;
-                                    return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
-                                  })()}
-                                </td>
-                                <td className="p-4 border-r-2 border-slate-300 font-black text-right text-base text-emerald-600 align-middle bg-slate-50/20">
-                                  {variant.dealerPricePerBag !== undefined ? (
-                                    (() => {
-                                      const val = String(variant.dealerPricePerBag);
-                                      if (isNaN(parseFloat(val))) return val;
-                                      return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
-                                    })()
-                                  ) : '-'}
-                                </td>
-                                {index === 0 && (
-                                  <td 
-                                    rowSpan={product.variants.length} 
-                                    className="p-4 border-r-2 border-slate-300 text-center align-middle bg-slate-50/20"
-                                  >
-                                    <div className="relative w-16 h-20 sm:w-20 sm:h-24 mx-auto rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-inner">
-                                      <Image
-                                        src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=300&auto=format&fit=crop&q=60'}
-                                        alt={product.product_name}
-                                        fill
-                                        sizes="100px"
-                                        className="object-cover"
-                                      />
-                                    </div>
-                                  </td>
-                                )}
-                                {index === 0 && (
-                                  <td 
-                                    rowSpan={product.variants.length} 
-                                    className="p-4 text-center align-middle bg-slate-50/10"
-                                  >
-                                    <a
-                                      href={getWhatsAppInquiryUrl(product)}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="inline-flex items-center justify-center p-3 bg-emerald-600 text-white hover:bg-emerald-700 rounded-xl shadow-md hover:shadow-lg transition-all"
-                                    >
-                                      <MessageSquare className="w-5 h-5 fill-current" />
-                                    </a>
-                                  </td>
-                                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                  {jkCementProducts.map((product) => (
+                    <div 
+                      key={product.id} 
+                      className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+                    >
+                      {/* Product Image */}
+                      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
+                        <Image
+                          src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
+                          alt={product.product_name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover"
+                        />
+                        <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+                          In Stock
+                        </span>
+                      </div>
+
+                      {/* Card Content */}
+                      <div className="p-5 flex flex-col flex-grow">
+                        <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-tight mb-2">
+                          {product.product_name}
+                        </h3>
+                        {product.description && (
+                          <p className="text-xs text-slate-500 mb-4 leading-relaxed line-clamp-3">
+                            {product.description}
+                          </p>
+                        )}
+
+                        {/* JK Cement Specialized Sub-Table */}
+                        <div className="border border-slate-200 rounded-xl overflow-hidden text-[10px] bg-slate-50 mb-5">
+                          <table className="w-full text-left border-collapse">
+                            <thead>
+                              <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 uppercase tracking-wider">
+                                <th className="p-2 pl-3">Qty</th>
+                                <th className="p-2 text-center">Std</th>
+                                <th className="p-2 text-right">Dealer</th>
+                                <th className="p-2 text-right pr-3">Bag Price</th>
                               </tr>
-                            );
-                          })}
-                        </React.Fragment>
-                      ))}
-                    </tbody>
-                  </table>
+                            </thead>
+                            <tbody className="divide-y divide-slate-200 text-slate-700 text-xs">
+                              {product.variants.map((v) => (
+                                <tr key={v.id} className="hover:bg-slate-100/30">
+                                  <td className="p-2 pl-3 font-bold text-slate-800">{v.size}</td>
+                                  <td className="p-2 text-center text-slate-600">
+                                    {v.stdPacking !== undefined ? String(v.stdPacking).padStart(2, '0') : '-'}
+                                  </td>
+                                  <td className="p-2 text-right text-slate-600">
+                                    {(() => {
+                                      const val = String(v.price);
+                                      if (isNaN(parseFloat(val))) return val;
+                                      return `₹${parseFloat(val).toLocaleString('en-IN')}`;
+                                    })()}
+                                  </td>
+                                  <td className="p-2 text-right pr-3 font-extrabold text-emerald-600">
+                                    {v.dealerPricePerBag !== undefined ? (
+                                      (() => {
+                                        const val = String(v.dealerPricePerBag);
+                                        if (isNaN(parseFloat(val))) return val;
+                                        return `₹${parseFloat(val).toLocaleString('en-IN')}`;
+                                      })()
+                                    ) : '-'}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+
+                        {/* WhatsApp Inquire CTA */}
+                        <a
+                          href={getWhatsAppInquiryUrl(product)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
+                        >
+                          <MessageSquare className="w-4 h-4 fill-current" />
+                          Send WhatsApp Inquiry
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
