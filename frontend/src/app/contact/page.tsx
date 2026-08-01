@@ -231,10 +231,10 @@ export default function ContactPage() {
           <div className="p-4 sm:p-5 border-b border-card-border flex items-center justify-between">
             <div>
               <h3 className="font-bold text-foreground">Find Us on Google Maps</h3>
-              <p className="text-xs text-muted-text">College Main Road, Sulibele</p>
+              <p className="text-xs text-muted-text">Sulibele, Karnataka</p>
             </div>
             <a
-              href="https://maps.google.com/?q=College+Main+Road,+Sulibele,+Karnataka+562129"
+              href="https://maps.app.goo.gl/2bPHiWEHRujmWoe19"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-bold text-primary dark:text-blue-400 hover:underline"
@@ -245,7 +245,7 @@ export default function ContactPage() {
           <div className="h-[350px] bg-slate-100">
             <iframe
               title="Lakshmi Agency Google Map Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.503714578135!2d77.8931102!3d13.1306059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16ff2aaaaaab%3A0xe54df6373b9e4a5e!2sCollege%20Main%20Road%2C%20Sulibele%2C%20Karnataka%20562129!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=13.186937,77.801894&z=17&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
