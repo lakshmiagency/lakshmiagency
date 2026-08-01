@@ -63,15 +63,8 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-2">
                 <Clock className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="block text-white font-medium">Monday - Saturday</span>
+                  <span className="block text-white font-medium">Monday - Sunday</span>
                   <span className="text-xs">8:30 AM - 8:30 PM</span>
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <Clock className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                <div>
-                  <span className="block text-white font-medium">Sunday</span>
-                  <span className="text-xs text-red-400">Closed</span>
                 </div>
               </li>
             </ul>
