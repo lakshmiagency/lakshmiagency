@@ -166,5 +166,272 @@
       { "id": 55, "size": "WASTE PIPE PER PCS", "unit": "", "price": "33", "status": "Available" },
       { "id": 56, "size": "2\" CONNECTING HOSE PER PCS", "unit": "", "price": "46", "status": "Available" }
     ]
+  },
+  {
+    "id": 15,
+    "product_name": "PVC HOSE PIPE",
+    "description": "Flexible chrome braided outlet water connections for kitchen and bathroom plumbing fittings.",
+    "image": "",
+    "variants": [
+      { "id": 57, "size": "1\"", "unit": "", "price": "54", "status": "Available" },
+      { "id": 58, "size": "1.5\"", "unit": "", "price": "72", "status": "Available" },
+      { "id": 59, "size": "3\"", "unit": "", "price": "138", "status": "Available" }
+    ]
+  },
+  {
+    "id": 16,
+    "product_name": "STEEL WOOL SPONG",
+    "description": "Coarse wire metal sponges for scrub cleanup of cement surfaces and steel cleaning.",
+    "image": "",
+    "variants": [
+      { "id": 60, "size": "60 PCS", "unit": "", "price": "800", "status": "Available" }
+    ]
+  },
+  {
+    "id": 17,
+    "product_name": "100 GMS UMBER POWDER",
+    "description": "Dry mineral earth pigments including Raw Sienna, Burnt Sienna, and Black Umber. Perfect for coloring cement mixers, wall plasters, and paints.",
+    "image": "",
+    "variants": [
+      { "id": 61, "size": "1114 TURKEY EACH PKT", "unit": "", "price": "630", "status": "Available" },
+      { "id": 62, "size": "1115 BURNT SIENNA", "unit": "", "price": "630", "status": "Available" },
+      { "id": 63, "size": "1116 RAW SIENNA", "unit": "", "price": "630", "status": "Available" },
+      { "id": 64, "size": "1117 BLACK UMBER", "unit": "", "price": "630", "status": "Available" }
+    ]
+  },
+  {
+    "id": 18,
+    "product_name": "CHALK POWDER",
+    "description": "Fine-grade white chalk powder filler for jointing compounds, wall putty mixes, and texture coatings.",
+    "image": "",
+    "variants": [
+      { "id": 65, "size": "1 KG", "unit": "", "price": "17", "status": "Available" }
+    ]
+  },
+  {
+    "id": 19,
+    "product_name": "STAG BRAND OXIDE",
+    "description": "High-purity Stag Brand coloring oxides. Available in Pink, Red, Blue, Green, Yellow, and Black for cement work.",
+    "image": "",
+    "variants": [
+      { "id": 66, "size": "500 GMS", "unit": "", "price": "35", "status": "Available" },
+      { "id": 67, "size": "1 KG", "unit": "", "price": "65", "status": "Available" }
+    ]
+  },
+  {
+    "id": 20,
+    "product_name": "GRANITE CLEANER",
+    "description": "Concentrated acidic cleaning agent formulation, designed to remove heavy mortar residues and scale stains from granite and stone floor sheets.",
+    "image": "",
+    "variants": [
+      { "id": 68, "size": "1 LITER PER BOX 10 BOTTLE", "unit": "", "price": "138", "status": "Available" },
+      { "id": 69, "size": "5 LITER", "unit": "", "price": "540", "status": "Available" }
+    ]
+  },
+  {
+    "id": 21,
+    "product_name": "PREMIUM TEXTURE 25KG",
+    "description": "Heavy-duty acrylic structural wall coating. Provides premium granular spray and stone layouts.",
+    "image": "",
+    "variants": [
+      { "id": 70, "size": "SPRAY", "unit": "", "price": "510", "status": "Available" },
+      { "id": 71, "size": "STONE", "unit": "", "price": "430", "status": "Available" }
+    ]
+  },
+  {
+    "id": 22,
+    "product_name": "METAL PASTE PROMISE BODY FILLER WHITE",
+    "description": "Premium white polyester body filler paste for repairing metal dents, sheet seams, and wood cavities.",
+    "image": "",
+    "variants": [
+      { "id": 72, "size": "900 GMS", "unit": "", "price": "180", "status": "Available" },
+      { "id": 73, "size": "500 GMS", "unit": "", "price": "103", "status": "Available" }
+    ]
+  },
+  {
+    "id": 23,
+    "product_name": "METAL PASTE PROMISE POLYESTER FILLER GREEN",
+    "description": "Rapid curing green polyester body filler paste for dent filling, auto-body repairs, and industrial machine joints.",
+    "image": "",
+    "variants": [
+      { "id": 74, "size": "200 GMS", "unit": "", "price": "38", "status": "Available" },
+      { "id": 75, "size": "500 GMS", "unit": "", "price": "68", "status": "Available" },
+      { "id": 76, "size": "900 GMS", "unit": "", "price": "114", "status": "Available" }
+    ]
+  },
+  {
+    "id": 24,
+    "product_name": "STEEL WOOL",
+    "description": "Multi-piece roll packaging of fine-grade steel scrubbing wool, used for paint removal and metal polishing.",
+    "image": "",
+    "variants": [
+      { "id": 77, "size": "1 BAG 60 PCS", "unit": "", "price": "800", "status": "Available" }
+    ]
+  },
+  {
+    "id": 25,
+    "product_name": "METAL PASTE CAMEL FILLER GREEN / WHITE",
+    "description": "Standard grade polyester body filler paste available in green and white formats for generic filling repairs.",
+    "image": "",
+    "variants": [
+      { "id": 78, "size": "200 GMS", "unit": "", "price": "38", "status": "Available" },
+      { "id": 79, "size": "500 GMS", "unit": "", "price": "68", "status": "Available" },
+      { "id": 80, "size": "900 GMS", "unit": "", "price": "114", "status": "Available" }
+    ]
+  },
+  {
+    "id": 26,
+    "product_name": "ACID",
+    "description": "Commercial strength hydrochloric acid cleaner for cleaning cement residues off newly tiled floors.",
+    "image": "",
+    "variants": [
+      { "id": 81, "size": "1 LTR", "unit": "", "price": "20", "status": "Available" },
+      { "id": 82, "size": "5 LTR", "unit": "", "price": "100", "status": "Available" },
+      { "id": 83, "size": "10 LTR", "unit": "", "price": "200", "status": "Available" },
+      { "id": 84, "size": "20 LTR", "unit": "", "price": "400", "status": "Available" }
+    ]
+  },
+  {
+    "id": 27,
+    "product_name": "NC THINNER",
+    "description": "Industrial nitrocellulose thinner solvent for thinning NC paints, lacquers, wood sealers, and priming coats.",
+    "image": "",
+    "variants": [
+      { "id": 85, "size": "500 ML", "unit": "", "price": "57.50", "status": "Available" },
+      { "id": 86, "size": "1 LTR", "unit": "", "price": "92", "status": "Available" }
+    ]
+  },
+  {
+    "id": 28,
+    "product_name": "CASTIC SODA",
+    "description": "High-purity sodium hydroxide flakes for chemical cleaning, drain clearing, and stripping paint residues.",
+    "image": "",
+    "variants": [
+      { "id": 87, "size": "1KG", "unit": "", "price": "95", "status": "Available" }
+    ]
+  },
+  {
+    "id": 29,
+    "product_name": "BLEACHING POWDER",
+    "description": "Industrial grade chlorinated bleaching powder disinfectant for water sanitization and deep surface cleaning.",
+    "image": "",
+    "variants": [
+      { "id": 88, "size": "250 GMS", "unit": "", "price": "14.37", "status": "Available" },
+      { "id": 89, "size": "500 GMS", "unit": "", "price": "28.98", "status": "Available" },
+      { "id": 90, "size": "1 KG", "unit": "", "price": "54.96", "status": "Available" }
+    ]
+  },
+  {
+    "id": 30,
+    "product_name": "DOTHI",
+    "description": "Washed cotton dhoti textiles for paint cleanups, surface wiping, and generic hardware store packaging.",
+    "image": "",
+    "variants": [
+      { "id": 91, "size": "CLOTH (S)", "unit": "", "price": "25", "status": "Available" },
+      { "id": 92, "size": "CLOTH (M)", "unit": "", "price": "20", "status": "Available" },
+      { "id": 93, "size": "CLOTH (L)", "unit": "", "price": "30", "status": "Available" }
+    ]
+  },
+  {
+    "id": 31,
+    "product_name": "PAINT REMOVER",
+    "description": "Strong chemical gel formulation for rapid stripping of oil paints, varnishes, and acrylic coatings from metals and walls.",
+    "image": "",
+    "variants": [
+      { "id": 94, "size": "500 ML", "unit": "", "price": "75", "status": "Available" },
+      { "id": 95, "size": "1 LTR", "unit": "", "price": "130", "status": "Available" }
+    ]
+  },
+  {
+    "id": 32,
+    "product_name": "2 IN 1 WALL PRIMER",
+    "description": "Premium acrylic wall primer suitable undercoat for interior and exterior masonry wall painting.",
+    "image": "",
+    "variants": [
+      { "id": 96, "size": "1 LTR", "unit": "", "price": "79.50", "status": "Available" },
+      { "id": 97, "size": "4 LTR", "unit": "", "price": "290", "status": "Available" },
+      { "id": 98, "size": "10 LTR", "unit": "", "price": "580", "status": "Available" },
+      { "id": 99, "size": "20 LTR", "unit": "", "price": "1046", "status": "Available" }
+    ]
+  },
+  {
+    "id": 33,
+    "product_name": "DISTEMPER",
+    "description": "Water-based wall distemper paint offering high coverage, economic wall decoration, and durability.",
+    "image": "",
+    "variants": [
+      { "id": 100, "size": "2 KG", "unit": "", "price": "99", "status": "Available" },
+      { "id": 101, "size": "5 KG", "unit": "", "price": "240", "status": "Available" },
+      { "id": 102, "size": "10 KG", "unit": "", "price": "386", "status": "Available" },
+      { "id": 103, "size": "20 KG", "unit": "", "price": "663", "status": "Available" }
+    ]
+  },
+  {
+    "id": 34,
+    "product_name": "COVER BLOCK",
+    "description": "Concrete cover blocks to maintain reinforce distance spacing during concrete slab and beam casting.",
+    "image": "",
+    "variants": [
+      { "id": 104, "size": "1 BOX", "unit": "", "price": "120", "status": "Available" }
+    ]
+  },
+  {
+    "id": 35,
+    "product_name": "1307_GOLD_GRAY(T01)",
+    "description": "Polymer fortified tile adhesive mortar for internal wall/floor installation of tiles and stones.",
+    "image": "",
+    "variants": [
+      { "id": 105, "size": "20 KG", "unit": "", "price": "266", "status": "Available" },
+      { "id": 106, "size": "30 KG", "unit": "", "price": "382.50", "status": "Available" }
+    ]
+  },
+  {
+    "id": 36,
+    "product_name": "VB_GOLD_PRO_GRAY(T02)",
+    "description": "Premium strength grey cement-based adhesive for large vitrified tiles, marble, and natural stone installations.",
+    "image": "",
+    "variants": [
+      { "id": 107, "size": "20 KG", "unit": "", "price": "428.40", "status": "Available" },
+      { "id": 108, "size": "30 KG", "unit": "", "price": "Price on Request", "status": "Available" }
+    ]
+  },
+  {
+    "id": 37,
+    "product_name": "VB_GOLD_PRO_WHITE(T09)",
+    "description": "Premium white cement-based polymer fortified adhesive, perfect for translucent marble, glass mosaics, and wall tiles.",
+    "image": "",
+    "variants": [
+      { "id": 109, "size": "20 KG", "unit": "", "price": "428.50", "status": "Available" },
+      { "id": 110, "size": "30 KG", "unit": "", "price": "Price on Request", "status": "Available" }
+    ]
+  },
+  {
+    "id": 38,
+    "product_name": "VEPOXY - 2K",
+    "description": "Two-component acid and chemical resistant epoxy grout for tile joints, offering heavy-duty durability.",
+    "image": "",
+    "variants": [
+      { "id": 111, "size": "1 KG", "unit": "", "price": "756", "status": "Available" },
+      { "id": 112, "size": "5 KG", "unit": "", "price": "2907", "status": "Available" }
+    ]
+  },
+  {
+    "id": 39,
+    "product_name": "GROUT / ALL COLOUR",
+    "description": "Economic cementitious grout powder for filling tile joints and gaps. Available in multiple color pigments.",
+    "image": "",
+    "variants": [
+      { "id": 113, "size": "1 KG", "unit": "", "price": "44", "status": "Available" }
+    ]
+  },
+  {
+    "id": 40,
+    "product_name": "TILE CLEANER",
+    "description": "Fast-acting acid based chemical formulation for cleaning cement stains, dirt, scale, and grime off tiles.",
+    "image": "",
+    "variants": [
+      { "id": 114, "size": "1 LTR", "unit": "", "price": "144", "status": "Available" },
+      { "id": 115, "size": "5 LTR", "unit": "", "price": "598", "status": "Available" }
+    ]
   }
 ]
