@@ -26,7 +26,7 @@ export const getProductById = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-    const product = products.find((p) => p.id === Number(id));
+    const product = products.find((p) => String(p.id) === id);
 
     if (!product) {
       return res.status(404).json({ message: 'Product not found' });

@@ -18,7 +18,7 @@ interface Variant {
 }
 
 interface Product {
-  id: number;
+  id: number | string;
   product_name: string;
   description: string;
   image: string;

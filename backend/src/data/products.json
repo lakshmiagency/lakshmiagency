@@ -151,13 +151,13 @@
   },
   {
     "id": 4,
-    "product_name": "GARDEN PIPES",
-    "description": "High-grade flexible garden hose pipes available in Super Black, Black Zebra, Green Zebra, and Super Foam styles.",
-    "image": "",
+    "product_name": "GARDEN PIPES - SUPER BLACK",
+    "description": "High-grade flexible garden hose pipes available in Super Black style.",
+    "image": "/product-image/4.jpg",
     "variants": [
       {
         "id": 19,
-        "size": "3/4\" SUPER BLACK",
+        "size": "3/4\"",
         "unit": "",
         "price": "101",
         "image": "/product-image/4.jpg",
@@ -165,15 +165,23 @@
       },
       {
         "id": 20,
-        "size": "1\" SUPER BLACK",
+        "size": "1\"",
         "unit": "",
         "price": "101",
         "image": "/product-image/4.jpg",
         "status": "Available"
-      },
+      }
+    ]
+  },
+  {
+    "id": "4a",
+    "product_name": "GARDEN PIPES - BLACK ZEBRA",
+    "description": "High-grade flexible garden hose pipes available in Black Zebra style.",
+    "image": "/product-image/4a.jpg",
+    "variants": [
       {
         "id": 21,
-        "size": "3/4\" BLACK ZEBRA",
+        "size": "3/4\"",
         "unit": "",
         "price": "81",
         "image": "/product-image/4a.jpg",
@@ -181,15 +189,23 @@
       },
       {
         "id": 22,
-        "size": "1\" BLACK ZEBRA",
+        "size": "1\"",
         "unit": "",
         "price": "81",
         "image": "/product-image/4a.jpg",
         "status": "Available"
-      },
+      }
+    ]
+  },
+  {
+    "id": "4b",
+    "product_name": "GARDEN PIPES - GREEN ZEBRA",
+    "description": "High-grade flexible garden hose pipes available in Green Zebra style.",
+    "image": "/product-image/4b.jpg",
+    "variants": [
       {
         "id": 23,
-        "size": "3/4\" GREEN ZEBRA",
+        "size": "3/4\"",
         "unit": "",
         "price": "130",
         "image": "/product-image/4b.jpg",
@@ -197,15 +213,23 @@
       },
       {
         "id": 24,
-        "size": "1\" GREEN ZEBRA",
+        "size": "1\"",
         "unit": "",
         "price": "130",
         "image": "/product-image/4b.jpg",
         "status": "Available"
-      },
+      }
+    ]
+  },
+  {
+    "id": "4c",
+    "product_name": "GARDEN PIPES - SUPER FOAM",
+    "description": "High-grade flexible garden hose pipes available in Super Foam style.",
+    "image": "/product-image/4c.jpg",
+    "variants": [
       {
         "id": 25,
-        "size": "1/2\" SUPER FOAM PIPE",
+        "size": "1/2\"",
         "unit": "",
         "price": "166",
         "image": "/product-image/4c.jpg",
@@ -213,7 +237,7 @@
       },
       {
         "id": 26,
-        "size": "3/4\" SUPER FOAM PIPE",
+        "size": "3/4\"",
         "unit": "",
         "price": "166",
         "image": "/product-image/4c.jpg",
@@ -221,7 +245,7 @@
       },
       {
         "id": 27,
-        "size": "1\" SUPER FOAM PIPE",
+        "size": "1\"",
         "unit": "",
         "price": "166",
         "image": "/product-image/4c.jpg",
