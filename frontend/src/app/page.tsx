@@ -61,8 +61,8 @@ export default function HomePage() {
         {/* Background Image Overlay */}
         <div className="absolute inset-0 opacity-10">
           <Image
-            src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=1600&auto=format&fit=crop&q=80"
-            alt="Hardware building materials background"
+            src="/shop-front.png"
+            alt="Lakshmi Agency Store Front"
             fill
             className="object-cover"
             priority={true}
