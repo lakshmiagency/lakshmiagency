@@ -57,9 +57,9 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       
       {/* 1. Hero Section */}
-      <section className="relative bg-slate-900 text-white overflow-hidden py-24 md:py-32 flex items-center min-h-[75vh]">
+      <section className="relative bg-slate-50 text-slate-900 overflow-hidden py-24 md:py-32 flex items-center min-h-[75vh]">
         {/* Background Image Overlay */}
-        <div className="absolute inset-0 opacity-25">
+        <div className="absolute inset-0 opacity-10">
           <Image
             src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=1600&auto=format&fit=crop&q=80"
             alt="Hardware building materials background"
@@ -67,20 +67,20 @@ export default function HomePage() {
             className="object-cover"
             priority={true}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-50 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-600 border border-blue-100 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
               Wholesale & Retail Supplier
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 mb-6">
               Premium Hardware & <br />
-              <span className="text-blue-500">Building Materials</span>
+              <span className="text-blue-600">Building Materials</span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
               Authorized dealers of cement, premium paints, CPVC pipes, garden water hoses, waterproofing products, and tile adhesives. We supply top-quality hardware materials to builders and homeowners in Sulibele, Hoskote Taluk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

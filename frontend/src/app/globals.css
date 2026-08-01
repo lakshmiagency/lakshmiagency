@@ -9,17 +9,6 @@
   --nav-bg: rgba(255, 255, 255, 0.85);
   --nav-border: rgba(241, 245, 249, 0.8);
 }
-
-.dark {
-  --background: #0b0f19;
-  --foreground: #f8fafc;
-  --card-bg: #111827;
-  --card-border: #1f2937;
-  --muted-text: #9ca3af;
-  --nav-bg: rgba(11, 15, 25, 0.85);
-  --nav-border: rgba(31, 41, 55, 0.8);
-}
-
 @theme {
   --color-primary: #0B3D91;
   --color-primary-hover: #072e6e;
@@ -58,9 +47,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
-}
-.dark ::-webkit-scrollbar-thumb {
-  background: #374151;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;

@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
           {/* Logo / Brand */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-primary dark:text-white flex items-center gap-2">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-primary flex items-center gap-2">
                 <span className="bg-primary text-white px-2 py-0.5 rounded-md font-extrabold text-sm sm:text-base">LA</span>
                 LAKSHMI AGENCY
               </span>
@@ -45,9 +45,9 @@ export const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary dark:hover:text-white ${
+                className={`text-sm font-medium transition-colors hover:text-primary ${
                   isActive(link.href)
-                    ? 'text-primary dark:text-white font-bold border-b-2 border-primary dark:border-white pb-1'
+                    ? 'text-primary font-bold border-b-2 border-primary pb-1'
                     : 'text-muted-text'
                 }`}
               >
@@ -84,8 +84,8 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsOpen(false)}
               className={`block px-3 py-2.5 rounded-md text-base font-medium transition-colors ${
                 isActive(link.href)
-                  ? 'bg-primary/10 text-primary dark:bg-white/10 dark:text-white font-bold'
-                  : 'text-muted-text hover:bg-slate-100 dark:hover:bg-slate-800/40 hover:text-primary dark:hover:text-white'
+                  ? 'bg-primary/10 text-primary font-bold'
+                  : 'text-muted-text hover:bg-slate-100 hover:text-primary'
               }`}
             >
               {link.name}
