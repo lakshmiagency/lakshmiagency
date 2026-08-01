@@ -39,13 +39,6 @@ export const api = {
     return apiFetch(`/products/${id}`);
   },
 
-  async getPrices(filters?: { search?: string }) {
-    const query = new URLSearchParams();
-    if (filters?.search) query.append('search', filters.search);
-    
-    return apiFetch(`/prices?${query.toString()}`);
-  },
-
   async getBusinessInfo() {
     return apiFetch('/business-info');
   },

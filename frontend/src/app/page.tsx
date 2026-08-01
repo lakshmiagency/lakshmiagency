@@ -11,8 +11,7 @@ import {
   BadgeCheck,
   ChevronRight,
   Phone,
-  MessageSquare,
-  FileSpreadsheet
+  MessageSquare
 } from 'lucide-react';
 import { api } from '../lib/api';
 import ProductCard from '../components/ProductCard';
@@ -92,13 +91,7 @@ export default function HomePage() {
                 Explore Catalogue
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link
-                href="/price-list"
-                className="flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-slate-800 text-slate-100 border border-slate-700 font-bold hover:bg-slate-700 transition-colors"
-              >
-                <FileSpreadsheet className="w-4 h-4 text-emerald-500" />
-                Latest Price List
-              </Link>
+
             </div>
           </div>
         </div>

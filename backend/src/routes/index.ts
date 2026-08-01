@@ -1,13 +1,11 @@
 import { Router } from 'express';
 import { getProducts, getProductById } from '../controllers/productController';
-import { getPrices } from '../controllers/priceController';
 
 const router = Router();
 
 // Public Catalog Routes
 router.get('/products', getProducts);
 router.get('/products/:id', getProductById);
-router.get('/prices', getPrices);
 
 // Business Info Route (Static)
 router.get('/business-info', (req, res) => {

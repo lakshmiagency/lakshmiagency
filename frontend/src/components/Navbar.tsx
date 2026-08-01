@@ -14,7 +14,6 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
-    { name: 'Price List', href: '/price-list' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
