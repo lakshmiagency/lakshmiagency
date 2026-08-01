@@ -2,11 +2,10 @@
 
 import React, { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Search, SlidersHorizontal, RefreshCw } from 'lucide-react';
+import { Search, RefreshCw, MessageSquare } from 'lucide-react';
 import { api } from '../../lib/api';
-import ProductCard from '../../components/ProductCard';
-import ProductModal from '../../components/ProductModal';
 
 interface Variant {
   id: number;
@@ -39,18 +38,14 @@ function ProductsCatalogInner() {
   // Data States
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  // Fetch products whenever filters in URL search params change
+  // Fetch products whenever search params change
   useEffect(() => {
     const fetchFilteredProducts = async () => {
       setLoading(true);
       try {
         const queryText = searchParams.get('search') || undefined;
-
-        const data = await api.getProducts({
-          search: queryText
-        });
+        const data = await api.getProducts({ search: queryText });
         setProducts(data);
       } catch (err) {
         console.error('Error fetching products:', err);
@@ -62,11 +57,10 @@ function ProductsCatalogInner() {
     fetchFilteredProducts();
   }, [searchParams]);
 
-  // Sync state with URL
+  // Sync search state with URL
   const applyFilters = (newSearch: string) => {
     const params = new URLSearchParams();
     if (newSearch) params.append('search', newSearch);
-    
     router.push(`/products?${params.toString()}`);
   };
 
@@ -78,6 +72,16 @@ function ProductsCatalogInner() {
   const resetFilters = () => {
     setSearch('');
     router.push('/products');
+  };
+
+  // WhatsApp inquiry URL generator
+  const getWhatsAppInquiryUrl = (product: Product, variant?: Variant) => {
+    const phoneNumber = '916361033361';
+    let text = `Hello Lakshmi Agency, I am interested in inquiring about "${product.product_name}".`;
+    if (variant) {
+      text += ` Size/Type: ${variant.size} ${variant.unit}, Listed Price: ₹${parseFloat(variant.price as string).toLocaleString('en-IN')}.`;
+    }
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -94,10 +98,10 @@ function ProductsCatalogInner() {
         {/* Title */}
         <div className="mb-12">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
-            Materials & Product Catalogue
+            Materials Rate Card & Products List
           </h1>
           <p className="text-sm text-muted-text mt-2">
-            Explore prices and sizes. Use the search bar below to find specific cement, paint accessories, PVC pipes, or waterproofing items.
+            Search live wholesale & retail prices for building materials, paints, PVC components, or waterproofing.
           </p>
         </div>
 
@@ -115,7 +119,6 @@ function ProductsCatalogInner() {
           </form>
 
           <div className="flex gap-3 w-full md:w-auto items-center justify-end">
-            {/* Reset Button */}
             {search && (
               <button
                 type="button"
@@ -129,11 +132,11 @@ function ProductsCatalogInner() {
           </div>
         </div>
 
-        {/* Product Grid / Listings */}
+        {/* Product Rate Card Table */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[...Array(8)].map((_, i) => (
-              <div key={i} className="animate-pulse bg-slate-100 dark:bg-slate-800/50 h-96 rounded-2xl border border-card-border" />
+          <div className="space-y-4">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="animate-pulse bg-slate-100 dark:bg-slate-800/40 h-16 rounded-xl border border-card-border" />
             ))}
           </div>
         ) : products.length === 0 ? (
@@ -147,24 +150,94 @@ function ProductsCatalogInner() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((prod) => (
-              <ProductCard
-                key={prod.id}
-                product={prod}
-                onViewDetails={setSelectedProduct}
-              />
-            ))}
+          <div className="border border-card-border rounded-2xl overflow-hidden shadow-sm bg-card-bg transition-theme overflow-x-auto">
+            <table className="w-full border-collapse text-left min-w-[700px]">
+              <thead>
+                <tr className="bg-slate-50 dark:bg-slate-950/20 text-muted-text font-bold text-xs uppercase tracking-wider border-b border-card-border">
+                  <th className="p-4 pl-6 border-r border-card-border">Item Category / Name</th>
+                  <th className="p-4 border-r border-card-border">Size / Type / Unit</th>
+                  <th className="p-4 border-r border-card-border text-right">Selling Price (Rs)</th>
+                  <th className="p-4 border-r border-card-border text-center">Photo</th>
+                  <th className="p-4 text-center">Inquire</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-card-border text-sm">
+                {products.map((product) => (
+                  <React.Fragment key={product.id}>
+                    {product.variants.map((variant, index) => (
+                      <tr 
+                        key={variant.id} 
+                        className="hover:bg-slate-50/30 dark:hover:bg-slate-900/5 transition-colors border-b border-card-border last:border-b-0"
+                      >
+                        {/* Spanned Product Details Column */}
+                        {index === 0 && (
+                          <td 
+                            rowSpan={product.variants.length} 
+                            className="p-4 pl-6 border-r border-card-border align-middle font-bold text-foreground w-[28%]"
+                          >
+                            <div className="flex flex-col gap-1">
+                              <span className="text-base font-extrabold uppercase leading-snug">{product.product_name}</span>
+                              {product.description && (
+                                <span className="text-xs text-muted-text font-normal leading-relaxed">{product.description}</span>
+                              )}
+                            </div>
+                          </td>
+                        )}
+
+                        {/* Variant Size Column */}
+                        <td className="p-4 border-r border-card-border font-medium text-foreground align-middle w-[25%]">
+                          {variant.size} {variant.unit}
+                        </td>
+
+                        {/* Variant Price Column */}
+                        <td className="p-4 border-r border-card-border font-black text-right text-base text-primary dark:text-white align-middle w-[17%]">
+                          ₹{parseFloat(variant.price as string).toLocaleString('en-IN')}
+                        </td>
+
+                        {/* Spanned Product Image Column */}
+                        {index === 0 && (
+                          <td 
+                            rowSpan={product.variants.length} 
+                            className="p-4 border-r border-card-border text-center align-middle w-[20%]"
+                          >
+                            <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl overflow-hidden border border-card-border bg-slate-50 dark:bg-slate-900 shadow-sm">
+                              <Image
+                                src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=300&auto=format&fit=crop&q=60'}
+                                alt={product.product_name}
+                                fill
+                                sizes="100px"
+                                className="object-cover"
+                              />
+                            </div>
+                          </td>
+                        )}
+
+                        {/* Spanned Inquire Button Column */}
+                        {index === 0 && (
+                          <td 
+                            rowSpan={product.variants.length} 
+                            className="p-4 text-center align-middle w-[10%]"
+                          >
+                            <a
+                              href={getWhatsAppInquiryUrl(product)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center p-3 bg-accent text-white hover:bg-accent-hover rounded-xl shadow-sm hover:shadow-lg transition-all"
+                              title="Send WhatsApp Inquiry"
+                            >
+                              <MessageSquare className="w-5 h-5 fill-current" />
+                            </a>
+                          </td>
+                        )}
+                      </tr>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
 
-        {/* Product Details Modal */}
-        {selectedProduct && (
-          <ProductModal
-            product={selectedProduct}
-            onClose={() => setSelectedProduct(null)}
-          />
-        )}
       </div>
     </div>
   );
