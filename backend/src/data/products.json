@@ -151,8 +151,8 @@
   },
   {
     "id": 4,
-    "product_name": "GARDEN PIPES (SUPER BLACK)",
-    "description": "High-grade flexible garden hose pipes in premium Super Black style.",
+    "product_name": "GARDEN PIPES",
+    "description": "High-grade flexible garden hose pipes available in Super Black, Black Zebra, Green Zebra, and Super Foam styles.",
     "image": "/product-image/Picture3.jpg",
     "variants": [
       {
@@ -160,6 +160,7 @@
         "size": "3/4\" SUPER BLACK",
         "unit": "",
         "price": "101",
+        "image": "/product-image/Picture3.jpg",
         "status": "Available"
       },
       {
@@ -167,21 +168,15 @@
         "size": "1\" SUPER BLACK",
         "unit": "",
         "price": "101",
+        "image": "/product-image/Picture3.jpg",
         "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 49,
-    "product_name": "GARDEN PIPES (BLACK ZEBRA)",
-    "description": "High-grade flexible garden hose pipes in Black Zebra style with yellow stripes.",
-    "image": "/product-image/Picture4.jpg",
-    "variants": [
+      },
       {
         "id": 21,
         "size": "3/4\" BLACK ZEBRA",
         "unit": "",
         "price": "81",
+        "image": "/product-image/Picture4.jpg",
         "status": "Available"
       },
       {
@@ -189,21 +184,15 @@
         "size": "1\" BLACK ZEBRA",
         "unit": "",
         "price": "81",
+        "image": "/product-image/Picture4.jpg",
         "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 50,
-    "product_name": "GARDEN PIPES (GREEN ZEBRA)",
-    "description": "High-grade flexible garden hose pipes in Green Zebra style.",
-    "image": "/product-image/Picture5.jpg",
-    "variants": [
+      },
       {
         "id": 23,
         "size": "3/4\" GREEN ZEBRA",
         "unit": "",
         "price": "130",
+        "image": "/product-image/Picture5.jpg",
         "status": "Available"
       },
       {
@@ -211,21 +200,15 @@
         "size": "1\" GREEN ZEBRA",
         "unit": "",
         "price": "130",
+        "image": "/product-image/Picture5.jpg",
         "status": "Available"
-      }
-    ]
-  },
-  {
-    "id": 51,
-    "product_name": "GARDEN PIPES (SUPER FOAM)",
-    "description": "Premium lightweight and durable foam-shield garden water hoses.",
-    "image": "/product-image/Picture6.jpg",
-    "variants": [
+      },
       {
         "id": 25,
         "size": "1/2\" SUPER FOAM PIPE",
         "unit": "",
         "price": "166",
+        "image": "/product-image/Picture6.jpg",
         "status": "Available"
       },
       {
@@ -233,6 +216,7 @@
         "size": "3/4\" SUPER FOAM PIPE",
         "unit": "",
         "price": "166",
+        "image": "/product-image/Picture6.jpg",
         "status": "Available"
       },
       {
@@ -240,6 +224,7 @@
         "size": "1\" SUPER FOAM PIPE",
         "unit": "",
         "price": "166",
+        "image": "/product-image/Picture6.jpg",
         "status": "Available"
       }
     ]
@@ -248,7 +233,7 @@
     "id": 5,
     "product_name": "LEVEL TUBE",
     "description": "Transparent plastic level tube pipes, designed for accurate level measurement in construction and masonry layouts.",
-    "image": "",
+    "image": "/product-image/5.png",
     "variants": [
       {
         "id": 28,
@@ -270,7 +255,7 @@
     "id": 6,
     "product_name": "PAINT THINNER",
     "description": "High-purity chemical mineral solvent thinner for oil-based paint mixing and brush cleaning tools.",
-    "image": "",
+    "image": "/product-image/6.jpg",
     "variants": [
       {
         "id": 30,
@@ -313,7 +298,7 @@
     "id": 7,
     "product_name": "SUPER CEM",
     "description": "High strength white cement-based decorative limewash coating powder, providing brilliant white finishing and protection.",
-    "image": "",
+    "image": "/product-image/7.jpg",
     "variants": [
       {
         "id": 35,
@@ -349,7 +334,7 @@
     "id": 8,
     "product_name": "FOLDING PIPE",
     "description": "Flexible lay-flat PVC delivery pipes, easily rollable and portable for water discharge applications.",
-    "image": "",
+    "image": "/product-image/8.png",
     "variants": [
       {
         "id": 39,
@@ -378,7 +363,7 @@
     "id": 9,
     "product_name": "SCRAPER BLADE",
     "description": "Heavy-duty steel scraping blades for surface prep and wall plaster scraping before paint applications.",
-    "image": "",
+    "image": "/product-image/9.jpg",
     "variants": [
       {
         "id": 42,
@@ -393,7 +378,7 @@
     "id": 10,
     "product_name": "PUTTY BLADE",
     "description": "Premium spring-steel metal blade scrapers for smooth application of wall putty and joint compounds.",
-    "image": "",
+    "image": "/product-image/10.jpg",
     "variants": [
       {
         "id": 43,
@@ -443,7 +428,7 @@
     "id": 11,
     "product_name": "AJAX SUKHA SHEETS",
     "description": "Dry sandpapers for wall, metal, and wood surface polishing and smoothing tasks.",
-    "image": "",
+    "image": "/product-image/11.jpg",
     "variants": [
       {
         "id": 49,
@@ -458,7 +443,7 @@
     "id": 12,
     "product_name": "SAND MASTER NXT CLOTH ROLL",
     "description": "Heavy-duty abrasive cloth rolls for intensive surface grinding and rust removal operations.",
-    "image": "",
+    "image": "/product-image/12.jpg",
     "variants": [
       {
         "id": 50,
@@ -473,7 +458,7 @@
     "id": 13,
     "product_name": "CONCORD NXT CLOTH ROLL",
     "description": "Premium industrial grade emery cloth rolls for high precision surface polishing and metal prep.",
-    "image": "",
+    "image": "/product-image/13.jpg",
     "variants": [
       {
         "id": 51,
@@ -488,7 +473,7 @@
     "id": 14,
     "product_name": "BATHROOM FITTINGS",
     "description": "Sleek stainless steel grating plates, waste couplings, outlet pipe extensions, and connection hoses for bathrooms.",
-    "image": "",
+    "image": "/product-image/14.png",
     "variants": [
       {
         "id": 52,
@@ -531,7 +516,7 @@
     "id": 15,
     "product_name": "PVC HOSE PIPE",
     "description": "Flexible chrome braided outlet water connections for kitchen and bathroom plumbing fittings.",
-    "image": "",
+    "image": "/product-image/15.jpg",
     "variants": [
       {
         "id": 57,
@@ -560,7 +545,7 @@
     "id": 16,
     "product_name": "STEEL WOOL SPONG",
     "description": "Coarse wire metal sponges for scrub cleanup of cement surfaces and steel cleaning.",
-    "image": "",
+    "image": "/product-image/16.jpg",
     "variants": [
       {
         "id": 60,
@@ -575,7 +560,7 @@
     "id": 17,
     "product_name": "100 GMS UMBER POWDER",
     "description": "Dry mineral earth pigments including Raw Sienna, Burnt Sienna, and Black Umber. Perfect for coloring cement mixers, wall plasters, and paints.",
-    "image": "",
+    "image": "/product-image/17.jpg",
     "variants": [
       {
         "id": 61,
@@ -611,7 +596,7 @@
     "id": 18,
     "product_name": "CHALK POWDER",
     "description": "Fine-grade white chalk powder filler for jointing compounds, wall putty mixes, and texture coatings.",
-    "image": "",
+    "image": "/product-image/18.png",
     "variants": [
       {
         "id": 65,
@@ -626,7 +611,7 @@
     "id": 19,
     "product_name": "STAG BRAND OXIDE",
     "description": "High-purity Stag Brand coloring oxides. Available in Pink, Red, Blue, Green, Yellow, and Black for cement work.",
-    "image": "",
+    "image": "/product-image/19.png",
     "variants": [
       {
         "id": 66,
@@ -648,7 +633,7 @@
     "id": 20,
     "product_name": "GRANITE CLEANER",
     "description": "Concentrated acidic cleaning agent formulation, designed to remove heavy mortar residues and scale stains from granite and stone floor sheets.",
-    "image": "",
+    "image": "/product-image/20.png",
     "variants": [
       {
         "id": 68,
@@ -670,7 +655,7 @@
     "id": 21,
     "product_name": "PREMIUM TEXTURE 25KG",
     "description": "Heavy-duty acrylic structural wall coating. Provides premium granular spray and stone layouts.",
-    "image": "",
+    "image": "/product-image/21.png",
     "variants": [
       {
         "id": 70,
@@ -692,7 +677,7 @@
     "id": 22,
     "product_name": "METAL PASTE PROMISE BODY FILLER WHITE",
     "description": "Premium white polyester body filler paste for repairing metal dents, sheet seams, and wood cavities.",
-    "image": "",
+    "image": "/product-image/23.png",
     "variants": [
       {
         "id": 72,
@@ -714,7 +699,7 @@
     "id": 23,
     "product_name": "METAL PASTE PROMISE POLYESTER FILLER GREEN",
     "description": "Rapid curing green polyester body filler paste for dent filling, auto-body repairs, and industrial machine joints.",
-    "image": "",
+    "image": "/product-image/23.png",
     "variants": [
       {
         "id": 74,
@@ -743,7 +728,7 @@
     "id": 24,
     "product_name": "STEEL WOOL",
     "description": "Multi-piece roll packaging of fine-grade steel scrubbing wool, used for paint removal and metal polishing.",
-    "image": "",
+    "image": "/product-image/24.png",
     "variants": [
       {
         "id": 77,
@@ -787,7 +772,7 @@
     "id": 26,
     "product_name": "ACID",
     "description": "Commercial strength hydrochloric acid cleaner for cleaning cement residues off newly tiled floors.",
-    "image": "",
+    "image": "/product-image/26.png",
     "variants": [
       {
         "id": 81,
@@ -823,7 +808,7 @@
     "id": 27,
     "product_name": "NC THINNER",
     "description": "Industrial nitrocellulose thinner solvent for thinning NC paints, lacquers, wood sealers, and priming coats.",
-    "image": "",
+    "image": "/product-image/27.png",
     "variants": [
       {
         "id": 85,
@@ -845,7 +830,7 @@
     "id": 28,
     "product_name": "CASTIC SODA",
     "description": "High-purity sodium hydroxide flakes for chemical cleaning, drain clearing, and stripping paint residues.",
-    "image": "",
+    "image": "/product-image/28.png",
     "variants": [
       {
         "id": 87,
@@ -860,7 +845,7 @@
     "id": 29,
     "product_name": "BLEACHING POWDER",
     "description": "Industrial grade chlorinated bleaching powder disinfectant for water sanitization and deep surface cleaning.",
-    "image": "",
+    "image": "/product-image/29.png",
     "variants": [
       {
         "id": 88,
@@ -889,7 +874,7 @@
     "id": 30,
     "product_name": "DOTHI",
     "description": "Washed cotton dhoti textiles for paint cleanups, surface wiping, and generic hardware store packaging.",
-    "image": "",
+    "image": "/product-image/30.png",
     "variants": [
       {
         "id": 91,
@@ -918,7 +903,7 @@
     "id": 31,
     "product_name": "PAINT REMOVER",
     "description": "Strong chemical gel formulation for rapid stripping of oil paints, varnishes, and acrylic coatings from metals and walls.",
-    "image": "",
+    "image": "/product-image/31.jpg",
     "variants": [
       {
         "id": 94,
@@ -940,7 +925,7 @@
     "id": 32,
     "product_name": "2 IN 1 WALL PRIMER",
     "description": "Premium acrylic wall primer suitable undercoat for interior and exterior masonry wall painting.",
-    "image": "",
+    "image": "/product-image/32.jpg",
     "variants": [
       {
         "id": 96,
@@ -1012,7 +997,7 @@
     "id": 34,
     "product_name": "COVER BLOCK",
     "description": "Concrete cover blocks to maintain reinforce distance spacing during concrete slab and beam casting.",
-    "image": "",
+    "image": "/product-image/34.png",
     "variants": [
       {
         "id": 104,
@@ -1027,7 +1012,7 @@
     "id": 35,
     "product_name": "1307_GOLD_GRAY(T01)",
     "description": "Polymer fortified tile adhesive mortar for internal wall/floor installation of tiles and stones.",
-    "image": "",
+    "image": "/product-image/35.png",
     "variants": [
       {
         "id": 105,
@@ -1049,7 +1034,7 @@
     "id": 36,
     "product_name": "VB_GOLD_PRO_GRAY(T02)",
     "description": "Premium strength grey cement-based adhesive for large vitrified tiles, marble, and natural stone installations.",
-    "image": "",
+    "image": "/product-image/37.png",
     "variants": [
       {
         "id": 107,
@@ -1071,7 +1056,7 @@
     "id": 37,
     "product_name": "VB_GOLD_PRO_WHITE(T09)",
     "description": "Premium white cement-based polymer fortified adhesive, perfect for translucent marble, glass mosaics, and wall tiles.",
-    "image": "",
+    "image": "/product-image/37.png",
     "variants": [
       {
         "id": 109,
@@ -1093,7 +1078,7 @@
     "id": 38,
     "product_name": "VEPOXY - 2K",
     "description": "Two-component acid and chemical resistant epoxy grout for tile joints, offering heavy-duty durability.",
-    "image": "",
+    "image": "/product-image/38.png",
     "variants": [
       {
         "id": 111,
@@ -1115,7 +1100,7 @@
     "id": 39,
     "product_name": "GROUT / ALL COLOUR",
     "description": "Economic cementitious grout powder for filling tile joints and gaps. Available in multiple color pigments.",
-    "image": "",
+    "image": "/product-image/39.png",
     "variants": [
       {
         "id": 113,
@@ -1130,7 +1115,7 @@
     "id": 40,
     "product_name": "TILE CLEANER",
     "description": "Fast-acting acid based chemical formulation for cleaning cement stains, dirt, scale, and grime off tiles.",
-    "image": "",
+    "image": "/product-image/40.png",
     "variants": [
       {
         "id": 114,
@@ -1152,7 +1137,7 @@
     "id": 41,
     "product_name": "AQUA BOND 2K",
     "description": "Two-component acrylic modified cementitious waterproofing coating for bathrooms, swimming pools, and water tanks.",
-    "image": "",
+    "image": "/product-image/41.png",
     "variants": [
       {
         "id": 116,
@@ -1167,7 +1152,7 @@
     "id": 42,
     "product_name": "ANCHOR LOCK",
     "description": "High strength polyester resin anchor grout for anchoring bolts, threaded rods, and rebar starter bars into concrete.",
-    "image": "",
+    "image": "/product-image/42.png",
     "variants": [
       {
         "id": 117,
@@ -1182,7 +1167,7 @@
     "id": 43,
     "product_name": "WATERPROOF PRIMER EXTERIOR",
     "description": "Premium quality waterproofing wall primer undercoat formulated for exterior masonry surfaces.",
-    "image": "",
+    "image": "/product-image/43.png",
     "variants": [
       {
         "id": 118,

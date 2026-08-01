@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Search, RefreshCw, MessageSquare, AlertTriangle } from 'lucide-react';
 import { api } from '../../lib/api';
@@ -15,6 +14,7 @@ interface Variant {
   stdPacking?: number;
   dealerPricePerBag?: string | number;
   status: string;
+  image?: string;
 }
 
 interface Product {
@@ -24,6 +24,188 @@ interface Product {
   image: string;
   tableType?: 'general' | 'jk_cement';
   variants: Variant[];
+}
+
+function ProductCard({ 
+  product, 
+  getWhatsAppInquiryUrl, 
+  formatPriceVal 
+}: { 
+  product: Product; 
+  getWhatsAppInquiryUrl: (product: Product) => string; 
+  formatPriceVal: (price: string | number) => string; 
+}) {
+  const [activeImage, setActiveImage] = useState(product.image);
+
+  useEffect(() => {
+    setActiveImage(product.image);
+  }, [product.image]);
+
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+      {/* Product Image */}
+      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
+        <img
+          src={activeImage || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
+          alt={product.product_name}
+          className="w-full h-full object-cover transition-all duration-300"
+          loading="lazy"
+        />
+        <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+          In Stock
+        </span>
+      </div>
+
+      {/* Card Content */}
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-tight mb-2">
+          {product.product_name}
+        </h3>
+        {product.description && (
+          <p className="text-xs text-slate-500 mb-4 leading-relaxed line-clamp-3">
+            {product.description}
+          </p>
+        )}
+
+        {/* Variants Sub-Table */}
+        <div className="border border-slate-200 rounded-xl overflow-hidden text-xs bg-slate-50 mb-5">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 text-[10px] uppercase tracking-wider">
+                <th className="p-2.5 pl-3">Size / Option</th>
+                <th className="p-2.5 text-right pr-3">Price (Rs)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 text-slate-700">
+              {product.variants.map((v) => (
+                <tr 
+                  key={v.id} 
+                  className="hover:bg-slate-100/50 cursor-pointer transition-colors"
+                  onMouseEnter={() => v.image && setActiveImage(v.image)}
+                  onMouseLeave={() => setActiveImage(product.image)}
+                >
+                  <td className="p-2.5 pl-3 font-semibold">{v.size} {v.unit}</td>
+                  <td className="p-2.5 text-right pr-3 font-extrabold text-blue-600">
+                    {formatPriceVal(v.price)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* WhatsApp Inquire CTA */}
+        <a
+          href={getWhatsAppInquiryUrl(product)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
+        >
+          <MessageSquare className="w-4 h-4 fill-current" />
+          Send WhatsApp Inquiry
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function JkCementProductCard({ 
+  product, 
+  getWhatsAppInquiryUrl 
+}: { 
+  product: Product; 
+  getWhatsAppInquiryUrl: (product: Product) => string; 
+}) {
+  const [activeImage, setActiveImage] = useState(product.image);
+
+  useEffect(() => {
+    setActiveImage(product.image);
+  }, [product.image]);
+
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+      {/* Product Image */}
+      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
+        <img
+          src={activeImage || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
+          alt={product.product_name}
+          className="w-full h-full object-cover transition-all duration-300"
+          loading="lazy"
+        />
+        <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+          In Stock
+        </span>
+      </div>
+
+      {/* Card Content */}
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-tight mb-2">
+          {product.product_name}
+        </h3>
+        {product.description && (
+          <p className="text-xs text-slate-500 mb-4 leading-relaxed line-clamp-3">
+            {product.description}
+          </p>
+        )}
+
+        {/* JK Cement Specialized Sub-Table */}
+        <div className="border border-slate-200 rounded-xl overflow-hidden text-[10px] bg-slate-50 mb-5">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 uppercase tracking-wider">
+                <th className="p-2 pl-3">Qty</th>
+                <th className="p-2 text-center">Std</th>
+                <th className="p-2 text-right">Dealer</th>
+                <th className="p-2 text-right pr-3">Bag Price</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 text-slate-700 text-xs">
+              {product.variants.map((v) => (
+                <tr 
+                  key={v.id} 
+                  className="hover:bg-slate-100/50 cursor-pointer transition-colors"
+                  onMouseEnter={() => v.image && setActiveImage(v.image)}
+                  onMouseLeave={() => setActiveImage(product.image)}
+                >
+                  <td className="p-2 pl-3 font-bold text-slate-800">{v.size}</td>
+                  <td className="p-2 text-center text-slate-600">
+                    {v.stdPacking !== undefined ? String(v.stdPacking).padStart(2, '0') : '-'}
+                  </td>
+                  <td className="p-2 text-right text-slate-600">
+                    {(() => {
+                      const val = String(v.price);
+                      if (isNaN(parseFloat(val))) return val;
+                      return `₹${parseFloat(val).toLocaleString('en-IN')}`;
+                    })()}
+                  </td>
+                  <td className="p-2 text-right pr-3 font-extrabold text-emerald-600">
+                    {v.dealerPricePerBag !== undefined ? (
+                      (() => {
+                        const val = String(v.dealerPricePerBag);
+                        if (isNaN(parseFloat(val))) return val;
+                        return `₹${parseFloat(val).toLocaleString('en-IN')}`;
+                      })()
+                    ) : '-'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* WhatsApp Inquire CTA */}
+        <a
+          href={getWhatsAppInquiryUrl(product)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
+        >
+          <MessageSquare className="w-4 h-4 fill-current" />
+          Send WhatsApp Inquiry
+        </a>
+      </div>
+    </div>
+  );
 }
 
 function ProductsCatalogInner() {
@@ -187,68 +369,12 @@ function ProductsCatalogInner() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                   {generalProducts.map((product) => (
-                    <div 
-                      key={product.id} 
-                      className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow"
-                    >
-                      {/* Product Image */}
-                      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
-                        <img
-                          src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
-                          alt={product.product_name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                        <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
-                          In Stock
-                        </span>
-                      </div>
-
-                      {/* Card Content */}
-                      <div className="p-5 flex flex-col flex-grow">
-                        <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-tight mb-2">
-                          {product.product_name}
-                        </h3>
-                        {product.description && (
-                          <p className="text-xs text-slate-500 mb-4 leading-relaxed line-clamp-3">
-                            {product.description}
-                          </p>
-                        )}
-
-                        {/* Variants Sub-Table */}
-                        <div className="border border-slate-200 rounded-xl overflow-hidden text-xs bg-slate-50 mb-5">
-                          <table className="w-full text-left border-collapse">
-                            <thead>
-                              <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 text-[10px] uppercase tracking-wider">
-                                <th className="p-2.5 pl-3">Size / Option</th>
-                                <th className="p-2.5 text-right pr-3">Price (Rs)</th>
-                              </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-200 text-slate-700">
-                              {product.variants.map((v) => (
-                                <tr key={v.id} className="hover:bg-slate-100/30">
-                                  <td className="p-2.5 pl-3 font-semibold">{v.size} {v.unit}</td>
-                                  <td className="p-2.5 text-right pr-3 font-extrabold text-blue-600">
-                                    {formatPriceVal(v.price)}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-
-                        {/* WhatsApp Inquire CTA */}
-                        <a
-                          href={getWhatsAppInquiryUrl(product)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
-                        >
-                          <MessageSquare className="w-4 h-4 fill-current" />
-                          Send WhatsApp Inquiry
-                        </a>
-                      </div>
-                    </div>
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      getWhatsAppInquiryUrl={getWhatsAppInquiryUrl}
+                      formatPriceVal={formatPriceVal}
+                    />
                   ))}
                 </div>
               </div>
@@ -264,86 +390,11 @@ function ProductsCatalogInner() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                   {jkCementProducts.map((product) => (
-                    <div 
-                      key={product.id} 
-                      className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow"
-                    >
-                      {/* Product Image */}
-                      <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
-                        <img
-                          src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
-                          alt={product.product_name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                        <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
-                          In Stock
-                        </span>
-                      </div>
-
-                      {/* Card Content */}
-                      <div className="p-5 flex flex-col flex-grow">
-                        <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-tight mb-2">
-                          {product.product_name}
-                        </h3>
-                        {product.description && (
-                          <p className="text-xs text-slate-500 mb-4 leading-relaxed line-clamp-3">
-                            {product.description}
-                          </p>
-                        )}
-
-                        {/* JK Cement Specialized Sub-Table */}
-                        <div className="border border-slate-200 rounded-xl overflow-hidden text-[10px] bg-slate-50 mb-5">
-                          <table className="w-full text-left border-collapse">
-                            <thead>
-                              <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 uppercase tracking-wider">
-                                <th className="p-2 pl-3">Qty</th>
-                                <th className="p-2 text-center">Std</th>
-                                <th className="p-2 text-right">Dealer</th>
-                                <th className="p-2 text-right pr-3">Bag Price</th>
-                              </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-200 text-slate-700 text-xs">
-                              {product.variants.map((v) => (
-                                <tr key={v.id} className="hover:bg-slate-100/30">
-                                  <td className="p-2 pl-3 font-bold text-slate-800">{v.size}</td>
-                                  <td className="p-2 text-center text-slate-600">
-                                    {v.stdPacking !== undefined ? String(v.stdPacking).padStart(2, '0') : '-'}
-                                  </td>
-                                  <td className="p-2 text-right text-slate-600">
-                                    {(() => {
-                                      const val = String(v.price);
-                                      if (isNaN(parseFloat(val))) return val;
-                                      return `₹${parseFloat(val).toLocaleString('en-IN')}`;
-                                    })()}
-                                  </td>
-                                  <td className="p-2 text-right pr-3 font-extrabold text-emerald-600">
-                                    {v.dealerPricePerBag !== undefined ? (
-                                      (() => {
-                                        const val = String(v.dealerPricePerBag);
-                                        if (isNaN(parseFloat(val))) return val;
-                                        return `₹${parseFloat(val).toLocaleString('en-IN')}`;
-                                      })()
-                                    ) : '-'}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-
-                        {/* WhatsApp Inquire CTA */}
-                        <a
-                          href={getWhatsAppInquiryUrl(product)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
-                        >
-                          <MessageSquare className="w-4 h-4 fill-current" />
-                          Send WhatsApp Inquiry
-                        </a>
-                      </div>
-                    </div>
+                    <JkCementProductCard
+                      key={product.id}
+                      product={product}
+                      getWhatsAppInquiryUrl={getWhatsAppInquiryUrl}
+                    />
                   ))}
                 </div>
               </div>
@@ -351,7 +402,6 @@ function ProductsCatalogInner() {
 
           </div>
         )}
-
       </div>
     </div>
   );
@@ -361,7 +411,7 @@ export default function ProductsPage() {
   return (
     <Suspense fallback={
       <div className="py-20 text-center text-slate-500">
-        Loading Catalogue...
+        Loading Products Catalog...
       </div>
     }>
       <ProductsCatalogInner />
