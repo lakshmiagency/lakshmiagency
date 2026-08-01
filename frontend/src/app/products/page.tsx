@@ -12,6 +12,8 @@ interface Variant {
   size: string;
   unit: string;
   price: string | number;
+  stdPacking?: number;
+  dealerPricePerBag?: string | number;
   status: string;
 }
 
@@ -20,6 +22,7 @@ interface Product {
   product_name: string;
   description: string;
   image: string;
+  tableType?: 'general' | 'jk_cement';
   variants: Variant[];
 }
 
@@ -27,10 +30,10 @@ function ProductsCatalogInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // Filter States initialized to empty for hydration safety
+  // Filter States
   const [search, setSearch] = useState('');
 
-  // Sync state with URL search params on mount or when searchParams change
+  // Sync state with URL search params
   useEffect(() => {
     setSearch(searchParams.get('search') || '');
   }, [searchParams]);
@@ -79,10 +82,14 @@ function ProductsCatalogInner() {
     const phoneNumber = '916361033361';
     let text = `Hello Lakshmi Agency, I am interested in inquiring about "${product.product_name}".`;
     if (variant) {
-      text += ` Size/Type: ${variant.size} ${variant.unit}, Listed Price: ₹${parseFloat(variant.price as string).toLocaleString('en-IN')}.`;
+      text += ` Size/Type: ${variant.size} ${variant.unit}, Price: ₹${parseFloat(variant.price as string).toLocaleString('en-IN')}.`;
     }
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   };
+
+  // Split products by table type
+  const generalProducts = products.filter(p => p.tableType !== 'jk_cement');
+  const jkCementProducts = products.filter(p => p.tableType === 'jk_cement');
 
   return (
     <div className="py-12 sm:py-20">
@@ -132,7 +139,6 @@ function ProductsCatalogInner() {
           </div>
         </div>
 
-        {/* Product Rate Card Table */}
         {loading ? (
           <div className="space-y-4">
             {[...Array(6)].map((_, i) => (
@@ -150,98 +156,218 @@ function ProductsCatalogInner() {
             </button>
           </div>
         ) : (
-          <div className="border border-card-border rounded-2xl overflow-hidden shadow-sm bg-card-bg transition-theme overflow-x-auto">
-            <table className="w-full border-collapse text-left min-w-[700px]">
-              <thead>
-                <tr className="bg-slate-50 dark:bg-slate-950/20 text-muted-text font-bold text-xs uppercase tracking-wider border-b border-card-border">
-                  <th className="p-4 pl-6 border-r border-card-border">Item Category / Name</th>
-                  <th className="p-4 border-r border-card-border">Size / Type / Unit</th>
-                  <th className="p-4 border-r border-card-border text-right">Selling Price (Rs)</th>
-                  <th className="p-4 border-r border-card-border text-center">Photo</th>
-                  <th className="p-4 text-center">Inquire</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-card-border text-sm">
-                {products.map((product) => (
-                  <React.Fragment key={product.id}>
-                    {product.variants.map((variant, index) => (
-                      <tr 
-                        key={variant.id} 
-                        className="hover:bg-slate-50/30 dark:hover:bg-slate-900/5 transition-colors border-b border-card-border last:border-b-0"
-                      >
-                        {/* Spanned Product Details Column */}
-                        {index === 0 && (
-                          <td 
-                            rowSpan={product.variants.length} 
-                            className="p-4 pl-6 border-r border-card-border align-middle font-bold text-foreground w-[28%]"
-                          >
-                            <div className="flex flex-col gap-1">
-                              <span className="text-base font-extrabold uppercase leading-snug">{product.product_name}</span>
-                              {product.description && (
-                                <span className="text-xs text-muted-text font-normal leading-relaxed">{product.description}</span>
-                              )}
-                            </div>
-                          </td>
-                        )}
-
-                        {/* Variant Size Column */}
-                        <td className="p-4 border-r border-card-border font-medium text-foreground align-middle w-[25%]">
-                          {variant.size} {variant.unit}
-                        </td>
-
-                        {/* Variant Price Column */}
-                        <td className="p-4 border-r border-card-border font-black text-right text-base text-primary dark:text-white align-middle w-[17%]">
-                          {(() => {
-                            const val = String(variant.price);
-                            if (isNaN(parseFloat(val))) return val;
-                            if (val.includes('/') || val.toLowerCase().includes('mtr')) {
-                              return val.startsWith('₹') ? val : `₹ ${val}`;
-                            }
-                            return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
-                          })()}
-                        </td>
-
-                        {/* Spanned Product Image Column */}
-                        {index === 0 && (
-                          <td 
-                            rowSpan={product.variants.length} 
-                            className="p-4 border-r border-card-border text-center align-middle w-[20%]"
-                          >
-                            <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl overflow-hidden border border-card-border bg-slate-50 dark:bg-slate-900 shadow-sm">
-                              <Image
-                                src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=300&auto=format&fit=crop&q=60'}
-                                alt={product.product_name}
-                                fill
-                                sizes="100px"
-                                className="object-cover"
-                              />
-                            </div>
-                          </td>
-                        )}
-
-                        {/* Spanned Inquire Button Column */}
-                        {index === 0 && (
-                          <td 
-                            rowSpan={product.variants.length} 
-                            className="p-4 text-center align-middle w-[10%]"
-                          >
-                            <a
-                              href={getWhatsAppInquiryUrl(product)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center p-3 bg-accent text-white hover:bg-accent-hover rounded-xl shadow-sm hover:shadow-lg transition-all"
-                              title="Send WhatsApp Inquiry"
-                            >
-                              <MessageSquare className="w-5 h-5 fill-current" />
-                            </a>
-                          </td>
-                        )}
+          <div className="space-y-16">
+            
+            {/* Table 1: General Hardware & Materials */}
+            {generalProducts.length > 0 && (
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                  Building Materials & Hardware Fittings
+                </h2>
+                <div className="border border-card-border rounded-2xl overflow-hidden shadow-sm bg-card-bg transition-theme overflow-x-auto">
+                  <table className="w-full border-collapse text-left min-w-[700px]">
+                    <thead>
+                      <tr className="bg-slate-50 dark:bg-slate-950/20 text-muted-text font-bold text-xs uppercase tracking-wider border-b border-card-border">
+                        <th className="p-4 pl-6 border-r border-card-border">Item Category / Name</th>
+                        <th className="p-4 border-r border-card-border">Size / Type / Unit</th>
+                        <th className="p-4 border-r border-card-border text-right">Selling Price (Rs)</th>
+                        <th className="p-4 border-r border-card-border text-center">Photo</th>
+                        <th className="p-4 text-center">Inquire</th>
                       </tr>
-                    ))}
-                  </React.Fragment>
-                ))}
-              </tbody>
-            </table>
+                    </thead>
+                    <tbody className="divide-y divide-card-border text-sm">
+                      {generalProducts.map((product) => (
+                        <React.Fragment key={product.id}>
+                          {product.variants.map((variant, index) => (
+                            <tr 
+                              key={variant.id} 
+                              className="hover:bg-slate-50/30 dark:hover:bg-slate-900/5 transition-colors border-b border-card-border last:border-b-0"
+                            >
+                              {index === 0 && (
+                                <td 
+                                  rowSpan={product.variants.length} 
+                                  className="p-4 pl-6 border-r border-card-border align-middle font-bold text-foreground w-[28%]"
+                                >
+                                  <div className="flex flex-col gap-1">
+                                    <span className="text-base font-extrabold uppercase leading-snug">{product.product_name}</span>
+                                    {product.description && (
+                                      <span className="text-xs text-muted-text font-normal leading-relaxed">{product.description}</span>
+                                    )}
+                                  </div>
+                                </td>
+                              )}
+                              <td className="p-4 border-r border-card-border font-medium text-foreground align-middle w-[25%]">
+                                {variant.size} {variant.unit}
+                              </td>
+                              <td className="p-4 border-r border-card-border font-black text-right text-base text-primary dark:text-white align-middle w-[17%]">
+                                {(() => {
+                                  const val = String(variant.price);
+                                  if (isNaN(parseFloat(val))) return val;
+                                  if (val.includes('/') || val.toLowerCase().includes('mtr')) {
+                                    return val.startsWith('₹') ? val : `₹ ${val}`;
+                                  }
+                                  return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
+                                })()}
+                              </td>
+                              {index === 0 && (
+                                <td 
+                                  rowSpan={product.variants.length} 
+                                  className="p-4 border-r border-card-border text-center align-middle w-[20%]"
+                                >
+                                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl overflow-hidden border border-card-border bg-slate-50 dark:bg-slate-900 shadow-sm">
+                                    <Image
+                                      src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=300&auto=format&fit=crop&q=60'}
+                                      alt={product.product_name}
+                                      fill
+                                      sizes="100px"
+                                      className="object-cover"
+                                    />
+                                  </div>
+                                </td>
+                              )}
+                              {index === 0 && (
+                                <td 
+                                  rowSpan={product.variants.length} 
+                                  className="p-4 text-center align-middle w-[10%]"
+                                >
+                                  <a
+                                    href={getWhatsAppInquiryUrl(product)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center p-3 bg-accent text-white hover:bg-accent-hover rounded-xl shadow-sm hover:shadow-lg transition-all"
+                                  >
+                                    <MessageSquare className="w-5 h-5 fill-current" />
+                                  </a>
+                                </td>
+                              )}
+                            </tr>
+                          ))}
+                        </React.Fragment>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Table 2: JK Cement & Putty Products */}
+            {jkCementProducts.length > 0 && (
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                  JK Cement & Wall Putty Products
+                </h2>
+                <div className="border border-card-border rounded-2xl overflow-hidden shadow-sm bg-card-bg transition-theme overflow-x-auto">
+                  <table className="w-full border-collapse text-left min-w-[850px]">
+                    <thead>
+                      <tr className="bg-slate-50 dark:bg-slate-950/20 text-muted-text font-bold text-xs uppercase tracking-wider border-b border-card-border">
+                        <th className="p-4 pl-6 border-r border-card-border">Name</th>
+                        <th className="p-4 border-r border-card-border text-center">Qty</th>
+                        <th className="p-4 border-r border-card-border text-center">Std. Packing (Per Bag)</th>
+                        <th className="p-4 border-r border-card-border text-right">Dealer Price</th>
+                        <th className="p-4 border-r border-card-border text-right">Dealer Price (Per Bag)</th>
+                        <th className="p-4 border-r border-card-border text-center">Photo</th>
+                        <th className="p-4 text-center">Inquire</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-card-border text-sm">
+                      {jkCementProducts.map((product) => (
+                        <React.Fragment key={product.id}>
+                          {product.variants.map((variant, index) => (
+                            <tr 
+                              key={variant.id} 
+                              className="hover:bg-slate-50/30 dark:hover:bg-slate-900/5 transition-colors border-b border-card-border last:border-b-0"
+                            >
+                              {/* Spanned Product Name */}
+                              {index === 0 && (
+                                <td 
+                                  rowSpan={product.variants.length} 
+                                  className="p-4 pl-6 border-r border-card-border align-middle font-bold text-foreground w-[22%]"
+                                >
+                                  <div className="flex flex-col gap-1">
+                                    <span className="text-base font-extrabold uppercase leading-snug">{product.product_name}</span>
+                                    {product.description && (
+                                      <span className="text-xs text-muted-text font-normal leading-relaxed">{product.description}</span>
+                                    )}
+                                  </div>
+                                </td>
+                              )}
+
+                              {/* Qty Column */}
+                              <td className="p-4 border-r border-card-border text-center font-semibold text-foreground align-middle w-[10%]">
+                                {variant.size}
+                              </td>
+
+                              {/* Std Packing Column */}
+                              <td className="p-4 border-r border-card-border text-center font-medium text-foreground align-middle w-[15%]">
+                                {variant.stdPacking !== undefined ? String(variant.stdPacking).padStart(2, '0') : '-'}
+                              </td>
+
+                              {/* Dealer Price (Per unit) */}
+                              <td className="p-4 border-r border-card-border font-bold text-right text-base text-foreground align-middle w-[15%]">
+                                {(() => {
+                                  const val = String(variant.price);
+                                  if (isNaN(parseFloat(val))) return val;
+                                  return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
+                                })()}
+                              </td>
+
+                              {/* Dealer Price Per Bag */}
+                              <td className="p-4 border-r border-card-border font-black text-right text-base text-primary dark:text-white align-middle w-[18%]">
+                                {variant.dealerPricePerBag !== undefined ? (
+                                  (() => {
+                                    const val = String(variant.dealerPricePerBag);
+                                    if (isNaN(parseFloat(val))) return val;
+                                    return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
+                                  })()
+                                ) : '-'}
+                              </td>
+
+                              {/* Spanned Product Photo */}
+                              {index === 0 && (
+                                <td 
+                                  rowSpan={product.variants.length} 
+                                  className="p-4 border-r border-card-border text-center align-middle w-[12%]"
+                                >
+                                  <div className="relative w-16 h-20 sm:w-20 sm:h-24 mx-auto rounded-xl overflow-hidden border border-card-border bg-slate-50 dark:bg-slate-900 shadow-sm">
+                                    <Image
+                                      src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=300&auto=format&fit=crop&q=60'}
+                                      alt={product.product_name}
+                                      fill
+                                      sizes="100px"
+                                      className="object-cover"
+                                    />
+                                  </div>
+                                </td>
+                              )}
+
+                              {/* Spanned Inquire */}
+                              {index === 0 && (
+                                <td 
+                                  rowSpan={product.variants.length} 
+                                  className="p-4 text-center align-middle w-[8%]"
+                                >
+                                  <a
+                                    href={getWhatsAppInquiryUrl(product)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center p-3 bg-accent text-white hover:bg-accent-hover rounded-xl shadow-sm hover:shadow-lg transition-all"
+                                  >
+                                    <MessageSquare className="w-5 h-5 fill-current" />
+                                  </a>
+                                </td>
+                              )}
+                            </tr>
+                          ))}
+                        </React.Fragment>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
           </div>
         )}
 

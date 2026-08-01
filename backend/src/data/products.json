@@ -1168,5 +1168,158 @@
         "status": "Available"
       }
     ]
+  },
+  {
+    "id": 44,
+    "product_name": "JK WHITE MAXX (WHITE CEMENT)",
+    "description": "Premium white Portland cement with advanced white-shield technology, providing high whiteness and bonding strength.",
+    "image": "",
+    "tableType": "jk_cement",
+    "variants": [
+      {
+        "id": 119,
+        "size": "1 KG",
+        "unit": "",
+        "price": "30.20",
+        "stdPacking": 25,
+        "dealerPricePerBag": "755",
+        "status": "Available"
+      },
+      {
+        "id": 120,
+        "size": "5 KG",
+        "unit": "",
+        "price": "145.00",
+        "stdPacking": 5,
+        "dealerPricePerBag": "725",
+        "status": "Available"
+      },
+      {
+        "id": 121,
+        "size": "50 KG",
+        "unit": "",
+        "price": "1200.00",
+        "stdPacking": 1,
+        "dealerPricePerBag": "1200",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "product_name": "JK WALLMAXX (WALL PUTTY)",
+    "description": "White cement-based premium wall putty that provides a smooth, water-resistant undercoat for painting.",
+    "image": "",
+    "tableType": "jk_cement",
+    "variants": [
+      {
+        "id": 122,
+        "size": "1 KG",
+        "unit": "",
+        "price": "40.50",
+        "stdPacking": 20,
+        "dealerPricePerBag": "810",
+        "status": "Available"
+      },
+      {
+        "id": 123,
+        "size": "5 KG",
+        "unit": "",
+        "price": "193.75",
+        "stdPacking": 4,
+        "dealerPricePerBag": "775",
+        "status": "Available"
+      },
+      {
+        "id": 124,
+        "size": "30 KG",
+        "unit": "",
+        "price": "753.00",
+        "stdPacking": 1,
+        "dealerPricePerBag": "753",
+        "status": "Available"
+      },
+      {
+        "id": 125,
+        "size": "40 KG",
+        "unit": "",
+        "price": "1150.00",
+        "stdPacking": 1,
+        "dealerPricePerBag": "1150",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "product_name": "JK SHEILD MAXX",
+    "description": "Premium waterproof white putty with advanced active protection against dampness and water seepage.",
+    "image": "",
+    "tableType": "jk_cement",
+    "variants": [
+      {
+        "id": 126,
+        "size": "40 KG",
+        "unit": "",
+        "price": "1300.00",
+        "stdPacking": 1,
+        "dealerPricePerBag": "1300",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "product_name": "JK LEVEL MAXX (COARSE PUTTY)",
+    "description": "Coarse undercoat putty for levelling surface irregularities, plaster cracks, and hollow spots on concrete walls.",
+    "image": "",
+    "tableType": "jk_cement",
+    "variants": [
+      {
+        "id": 127,
+        "size": "40 KG",
+        "unit": "",
+        "price": "570.00",
+        "stdPacking": 1,
+        "dealerPricePerBag": "570",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "product_name": "JK GYPSO MAXX (POP)",
+    "description": "Superfine plaster of Paris (POP) for ceiling designs, decorative moldings, and wall finishing.",
+    "image": "",
+    "tableType": "jk_cement",
+    "variants": [
+      {
+        "id": 128,
+        "size": "1 KG",
+        "unit": "",
+        "price": "18.75",
+        "stdPacking": 20,
+        "dealerPricePerBag": "375",
+        "status": "Available"
+      },
+      {
+        "id": 129,
+        "size": "5 KG",
+        "unit": "",
+        "price": "93.75",
+        "stdPacking": 4,
+        "dealerPricePerBag": "375",
+        "status": "Available"
+      },
+      {
+        "id": 130,
+        "size": "25 KG",
+        "unit": "",
+        "price": "340.00",
+        "stdPacking": 1,
+        "dealerPricePerBag": "340",
+        "status": "Available"
+      }
+    ]
   }
 ]
