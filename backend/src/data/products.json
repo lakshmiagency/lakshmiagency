@@ -131,7 +131,7 @@
     "id": 3,
     "product_name": "PVC WASTE PIPE",
     "description": "Durable flexible PVC waste drainage pipes with connectors, perfect for washbasin and urinal outlets.",
-    "image": "",
+    "image": "/product-image/3.jpg",
     "variants": [
       {
         "id": 17,
@@ -153,14 +153,14 @@
     "id": 4,
     "product_name": "GARDEN PIPES",
     "description": "High-grade flexible garden hose pipes available in Super Black, Black Zebra, Green Zebra, and Super Foam styles.",
-    "image": "/product-image/Picture3.jpg",
+    "image": "",
     "variants": [
       {
         "id": 19,
         "size": "3/4\" SUPER BLACK",
         "unit": "",
         "price": "101",
-        "image": "/product-image/Picture3.jpg",
+        "image": "/product-image/4.jpg",
         "status": "Available"
       },
       {
@@ -168,7 +168,7 @@
         "size": "1\" SUPER BLACK",
         "unit": "",
         "price": "101",
-        "image": "/product-image/Picture3.jpg",
+        "image": "/product-image/4.jpg",
         "status": "Available"
       },
       {
@@ -176,7 +176,7 @@
         "size": "3/4\" BLACK ZEBRA",
         "unit": "",
         "price": "81",
-        "image": "/product-image/Picture4.jpg",
+        "image": "/product-image/4a.jpg",
         "status": "Available"
       },
       {
@@ -184,7 +184,7 @@
         "size": "1\" BLACK ZEBRA",
         "unit": "",
         "price": "81",
-        "image": "/product-image/Picture4.jpg",
+        "image": "/product-image/4a.jpg",
         "status": "Available"
       },
       {
@@ -192,7 +192,7 @@
         "size": "3/4\" GREEN ZEBRA",
         "unit": "",
         "price": "130",
-        "image": "/product-image/Picture5.jpg",
+        "image": "/product-image/4b.jpg",
         "status": "Available"
       },
       {
@@ -200,7 +200,7 @@
         "size": "1\" GREEN ZEBRA",
         "unit": "",
         "price": "130",
-        "image": "/product-image/Picture5.jpg",
+        "image": "/product-image/4b.jpg",
         "status": "Available"
       },
       {
@@ -208,7 +208,7 @@
         "size": "1/2\" SUPER FOAM PIPE",
         "unit": "",
         "price": "166",
-        "image": "/product-image/Picture6.jpg",
+        "image": "/product-image/4c.jpg",
         "status": "Available"
       },
       {
@@ -216,7 +216,7 @@
         "size": "3/4\" SUPER FOAM PIPE",
         "unit": "",
         "price": "166",
-        "image": "/product-image/Picture6.jpg",
+        "image": "/product-image/4c.jpg",
         "status": "Available"
       },
       {
@@ -224,7 +224,7 @@
         "size": "1\" SUPER FOAM PIPE",
         "unit": "",
         "price": "166",
-        "image": "/product-image/Picture6.jpg",
+        "image": "/product-image/4c.jpg",
         "status": "Available"
       }
     ]
