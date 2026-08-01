@@ -193,12 +193,11 @@ function ProductsCatalogInner() {
                     >
                       {/* Product Image */}
                       <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
-                        <Image
+                        <img
                           src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
                           alt={product.product_name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
+                          className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                         <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
                           In Stock
@@ -271,12 +270,11 @@ function ProductsCatalogInner() {
                     >
                       {/* Product Image */}
                       <div className="relative h-48 w-full bg-slate-100 border-b border-slate-200">
-                        <Image
+                        <img
                           src={product.image || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
                           alt={product.product_name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
+                          className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                         <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
                           In Stock
