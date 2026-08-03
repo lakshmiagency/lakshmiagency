@@ -56,3 +56,80 @@ body {
 .transition-theme {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Print Media Styles */
+@media print {
+  nav, 
+  footer, 
+  button, 
+  form,
+  .no-print,
+  .print-hide,
+  a[href^="https://wa.me"],
+  a[href^="tel"],
+  [class*="WhatsApp"],
+  [class*="whatsapp"],
+  .alert-banner {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 10pt !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+  }
+
+  .max-w-7xl,
+  main,
+  div {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Keep grid layouts but adjust spacing for paper sizes */
+  .grid {
+    gap: 1rem !important;
+  }
+
+  /* Prevent page-break issues inside tables or product cards */
+  tr, 
+  thead, 
+  tbody, 
+  table,
+  .card,
+  [class*="ProductCard"],
+  [class*="ProductInfo"],
+  [class*="McbTable"],
+  [class*="WireTable"] {
+    page-break-inside: avoid !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid !important;
+  }
+
+  .sticky,
+  .lg\:sticky {
+    position: static !important;
+  }
+
+  /* Force print-color-adjust for headers and background highlights */
+  thead tr,
+  .bg-slate-50,
+  .bg-slate-100 {
+    background-color: #f1f5f9 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

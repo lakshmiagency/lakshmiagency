@@ -509,14 +509,43 @@ Quanty : `;
           <span className="text-slate-900 font-bold">Products Catalogue</span>
         </nav>
 
-        {/* Title */}
-        <div className="mb-12">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Materials Rate Card & Products List
-          </h1>
-          <p className="text-sm text-slate-600 mt-2">
-            Search live wholesale & retail prices for building materials, paints, PVC components, or waterproofing.
+        {/* Print-only Brand Header */}
+        <div className="hidden print:flex flex-col items-center text-center border-b-2 border-slate-300 pb-5 mb-8 w-full">
+          <div className="flex items-center gap-4 mb-2">
+            <img src="/logo.png" alt="Lakshmi Agency Logo" className="w-16 h-16 object-contain rounded-full border border-slate-200" />
+            <div className="text-left">
+              <h1 className="text-3xl font-black text-slate-900 tracking-tight leading-none">LAKSHMI AGENCY</h1>
+              <p className="text-xs text-slate-500 font-extrabold uppercase tracking-wider mt-1">Building Materials & Hardware Fittings</p>
+            </div>
+          </div>
+          <p className="text-xs text-slate-600 max-w-2xl mt-1 leading-relaxed">
+            Wholesale & Retail Supplier of Building Materials, Putty, Paints, PVC Pipes, Waterproofing Products, and Electricals.
           </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs font-bold text-slate-700 mt-3 pt-2 border-t border-slate-100 w-full max-w-lg">
+            <span>📍 College Main Road, Sulibele, Hoskote, Bangalore Rural</span>
+            <span>📞 Phone: +91 6361033361, +91 9481252271</span>
+          </div>
+        </div>
+
+        {/* Title & Download Button */}
+        <div className="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 print:hidden">
+          <div>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Materials Rate Card & Products List
+            </h1>
+            <p className="text-sm text-slate-600 mt-2">
+              Search live wholesale & retail prices for building materials, paints, PVC components, or waterproofing.
+            </p>
+          </div>
+          <button
+            onClick={() => window.print()}
+            className="flex-shrink-0 flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-sm transition-all no-print"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download PDF
+          </button>
         </div>
 
         {/* Filter Controls Panel */}
