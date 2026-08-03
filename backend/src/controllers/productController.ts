@@ -9,10 +9,14 @@ export const getProducts = async (req: Request, res: Response) => {
 
     if (search) {
       const term = String(search).toLowerCase();
-      filtered = filtered.filter((p) => 
-        p.product_name.toLowerCase().includes(term) ||
-        p.description.toLowerCase().includes(term)
-      );
+      const isVBondQuery = ['v bond', 'v-bond', 'vbond', 'vb'].includes(term);
+      filtered = filtered.filter((p) => {
+        if (isVBondQuery && Number(p.id) >= 35 && Number(p.id) <= 43) {
+          return true;
+        }
+        return p.product_name.toLowerCase().includes(term) ||
+               p.description.toLowerCase().includes(term);
+      });
     }
 
     res.json(filtered);

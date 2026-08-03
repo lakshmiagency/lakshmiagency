@@ -101,7 +101,9 @@ function GalleryInner() {
     const matchesCategory = activeCategory === 'All' || category === activeCategory;
     
     const term = search.toLowerCase();
+    const isVBondQuery = ['v bond', 'v-bond', 'vbond', 'vb'].includes(term);
     const matchesSearch = 
+      (isVBondQuery && Number(product.id) >= 35 && Number(product.id) <= 43) ||
       product.product_name.toLowerCase().includes(term) ||
       product.description.toLowerCase().includes(term) ||
       product.variants.some((v) => v.size.toLowerCase().includes(term) || (v.itemCode && v.itemCode.toLowerCase().includes(term)));

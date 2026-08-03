@@ -148,7 +148,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1: Polycab Wires & MCBs */}
             <div className="group bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-xl hover:border-blue-350 transition-all duration-300 transform hover:-translate-y-1">
               <div className="relative h-48 bg-gradient-to-br from-red-50 to-blue-50 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
@@ -225,7 +225,45 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Card 3: Tufit Acrylic Textures */}
+            {/* Card 3: V Bond Adhesives */}
+            <div className="group bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-xl hover:border-indigo-350 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative h-48 bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
+                {/* Brand Accent Shading */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src="/product-image/37.png"
+                  alt="V Bond Adhesives & Chemicals"
+                  className="max-h-36 object-contain z-10 drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-indigo-600 text-white font-extrabold text-[9px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+                  Adhesives & Chemicals
+                </span>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-lg font-black text-slate-900 uppercase tracking-tight mb-2 group-hover:text-indigo-600 transition-colors">
+                  V Bond Adhesives
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed mb-6">
+                  High-performance polymer tile adhesives, epoxy joint grouts, waterproofing bonds, and tile cleaners.
+                </p>
+                <div className="mt-auto grid grid-cols-2 gap-3">
+                  <Link
+                    href="/products?search=v+bond"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 hover:border-indigo-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-indigo-600 font-bold text-xs transition-colors"
+                  >
+                    View Rates
+                  </Link>
+                  <Link
+                    href="/gallery?search=v+bond"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm hover:shadow-indigo-500/10 transition-colors"
+                  >
+                    View Gallery
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Tufit Acrylic Textures */}
             <div className="group bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-xl hover:border-emerald-350 transition-all duration-300 transform hover:-translate-y-1">
               <div className="relative h-48 bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
                 {/* Brand Accent Shading */}
