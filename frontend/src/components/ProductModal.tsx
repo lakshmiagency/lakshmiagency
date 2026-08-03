@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { X, AlertTriangle, Phone, MessageSquare } from 'lucide-react';
+import { useEnquiry } from '../context/EnquiryContext';
 
 interface Variant {
   id: number;
@@ -26,6 +27,8 @@ interface ProductModalProps {
 }
 
 export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
+  const { addToEnquiry } = useEnquiry();
+
   if (!product) return null;
 
   const { product_name, description, image, variants } = product;
@@ -98,7 +101,8 @@ Quanty : `;
                     <tr className="border-b border-card-border bg-slate-100/50 dark:bg-slate-950/20 text-muted-text font-semibold text-xs">
                       <th className="p-2.5 pl-3">Size/Option</th>
                       <th className="p-2.5">Price</th>
-                      <th className="p-2.5 pr-3 text-right">Status</th>
+                      <th className="p-2.5 text-center">Status</th>
+                      <th className="p-2.5 pr-3 text-center no-print">List</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -115,7 +119,7 @@ Quanty : `;
                             return `₹ ${parseFloat(val).toLocaleString('en-IN')}`;
                           })()}
                         </td>
-                        <td className="p-2.5 pr-3 text-right">
+                        <td className="p-2.5 text-center">
                           <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider ${
                             v.status === 'Available' ? 'text-emerald-500' : 'text-red-500'
                           }`}>
@@ -124,6 +128,14 @@ Quanty : `;
                             }`} />
                             {v.status}
                           </span>
+                        </td>
+                        <td className="p-2.5 pr-3 text-center no-print">
+                          <button
+                            onClick={() => addToEnquiry(product, v)}
+                            className="px-2 py-0.5 rounded-lg bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-700 font-extrabold text-[10px] uppercase transition-all cursor-pointer"
+                          >
+                            + Add
+                          </button>
                         </td>
                       </tr>
                     ))}

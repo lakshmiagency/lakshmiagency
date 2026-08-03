@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ClipboardList } from 'lucide-react';
+import { useEnquiry } from '../context/EnquiryContext';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
+  const { enquiryItems, openDrawer } = useEnquiry();
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -27,7 +28,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 glass transition-theme">
+    <nav className="sticky top-0 z-50 glass transition-theme no-print">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo / Brand */}
@@ -65,17 +66,40 @@ export const Navbar: React.FC = () => {
               </Link>
             ))}
 
-
-
+            {/* Enquiry List Icon */}
+            <button
+              onClick={openDrawer}
+              className="relative p-2 rounded-xl border border-slate-205 hover:border-blue-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-blue-600 transition-colors flex items-center gap-1.5 font-bold text-xs shadow-xs cursor-pointer ml-2"
+            >
+              <ClipboardList className="w-4 h-4 text-blue-600" />
+              <span>Enquiry List</span>
+              {enquiryItems.length > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-blue-600 text-white font-extrabold text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white">
+                  {enquiryItems.length}
+                </span>
+              )}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-
+            {/* Mobile Enquiry List Button */}
+            <button
+              onClick={openDrawer}
+              className="relative p-2 rounded-lg text-muted-text hover:bg-slate-105 focus:outline-none mr-1"
+              aria-label="Enquiry List"
+            >
+              <ClipboardList className="w-6 h-6 text-blue-600" />
+              {enquiryItems.length > 0 && (
+                <span className="absolute top-0.5 right-0.5 bg-blue-600 text-white font-extrabold text-[8px] w-4 h-4 rounded-full flex items-center justify-center border border-white">
+                  {enquiryItems.length}
+                </span>
+              )}
+            </button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-muted-text hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
+              className="p-2 rounded-lg text-muted-text hover:bg-slate-105 focus:outline-none"
               aria-label="Main menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

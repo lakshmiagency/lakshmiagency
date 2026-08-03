@@ -5,6 +5,7 @@ import Providers from "../components/Providers";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import EnquiryDrawer from "../components/EnquiryDrawer";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -47,6 +48,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <FloatingWhatsApp />
+          <EnquiryDrawer />
         </Providers>
       </body>
     </html>

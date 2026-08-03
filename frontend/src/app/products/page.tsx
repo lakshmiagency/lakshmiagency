@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Search, RefreshCw, MessageSquare, AlertTriangle } from 'lucide-react';
 import { api } from '../../lib/api';
+import { useEnquiry } from '../../context/EnquiryContext';
 
 interface Variant {
   id: number;
@@ -40,6 +41,7 @@ function ProductCard({
   formatPriceVal: (price: string | number) => string; 
 }) {
   const [activeImage, setActiveImage] = useState(product.image);
+  const { addToEnquiry } = useEnquiry();
 
   useEffect(() => {
     setActiveImage(product.image);
@@ -77,7 +79,8 @@ function ProductCard({
             <thead>
               <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 text-[10px] uppercase tracking-wider">
                 <th className="p-2.5 pl-3">Size / Option</th>
-                <th className="p-2.5 text-right pr-3">Price (Rs)</th>
+                <th className="p-2.5 text-right">Price (Rs)</th>
+                <th className="p-2.5 text-center pr-3 no-print w-16">List</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 text-slate-700">
@@ -89,8 +92,19 @@ function ProductCard({
                   onMouseLeave={() => setActiveImage(product.image)}
                 >
                   <td className="p-2.5 pl-3 font-semibold">{v.size} {v.unit}</td>
-                  <td className="p-2.5 text-right pr-3 font-extrabold text-blue-600">
+                  <td className="p-2.5 text-right font-extrabold text-blue-600">
                     {formatPriceVal(v.price)}
+                  </td>
+                  <td className="p-2.5 text-center pr-3 no-print">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToEnquiry(product, v);
+                      }}
+                      className="px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-700 font-extrabold text-[10px] uppercase transition-all"
+                    >
+                      + Add
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -121,6 +135,7 @@ function JkCementProductCard({
   getWhatsAppInquiryUrl: (product: Product) => string; 
 }) {
   const [activeImage, setActiveImage] = useState(product.image);
+  const { addToEnquiry } = useEnquiry();
 
   useEffect(() => {
     setActiveImage(product.image);
@@ -160,7 +175,8 @@ function JkCementProductCard({
                 <th className="p-2 pl-3">Qty</th>
                 <th className="p-2 text-center">Std</th>
                 <th className="p-2 text-right">Dealer</th>
-                <th className="p-2 text-right pr-3">Bag Price</th>
+                <th className="p-2 text-right">Bag Price</th>
+                <th className="p-2 text-center pr-3 no-print w-14">List</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 text-slate-700 text-xs">
@@ -182,7 +198,7 @@ function JkCementProductCard({
                       return `₹${parseFloat(val).toLocaleString('en-IN')}`;
                     })()}
                   </td>
-                  <td className="p-2 text-right pr-3 font-extrabold text-emerald-600">
+                  <td className="p-2 text-right font-extrabold text-emerald-600">
                     {v.dealerPricePerBag !== undefined ? (
                       (() => {
                         const val = String(v.dealerPricePerBag);
@@ -190,6 +206,17 @@ function JkCementProductCard({
                         return `₹${parseFloat(val).toLocaleString('en-IN')}`;
                       })()
                     ) : '-'}
+                  </td>
+                  <td className="p-2 text-center pr-3 no-print">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToEnquiry(product, v);
+                      }}
+                      className="px-2 py-0.5 rounded-lg bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-700 font-extrabold text-[9px] uppercase transition-all"
+                    >
+                      + Add
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -220,6 +247,7 @@ function PolycabMcbProductCard({
   getWhatsAppInquiryUrl: (product: Product) => string; 
 }) {
   const [activeImage, setActiveImage] = useState(product.image);
+  const { addToEnquiry } = useEnquiry();
 
   useEffect(() => {
     setActiveImage(product.image);
@@ -311,7 +339,7 @@ Quantity : `;
                       })()
                     ) : '-'}
                   </td>
-                  <td className="p-3 text-center pr-4">
+                  <td className="p-3 text-center pr-4 flex items-center justify-center gap-1.5">
                     <a
                       href={getVariantWhatsAppInquiryUrl(v)}
                       target="_blank"
@@ -321,6 +349,12 @@ Quantity : `;
                       <MessageSquare className="w-3 h-3 fill-current" />
                       Inquire
                     </a>
+                    <button
+                      onClick={() => addToEnquiry(product, v)}
+                      className="inline-flex items-center gap-1 py-1.5 px-3 rounded-lg bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-700 font-extrabold text-[10px] uppercase transition-all no-print cursor-pointer"
+                    >
+                      + Add
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -342,6 +376,7 @@ function PolycabWireProductCard({
   formatPriceVal: (price: string | number) => string;
 }) {
   const [activeImage, setActiveImage] = useState(product.image);
+  const { addToEnquiry } = useEnquiry();
 
   useEffect(() => {
     setActiveImage(product.image);
@@ -381,7 +416,8 @@ function PolycabWireProductCard({
                 <th className="p-2 pl-3">Size (Sq.mm.)</th>
                 <th className="p-2 text-right">LP (₹)</th>
                 <th className="p-2 text-center">Packing</th>
-                <th className="p-2 pl-2 pr-3">Colours</th>
+                <th className="p-2 pl-2">Colours</th>
+                <th className="p-2 text-center pr-3 no-print w-14">List</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 text-slate-700 text-[11px]">
@@ -397,8 +433,19 @@ function PolycabWireProductCard({
                   <td className="p-2 text-center text-slate-600 font-medium">
                     {v.coilsPerCarton !== undefined ? `${v.coilsPerCarton} Coils` : '-'}
                   </td>
-                  <td className="p-2 pl-2 pr-3 text-slate-500 font-medium max-w-[120px] truncate" title={v.colors}>
+                  <td className="p-2 pl-2 pr-3 text-slate-500 font-medium max-w-[100px] truncate" title={v.colors}>
                     {v.colors || '-'}
+                  </td>
+                  <td className="p-2 text-center pr-3 no-print">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToEnquiry(product, v);
+                      }}
+                      className="px-2 py-0.5 rounded-lg bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-700 font-extrabold text-[9px] uppercase transition-all"
+                    >
+                      + Add
+                    </button>
                   </td>
                 </tr>
               ))}
