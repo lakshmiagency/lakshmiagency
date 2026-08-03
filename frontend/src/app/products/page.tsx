@@ -13,6 +13,8 @@ interface Variant {
   price: string | number;
   stdPacking?: number;
   dealerPricePerBag?: string | number;
+  itemCode?: string;
+  newLp?: string | number;
   status: string;
   image?: string;
 }
@@ -22,7 +24,7 @@ interface Product {
   product_name: string;
   description: string;
   image: string;
-  tableType?: 'general' | 'jk_cement';
+  tableType?: 'general' | 'jk_cement' | 'polycab_mcb';
   variants: Variant[];
 }
 
@@ -208,6 +210,126 @@ function JkCementProductCard({
   );
 }
 
+function PolycabMcbProductCard({ 
+  product, 
+  getWhatsAppInquiryUrl 
+}: { 
+  product: Product; 
+  getWhatsAppInquiryUrl: (product: Product) => string; 
+}) {
+  const [activeImage, setActiveImage] = useState(product.image);
+
+  useEffect(() => {
+    setActiveImage(product.image);
+  }, [product.image]);
+
+  const getVariantWhatsAppInquiryUrl = (variant: Variant) => {
+    const phoneNumber = '916361033361';
+    const text = `Hello Lakshmi Agency,
+I need "POLYCAB MCB - Item ${variant.itemCode} (${variant.size})"
+Quantity : `;
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  };
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      {/* Product Info Card */}
+      <div className="lg:col-span-4 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow lg:sticky lg:top-24">
+        <div className="relative h-64 w-full bg-white border-b border-slate-200 p-6 flex items-center justify-center">
+          <img
+            src={activeImage || '/product-image/53.png'}
+            alt={product.product_name}
+            className="max-w-full max-h-full object-contain transition-all duration-300"
+            loading="lazy"
+          />
+          <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+            In Stock
+          </span>
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-3">
+            {product.product_name}
+          </h3>
+          <p className="text-sm text-slate-500 mb-6 leading-relaxed">
+            {product.description}
+          </p>
+          <a
+            href={getWhatsAppInquiryUrl(product)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
+          >
+            <MessageSquare className="w-4 h-4 fill-current" />
+            Send Bulk Inquiry
+          </a>
+        </div>
+      </div>
+
+      {/* MCB Table Section */}
+      <div className="lg:col-span-8 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+        <div className="p-4 bg-slate-50 border-b border-slate-200">
+          <h4 className="font-extrabold text-slate-900 text-sm uppercase tracking-wider">
+            Polycab Rate List & Specification
+          </h4>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr className="bg-slate-100/75 text-slate-600 font-bold border-b border-slate-200 uppercase tracking-wider text-[10px]">
+                <th className="p-3 pl-4">Item Code</th>
+                <th className="p-3">Description</th>
+                <th className="p-3 text-right">New LP (1-Apr-23)</th>
+                <th className="p-3 text-right">RLP</th>
+                <th className="p-3 text-center pr-4">Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 text-slate-700">
+              {product.variants.map((v) => (
+                <tr 
+                  key={v.id} 
+                  className="hover:bg-slate-50 transition-colors"
+                >
+                  <td className="p-3 pl-4 font-mono font-bold text-slate-900">{v.itemCode}</td>
+                  <td className="p-3 font-semibold text-slate-800">{v.size}</td>
+                  <td className="p-3 text-right font-medium text-slate-500">
+                    {v.newLp !== undefined ? (
+                      (() => {
+                        const val = String(v.newLp);
+                        if (isNaN(parseFloat(val))) return val;
+                        return `₹${parseFloat(val).toLocaleString('en-IN')}`;
+                      })()
+                    ) : '-'}
+                  </td>
+                  <td className="p-3 text-right font-extrabold text-blue-600 text-sm">
+                    {v.price !== undefined ? (
+                      (() => {
+                        const val = String(v.price);
+                        if (isNaN(parseFloat(val))) return val;
+                        return `₹${parseFloat(val).toLocaleString('en-IN')}`;
+                      })()
+                    ) : '-'}
+                  </td>
+                  <td className="p-3 text-center pr-4">
+                    <a
+                      href={getVariantWhatsAppInquiryUrl(v)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 py-1.5 px-3 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-[10px] uppercase transition-all"
+                    >
+                      <MessageSquare className="w-3 h-3 fill-current" />
+                      Inquire
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ProductsCatalogInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -279,8 +401,9 @@ Quanty : `;
   };
 
   // Split products by table type
-  const generalProducts = products.filter(p => p.tableType !== 'jk_cement');
+  const generalProducts = products.filter(p => p.tableType !== 'jk_cement' && p.tableType !== 'polycab_mcb');
   const jkCementProducts = products.filter(p => p.tableType === 'jk_cement');
+  const polycabMcbProducts = products.filter(p => p.tableType === 'polycab_mcb');
 
   return (
     // Forced Light Theme Wrapper
@@ -390,6 +513,26 @@ Quanty : `;
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                   {jkCementProducts.map((product) => (
                     <JkCementProductCard
+                      key={product.id}
+                      product={product}
+                      getWhatsAppInquiryUrl={getWhatsAppInquiryUrl}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Section 3: Polycab MCB & RCCB Products */}
+            {polycabMcbProducts.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
+                  Polycab MCB & RCCB Products
+                </h2>
+
+                <div className="space-y-8">
+                  {polycabMcbProducts.map((product) => (
+                    <PolycabMcbProductCard
                       key={product.id}
                       product={product}
                       getWhatsAppInquiryUrl={getWhatsAppInquiryUrl}

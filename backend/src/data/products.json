@@ -1414,5 +1414,203 @@
         "status": "Available"
       }
     ]
+  },
+  {
+    "id": 53,
+    "product_name": "POLYCAB MCB",
+    "description": "High-performance miniature circuit breakers (MCBs), RCCBs, and changeover switches for reliable electrical protection and safety in residential and commercial applications.",
+    "image": "/product-image/53.png",
+    "tableType": "polycab_mcb",
+    "variants": [
+      {
+        "id": 131,
+        "itemCode": "GMM501P001",
+        "size": "B6-32A SP MCB 6kA Polycab",
+        "unit": "",
+        "newLp": "201",
+        "price": "108.00",
+        "status": "Available"
+      },
+      {
+        "id": 132,
+        "itemCode": "GMM601N001",
+        "size": "10-32A SPN MCB 6kA Polycab",
+        "unit": "",
+        "newLp": "661",
+        "price": "320",
+        "status": "Available"
+      },
+      {
+        "id": 133,
+        "itemCode": "GMM603P002",
+        "size": "C10-32A TP MCB 6kA Polycab",
+        "unit": "",
+        "newLp": "1259",
+        "price": "690",
+        "status": "Available"
+      },
+      {
+        "id": 134,
+        "itemCode": "GMM604P006",
+        "size": "C32A FP MCB 6kA Polycab",
+        "unit": "",
+        "newLp": "1663",
+        "price": "855",
+        "status": "Available"
+      },
+      {
+        "id": 135,
+        "itemCode": "GMM604P007",
+        "size": "C40A FP MCB 6kA Polycab",
+        "unit": "",
+        "newLp": "2187",
+        "price": "1125",
+        "status": "Available"
+      },
+      {
+        "id": 136,
+        "itemCode": "GMM604P008",
+        "size": "C63A FP MCB 6kA Polycab",
+        "unit": "",
+        "newLp": "2396",
+        "price": "1230",
+        "status": "Available"
+      },
+      {
+        "id": 137,
+        "itemCode": "GMM201N007",
+        "size": "C40A MCB 1N 10kA MCB",
+        "unit": "",
+        "newLp": "1068",
+        "price": "550",
+        "status": "Available"
+      },
+      {
+        "id": 138,
+        "itemCode": "GMM201N008",
+        "size": "C63A MCB 1N 10kA MCB",
+        "unit": "",
+        "newLp": "1263",
+        "price": "650",
+        "status": "Available"
+      },
+      {
+        "id": 139,
+        "itemCode": "GMM203P007",
+        "size": "C40A MCB 3P 10kA MCB",
+        "unit": "",
+        "newLp": "1821",
+        "price": "1000",
+        "status": "Available"
+      },
+      {
+        "id": 140,
+        "itemCode": "GMM203P008",
+        "size": "C63A MCB 3P 10kA MCB",
+        "unit": "",
+        "newLp": "2014",
+        "price": "1100",
+        "status": "Available"
+      },
+      {
+        "id": 141,
+        "itemCode": "GMR502P009",
+        "size": "25A 100MA DP RCCB",
+        "unit": "",
+        "newLp": "3000",
+        "price": "1630",
+        "status": "Available"
+      },
+      {
+        "id": 142,
+        "itemCode": "GMR502P011",
+        "size": "40A 100MA DP RCCB",
+        "unit": "",
+        "newLp": "3268",
+        "price": "1765",
+        "status": "Available"
+      },
+      {
+        "id": 143,
+        "itemCode": "GMR504P017",
+        "size": "40A 300MA FP RCCB",
+        "unit": "",
+        "newLp": "3941",
+        "price": "2130",
+        "status": "Available"
+      },
+      {
+        "id": 144,
+        "itemCode": "GMR504P018",
+        "size": "63A 300MA FP RCCB",
+        "unit": "",
+        "newLp": "4366",
+        "price": "2360",
+        "status": "Available"
+      },
+      {
+        "id": 145,
+        "itemCode": "GPDSN20016",
+        "size": "04W SP&N MCBDB DD SM GREY WHITE POLYCAB",
+        "unit": "",
+        "newLp": "1755",
+        "price": "960",
+        "status": "Available"
+      },
+      {
+        "id": 146,
+        "itemCode": "GPDSN20012",
+        "size": "06W SP&N MCBDB DD SM GREY WHITE POLYCAB",
+        "unit": "",
+        "newLp": "2033",
+        "price": "1110",
+        "status": "Available"
+      },
+      {
+        "id": 147,
+        "itemCode": "GPDSN20017",
+        "size": "08W SP&N MCBDB DD SM GREY WHITE POLYCAB",
+        "unit": "",
+        "newLp": "2217",
+        "price": "1210",
+        "status": "Available"
+      },
+      {
+        "id": 148,
+        "itemCode": "GPDSN20018",
+        "size": "12W SP&N MCBDB DD SM GREY WHITE POLYCAB",
+        "unit": "",
+        "newLp": "2714",
+        "price": "1480",
+        "status": "Available"
+      },
+      {
+        "id": 149,
+        "itemCode": "GPDSN20019",
+        "size": "16W SP&N MCBDB DD SM GREY WHITE POLYCAB",
+        "unit": "",
+        "newLp": "3580",
+        "price": "1955",
+        "status": "Available"
+      },
+      {
+        "id": 150,
+        "itemCode": "GMC102P001",
+        "size": "25 A DP MCB CHANGEOVER SWITCH",
+        "unit": "",
+        "newLp": "1254",
+        "price": "685",
+        "status": "Available"
+      },
+      {
+        "id": 151,
+        "itemCode": "GMC102P002",
+        "size": "40 A DP MCB CHANGEOVER SWITCH",
+        "unit": "",
+        "newLp": "1655",
+        "price": "910",
+        "status": "Available"
+      }
+    ]
   }
 ]
