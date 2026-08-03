@@ -698,6 +698,73 @@
     ]
   },
   {
+    "id": 49,
+    "product_name": "TUFIT UNIFORM TEXTURE",
+    "description": "Premium acrylic-based uniform texture coating that provides a smooth, consistent decorative finish with excellent durability, weather resistance, and long-lasting surface protection.",
+    "image": "/product-image/49.png",
+    "variants": [
+      {
+        "id": 119,
+        "size": "25 KG",
+        "unit": "",
+        "price": "475",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "product_name": "TUFIT ACRYLIC DECORATIVE TEXTURE",
+    "description": "High-quality acrylic decorative texture designed to create attractive textured wall finishes with superior adhesion, crack resistance, UV stability, and excellent weather protection.",
+    "image": "/product-image/50.png",
+    "variants": [
+      {
+        "id": 120,
+        "size": "25 KG",
+        "unit": "",
+        "price": "600",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "product_name": "TUFIT GYPSUM POWDER",
+    "description": "Premium gypsum-based powder ideal for wall jointing, crack filling, surface leveling, patch repairs, and providing a smooth base before painting on interior walls and ceilings.",
+    "image": "/product-image/51.png",
+    "variants": [
+      {
+        "id": 121,
+        "size": "25 KG",
+        "unit": "",
+        "price": "325",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "product_name": "TUFIT TILE ADHESIVE'S (T01)",
+    "description": "High-performance cement-based tile adhesive suitable for fixing ceramic and vitrified tiles on interior and exterior walls and floors, offering strong bonding, easy application, and durable performance.",
+    "image": "/product-image/52.png",
+    "variants": [
+      {
+        "id": 122,
+        "size": "1 KG",
+        "unit": "",
+        "price": "21.50",
+        "status": "Available"
+      },
+      {
+        "id": 123,
+        "size": "5 KG",
+        "unit": "",
+        "price": "79.30",
+        "status": "Available"
+      }
+    ]
+  },
+  {
     "id": 22,
     "product_name": "METAL PASTE PROMISE BODY FILLER WHITE",
     "description": "Premium white polyester body filler paste for repairing metal dents, sheet seams, and wood cavities.",
@@ -705,16 +772,16 @@
     "variants": [
       {
         "id": 72,
-        "size": "900 GMS",
+        "size": "500 GMS",
         "unit": "",
-        "price": "180",
+        "price": "112.30",
         "status": "Available"
       },
       {
         "id": 73,
-        "size": "500 GMS",
+        "size": "900 GMS",
         "unit": "",
-        "price": "103",
+        "price": "190.80",
         "status": "Available"
       }
     ]
@@ -726,24 +793,17 @@
     "image": "/product-image/23.png",
     "variants": [
       {
-        "id": 74,
-        "size": "200 GMS",
-        "unit": "",
-        "price": "38",
-        "status": "Available"
-      },
-      {
         "id": 75,
         "size": "500 GMS",
         "unit": "",
-        "price": "68",
+        "price": "105.40",
         "status": "Available"
       },
       {
         "id": 76,
         "size": "900 GMS",
         "unit": "",
-        "price": "114",
+        "price": "174.65",
         "status": "Available"
       }
     ]
