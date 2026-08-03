@@ -193,7 +193,7 @@ export default function HomePage() {
                 {/* Brand Accent Shading */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <img
-                  src="/product-image/35.png"
+                  src="/product-image/44.png"
                   alt="JK Cement Products"
                   className="max-h-36 object-contain z-10 drop-shadow-md group-hover:scale-105 transition-transform duration-500"
                 />
@@ -231,7 +231,7 @@ export default function HomePage() {
                 {/* Brand Accent Shading */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <img
-                  src="/product-image/37.png"
+                  src="/product-image/35.png"
                   alt="V Bond Adhesives & Chemicals"
                   className="max-h-36 object-contain z-10 drop-shadow-md group-hover:scale-105 transition-transform duration-500"
                 />
