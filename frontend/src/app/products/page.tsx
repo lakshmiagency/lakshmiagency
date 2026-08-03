@@ -46,7 +46,7 @@ function ProductCard({
   }, [product.image]);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+    <div className="product-card-print bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
       {/* Product Image */}
       <div className="relative h-56 w-full bg-white border-b border-slate-200 p-4 flex items-center justify-center">
         <img
@@ -127,7 +127,7 @@ function JkCementProductCard({
   }, [product.image]);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+    <div className="product-card-print bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
       {/* Product Image */}
       <div className="relative h-56 w-full bg-white border-b border-slate-200 p-4 flex items-center justify-center">
         <img
@@ -234,7 +234,7 @@ Quantity : `;
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div className="product-card-print grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       {/* Product Info Card */}
       <div className="lg:col-span-4 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow lg:sticky lg:top-24">
         <div className="relative h-64 w-full bg-white border-b border-slate-200 p-6 flex items-center justify-center">
@@ -348,7 +348,7 @@ function PolycabWireProductCard({
   }, [product.image]);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+    <div className="product-card-print bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
       {/* Product Image */}
       <div className="relative h-52 w-full bg-white border-b border-slate-200 p-4 flex items-center justify-center">
         <img
@@ -503,7 +503,7 @@ Quanty : `;
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumbs */}
-        <nav className="text-xs sm:text-sm text-slate-500 mb-6">
+        <nav className="text-xs sm:text-sm text-slate-500 mb-6 no-print">
           <span className="hover:text-slate-900"><Link href="/">Home</Link></span>
           <span className="mx-2">/</span>
           <span className="text-slate-900 font-bold">Products Catalogue</span>
@@ -549,7 +549,7 @@ Quanty : `;
         </div>
 
         {/* Filter Controls Panel */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 mb-10 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="bg-white border border-slate-200 rounded-2xl p-5 mb-10 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between no-print">
           <form onSubmit={handleSearchSubmit} className="relative w-full md:w-1/2">
             <input
               type="text"

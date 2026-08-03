@@ -160,7 +160,7 @@ function GalleryInner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumbs */}
-        <nav className="text-xs sm:text-sm text-slate-500 mb-6">
+        <nav className="text-xs sm:text-sm text-slate-500 mb-6 no-print">
           <span className="hover:text-slate-900"><Link href="/">Home</Link></span>
           <span className="mx-2">/</span>
           <span className="text-slate-900 font-bold">Visual Gallery</span>
@@ -206,7 +206,7 @@ function GalleryInner() {
         </div>
 
         {/* Filter & Search Panel */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 mb-10 shadow-sm space-y-4">
+        <div className="bg-white border border-slate-200 rounded-2xl p-5 mb-10 shadow-sm space-y-4 no-print">
           {/* Search bar */}
           <div className="relative w-full">
             <input
@@ -269,7 +269,7 @@ function GalleryInner() {
               <div
                 key={product.id}
                 onClick={() => setSelectedProduct(product)}
-                className="group cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center p-4 text-center hover:border-blue-300"
+                className="product-card-print group cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center p-4 text-center hover:border-blue-300"
               >
                 {/* Image Wrapper */}
                 <div className="relative aspect-square w-full bg-white flex items-center justify-center p-2 mb-3 overflow-hidden">
