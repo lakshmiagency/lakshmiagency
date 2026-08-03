@@ -1,46 +1,67 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+import productsData from '../data/products.json';
 
-async function apiFetch(path: string, options: RequestInit = {}) {
-  const headers = new Headers(options.headers || {});
-  
-  if (!headers.has('Content-Type')) {
-    headers.set('Content-Type', 'application/json');
-  }
-
-  const response = await fetch(`${API_URL}${path}`, {
-    ...options,
-    headers,
-  });
-
-  if (!response.ok) {
-    let errorMessage = `HTTP error! status: ${response.status}`;
-    try {
-      const data = await response.json();
-      errorMessage = data.message || errorMessage;
-    } catch (e) {
-      // response might not be JSON
-    }
-    throw new Error(errorMessage);
-  }
-
-  return response.json();
+interface Variant {
+  id: number;
+  size: string;
+  unit: string;
+  price: string | number;
+  status: string;
+  itemCode?: string;
+  newLp?: string | number;
+  coilsPerCarton?: number;
+  colors?: string;
+  stdPacking?: number;
+  dealerPricePerBag?: string | number;
 }
+
+interface Product {
+  id: number | string;
+  product_name: string;
+  description: string;
+  image: string;
+  tableType?: 'general' | 'jk_cement' | 'polycab_mcb' | 'polycab_wire';
+  variants: Variant[];
+}
+
+const typedProductsData = productsData as unknown as Product[];
 
 export const api = {
   // Public Data
-  async getProducts(filters?: { search?: string }) {
-    const query = new URLSearchParams();
-    if (filters?.search) query.append('search', filters.search);
+  async getProducts(filters?: { search?: string }): Promise<Product[]> {
+    let filtered = [...typedProductsData];
     
-    return apiFetch(`/products?${query.toString()}`);
+    if (filters?.search) {
+      const term = filters.search.toLowerCase();
+      const isVBondQuery = ['v bond', 'v-bond', 'vbond', 'vb'].includes(term);
+      filtered = filtered.filter((p) => {
+        if (isVBondQuery && Number(p.id) >= 35 && Number(p.id) <= 43) {
+          return true;
+        }
+        return p.product_name.toLowerCase().includes(term) ||
+               p.description.toLowerCase().includes(term);
+      });
+    }
+    
+    return filtered;
   },
 
-  async getProductById(id: string | number) {
-    return apiFetch(`/products/${id}`);
+  async getProductById(id: string | number): Promise<Product> {
+    const product = typedProductsData.find((p) => String(p.id) === String(id));
+    if (!product) {
+      throw new Error('Product not found');
+    }
+    return product;
   },
 
   async getBusinessInfo() {
-    return apiFetch('/business-info');
+    return {
+      name: 'Lakshmi Agency',
+      type: 'Wholesale & Retail Supplier of Building Materials, Hardware, Paint Accessories, PVC Pipes, Bathroom Fittings, Waterproofing Products, Putty, Wall Primer, Tile Chemicals and JK Cement Products.',
+      address: 'College Main Road, Sulibele, Hoskote Taluk, Bangalore Rural - 562129',
+      phoneNumbers: ['9481252271', '6361033361', '9008157128'],
+      whatsApp: '6361033361',
+      businessHours: 'Monday - Saturday: 8:30 AM - 8:30 PM, Sunday: Closed'
+    };
   },
 };
 
