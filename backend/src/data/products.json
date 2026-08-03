@@ -1612,5 +1612,320 @@
         "status": "Available"
       }
     ]
+  },
+  {
+    "id": 54,
+    "product_name": "POLYCAB GREEN WIRE+",
+    "description": "GreenPro certified extra safe, heat resistant, flame retardant, low smoke halogen-free house wires (90m box packaging).",
+    "image": "/product-image/54.png",
+    "tableType": "polycab_wire",
+    "variants": [
+      {
+        "id": 152,
+        "size": "0.75",
+        "unit": "SQ.MM.",
+        "price": "2370",
+        "coilsPerCarton": 28,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 153,
+        "size": "1",
+        "unit": "SQ.MM.",
+        "price": "3195",
+        "coilsPerCarton": 24,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 154,
+        "size": "1.5",
+        "unit": "SQ.MM.",
+        "price": "4660",
+        "coilsPerCarton": 16,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 155,
+        "size": "2.5",
+        "unit": "SQ.MM.",
+        "price": "7315",
+        "coilsPerCarton": 12,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 156,
+        "size": "4",
+        "unit": "SQ.MM.",
+        "price": "10670",
+        "coilsPerCarton": 8,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      },
+      {
+        "id": 157,
+        "size": "6",
+        "unit": "SQ.MM.",
+        "price": "16015",
+        "coilsPerCarton": 6,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "product_name": "POLYCABOPTIMA+",
+    "description": "High-quality lead-free, flame retardant power-saving house wires (90m box packaging).",
+    "image": "/product-image/55.png",
+    "tableType": "polycab_wire",
+    "variants": [
+      {
+        "id": 158,
+        "size": "0.75",
+        "unit": "SQ.MM.",
+        "price": "2220",
+        "coilsPerCarton": 28,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 159,
+        "size": "1",
+        "unit": "SQ.MM.",
+        "price": "2980",
+        "coilsPerCarton": 24,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 160,
+        "size": "1.5",
+        "unit": "SQ.MM.",
+        "price": "4355",
+        "coilsPerCarton": 16,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 161,
+        "size": "2.5",
+        "unit": "SQ.MM.",
+        "price": "6880",
+        "coilsPerCarton": 12,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 162,
+        "size": "4",
+        "unit": "SQ.MM.",
+        "price": "10070",
+        "coilsPerCarton": 8,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      },
+      {
+        "id": 163,
+        "size": "6",
+        "unit": "SQ.MM.",
+        "price": "15050",
+        "coilsPerCarton": 6,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      },
+      {
+        "id": 164,
+        "size": "10",
+        "unit": "SQ.MM.",
+        "price": "24100",
+        "coilsPerCarton": 1,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      },
+      {
+        "id": 165,
+        "size": "16",
+        "unit": "SQ.MM.",
+        "price": "38050",
+        "coilsPerCarton": 1,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "product_name": "POLYCABPRIMMA",
+    "description": "Flame retardant lead-free wires for general purpose residential and commercial applications (90m box packaging).",
+    "image": "/product-image/56.png",
+    "tableType": "polycab_wire",
+    "variants": [
+      {
+        "id": 166,
+        "size": "0.75",
+        "unit": "SQ.MM.",
+        "price": "2195",
+        "coilsPerCarton": 28,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 167,
+        "size": "1",
+        "unit": "SQ.MM.",
+        "price": "2785",
+        "coilsPerCarton": 24,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 168,
+        "size": "1.5",
+        "unit": "SQ.MM.",
+        "price": "4095",
+        "coilsPerCarton": 16,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 169,
+        "size": "2.5",
+        "unit": "SQ.MM.",
+        "price": "6525",
+        "coilsPerCarton": 12,
+        "colors": "Rd, Yw, Be, Bk, Gn, We, Gy",
+        "status": "Available"
+      },
+      {
+        "id": 170,
+        "size": "4",
+        "unit": "SQ.MM.",
+        "price": "10000",
+        "coilsPerCarton": 8,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      },
+      {
+        "id": 171,
+        "size": "6",
+        "unit": "SQ.MM.",
+        "price": "15000",
+        "coilsPerCarton": 6,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "product_name": "POLYCAB GREEN WIRE (180M)",
+    "description": "GreenPro certified extra safe, heat resistant, flame retardant house wires in 180m pouch packaging.",
+    "image": "/product-image/57.png",
+    "tableType": "polycab_wire",
+    "variants": [
+      {
+        "id": 172,
+        "size": "1",
+        "unit": "SQ.MM.",
+        "price": "6390",
+        "coilsPerCarton": 12,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 173,
+        "size": "1.5",
+        "unit": "SQ.MM.",
+        "price": "9320",
+        "coilsPerCarton": 10,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 174,
+        "size": "2.5",
+        "unit": "SQ.MM.",
+        "price": "14630",
+        "coilsPerCarton": 6,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 175,
+        "size": "4",
+        "unit": "SQ.MM.",
+        "price": "21340",
+        "coilsPerCarton": 4,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      },
+      {
+        "id": 176,
+        "size": "6",
+        "unit": "SQ.MM.",
+        "price": "32030",
+        "coilsPerCarton": 3,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "product_name": "POLYCAB LF FR (180M)",
+    "description": "Lead-free, flame retardant residential house wires in 180m pouch packaging.",
+    "image": "/product-image/58.png",
+    "tableType": "polycab_wire",
+    "variants": [
+      {
+        "id": 177,
+        "size": "1",
+        "unit": "SQ.MM.",
+        "price": "5960",
+        "coilsPerCarton": 12,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 178,
+        "size": "1.5",
+        "unit": "SQ.MM.",
+        "price": "8710",
+        "coilsPerCarton": 10,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 179,
+        "size": "2.5",
+        "unit": "SQ.MM.",
+        "price": "13760",
+        "coilsPerCarton": 6,
+        "colors": "Rd, Yw, Be, Bk, Gn, We",
+        "status": "Available"
+      },
+      {
+        "id": 180,
+        "size": "4",
+        "unit": "SQ.MM.",
+        "price": "20140",
+        "coilsPerCarton": 4,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      },
+      {
+        "id": 181,
+        "size": "6",
+        "unit": "SQ.MM.",
+        "price": "30100",
+        "coilsPerCarton": 3,
+        "colors": "Rd, Yw, Be, Bk, Gn",
+        "status": "Available"
+      }
+    ]
   }
 ]

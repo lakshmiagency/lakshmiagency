@@ -15,6 +15,8 @@ interface Variant {
   dealerPricePerBag?: string | number;
   itemCode?: string;
   newLp?: string | number;
+  coilsPerCarton?: number;
+  colors?: string;
   status: string;
   image?: string;
 }
@@ -24,7 +26,7 @@ interface Product {
   product_name: string;
   description: string;
   image: string;
-  tableType?: 'general' | 'jk_cement' | 'polycab_mcb';
+  tableType?: 'general' | 'jk_cement' | 'polycab_mcb' | 'polycab_wire';
   variants: Variant[];
 }
 
@@ -330,6 +332,95 @@ Quantity : `;
   );
 }
 
+function PolycabWireProductCard({ 
+  product, 
+  getWhatsAppInquiryUrl,
+  formatPriceVal
+}: { 
+  product: Product; 
+  getWhatsAppInquiryUrl: (product: Product) => string;
+  formatPriceVal: (price: string | number) => string;
+}) {
+  const [activeImage, setActiveImage] = useState(product.image);
+
+  useEffect(() => {
+    setActiveImage(product.image);
+  }, [product.image]);
+
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+      {/* Product Image */}
+      <div className="relative h-52 w-full bg-white border-b border-slate-200 p-4 flex items-center justify-center">
+        <img
+          src={activeImage || 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop&q=80'}
+          alt={product.product_name}
+          className="max-w-full max-h-full object-contain transition-all duration-300"
+          loading="lazy"
+        />
+        <span className="absolute top-3 right-3 bg-emerald-500 text-white font-extrabold text-[10px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+          In Stock
+        </span>
+      </div>
+
+      {/* Card Content */}
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-tight mb-2">
+          {product.product_name}
+        </h3>
+        {product.description && (
+          <p className="text-xs text-slate-500 mb-4 leading-relaxed line-clamp-2">
+            {product.description}
+          </p>
+        )}
+
+        {/* Wire Specialized Table */}
+        <div className="border border-slate-200 rounded-xl overflow-hidden text-[10px] bg-slate-50 mb-5">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 uppercase tracking-wider text-[9px]">
+                <th className="p-2 pl-3">Size (Sq.mm.)</th>
+                <th className="p-2 text-right">LP (₹)</th>
+                <th className="p-2 text-center">Packing</th>
+                <th className="p-2 pl-2 pr-3">Colours</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 text-slate-700 text-[11px]">
+              {product.variants.map((v) => (
+                <tr 
+                  key={v.id} 
+                  className="hover:bg-slate-100/50 cursor-pointer transition-colors"
+                >
+                  <td className="p-2 pl-3 font-bold text-slate-800">{v.size} {v.unit}</td>
+                  <td className="p-2 text-right font-extrabold text-blue-600">
+                    {formatPriceVal(v.price)}
+                  </td>
+                  <td className="p-2 text-center text-slate-600 font-medium">
+                    {v.coilsPerCarton !== undefined ? `${v.coilsPerCarton} Coils` : '-'}
+                  </td>
+                  <td className="p-2 pl-2 pr-3 text-slate-500 font-medium max-w-[120px] truncate" title={v.colors}>
+                    {v.colors || '-'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* WhatsApp Inquire CTA */}
+        <a
+          href={getWhatsAppInquiryUrl(product)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all"
+        >
+          <MessageSquare className="w-4 h-4 fill-current" />
+          Send WhatsApp Inquiry
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function ProductsCatalogInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -401,9 +492,10 @@ Quanty : `;
   };
 
   // Split products by table type
-  const generalProducts = products.filter(p => p.tableType !== 'jk_cement' && p.tableType !== 'polycab_mcb');
+  const generalProducts = products.filter(p => p.tableType !== 'jk_cement' && p.tableType !== 'polycab_mcb' && p.tableType !== 'polycab_wire');
   const jkCementProducts = products.filter(p => p.tableType === 'jk_cement');
   const polycabMcbProducts = products.filter(p => p.tableType === 'polycab_mcb');
+  const polycabWireProducts = products.filter(p => p.tableType === 'polycab_wire');
 
   return (
     // Forced Light Theme Wrapper
@@ -536,6 +628,27 @@ Quanty : `;
                       key={product.id}
                       product={product}
                       getWhatsAppInquiryUrl={getWhatsAppInquiryUrl}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Section 4: Polycab Wires & Cables */}
+            {polycabWireProducts.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
+                  Polycab Wires & Cables
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                  {polycabWireProducts.map((product) => (
+                    <PolycabWireProductCard
+                      key={product.id}
+                      product={product}
+                      getWhatsAppInquiryUrl={getWhatsAppInquiryUrl}
+                      formatPriceVal={formatPriceVal}
                     />
                   ))}
                 </div>
