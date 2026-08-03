@@ -133,6 +133,139 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 2.5 Featured Brands Showcase */}
+      <section className="py-16 sm:py-24 bg-slate-100/60 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-blue-50 text-blue-600 border border-blue-100 tracking-wider">
+              Authorized Partner Brands
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">
+              Shop Premium Builder Brands
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+              Explore rates, structural listings, and view photo catalogues for our leading partner manufacturers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1: Polycab Wires & MCBs */}
+            <div className="group bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-xl hover:border-blue-350 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative h-48 bg-gradient-to-br from-red-50 to-blue-50 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
+                {/* Brand Accent Shading */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-red-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src="/product-image/53.png"
+                  alt="Polycab Electrical Fittings"
+                  className="max-h-36 object-contain z-10 drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-red-600 text-white font-extrabold text-[9px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+                  Electricals
+                </span>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-lg font-black text-slate-900 uppercase tracking-tight mb-2 group-hover:text-blue-600 transition-colors">
+                  Polycab Electricals
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed mb-6">
+                  Premium industrial copper wires, flame-retardant cable coils, MCBs, RCCBs, and home electrical components.
+                </p>
+                <div className="mt-auto grid grid-cols-2 gap-3">
+                  <Link
+                    href="/products?search=polycab"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 hover:border-blue-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-blue-600 font-bold text-xs transition-colors"
+                  >
+                    View Rates
+                  </Link>
+                  <Link
+                    href="/gallery?category=Electrical"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-sm hover:shadow-blue-500/10 transition-colors"
+                  >
+                    View Gallery
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: JK Cement & Putty */}
+            <div className="group bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-xl hover:border-amber-350 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative h-48 bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
+                {/* Brand Accent Shading */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src="/product-image/35.png"
+                  alt="JK Cement Products"
+                  className="max-h-36 object-contain z-10 drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-amber-600 text-white font-extrabold text-[9px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+                  Cement & Putty
+                </span>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-lg font-black text-slate-900 uppercase tracking-tight mb-2 group-hover:text-amber-600 transition-colors">
+                  JK Cement & Putty
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed mb-6">
+                  Industry-grade white Portland cement, smooth undercoat wall putty, dampness shields, and POP materials.
+                </p>
+                <div className="mt-auto grid grid-cols-2 gap-3">
+                  <Link
+                    href="/products?search=jk"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 hover:border-amber-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-amber-600 font-bold text-xs transition-colors"
+                  >
+                    View Rates
+                  </Link>
+                  <Link
+                    href="/gallery?category=Cement+%26+Putty"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs shadow-sm hover:shadow-amber-500/10 transition-colors"
+                  >
+                    View Gallery
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Tufit Acrylic Textures */}
+            <div className="group bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-xl hover:border-emerald-350 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative h-48 bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
+                {/* Brand Accent Shading */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src="/product-image/50.png"
+                  alt="Tufit Texture Layouts"
+                  className="max-h-36 object-contain z-10 drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-emerald-600 text-white font-extrabold text-[9px] uppercase tracking-wider py-1 px-2.5 rounded-full shadow-sm">
+                  Paints & Textures
+                </span>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-lg font-black text-slate-900 uppercase tracking-tight mb-2 group-hover:text-emerald-600 transition-colors">
+                  Tufit Premium Textures
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed mb-6">
+                  High-grade acrylic decorative texture mixes, granular stone layouts, interior jointing gypsum, and fillers.
+                </p>
+                <div className="mt-auto grid grid-cols-2 gap-3">
+                  <Link
+                    href="/products?search=tufit"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 hover:border-emerald-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-emerald-600 font-bold text-xs transition-colors"
+                  >
+                    View Rates
+                  </Link>
+                  <Link
+                    href="/gallery?category=Paints+%26+Coatings"
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm hover:shadow-emerald-500/10 transition-colors"
+                  >
+                    View Gallery
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. About Teaser Section */}
       <section className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
