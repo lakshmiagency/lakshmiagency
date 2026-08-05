@@ -18,12 +18,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lakshmi Agency | Building Materials, Hardware & Paints (Sulibele)",
-  description: "Wholesale & retail supplier of premium building materials, hardware tools, paints, PVC pipes, bathroom fittings, waterproofing products, and JK cement. Located in College Main Road, Sulibele, Hoskote Taluk, Bangalore Rural.",
+  title: "Lakshmi Agency | Explore For Catalog and Price List",
+  description: "Order Now on whatsapp 63610 33361",
   keywords: "Lakshmi Agency, Sulibele, Hoskote, Bangalore Rural, building materials, paints, hardware, PVC pipes, JK cement, waterproofing, bathroom fittings, price list",
   openGraph: {
-    title: "Lakshmi Agency | Building Materials, Hardware & Paints",
-    description: "Premium wholesale & retail supply of construction materials in Bangalore Rural. View our catalogue and current price list.",
+    title: "Lakshmi Agency | Explore For Catalog and Price List",
+    description: "Order Now on whatsapp 63610 33361",
     type: "website",
     locale: "en_IN",
     siteName: "Lakshmi Agency",
