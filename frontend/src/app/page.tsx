@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import {
   ArrowRight,
   Award,
@@ -11,7 +12,8 @@ import {
   BadgeCheck,
   ChevronRight,
   Phone,
-  MessageSquare
+  MessageSquare,
+  Search
 } from 'lucide-react';
 import { api } from '../lib/api';
 import ProductCard from '../components/ProductCard';
@@ -34,9 +36,20 @@ interface Product {
 }
 
 export default function HomePage() {
+  const router = useRouter();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      router.push('/products');
+    }
+  };
 
   useEffect(() => {
     const loadHomeData = async () => {
@@ -83,6 +96,27 @@ export default function HomePage() {
             <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
               Authorized dealers of cement, premium paints, CPVC pipes, garden water hoses, waterproofing products, and tile adhesives. We supply top-quality hardware materials to builders and homeowners in Sulibele, Hoskote Taluk.
             </p>
+
+            {/* Search Input Bar */}
+            <form onSubmit={handleSearchSubmit} className="relative max-w-md w-full mb-8 flex items-center">
+              <div className="relative flex-grow">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 z-10" />
+                <input
+                  type="text"
+                  placeholder="Search products (e.g. wire, cement, paint)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-24 py-3.5 rounded-2xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm shadow-sm transition-all text-slate-800 placeholder-slate-400"
+                />
+              </div>
+              <button
+                type="submit"
+                className="absolute right-1.5 py-2 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs transition-colors shadow-sm cursor-pointer"
+              >
+                Search
+              </button>
+            </form>
+
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/products"
